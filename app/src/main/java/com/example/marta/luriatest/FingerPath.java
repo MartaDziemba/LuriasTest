@@ -145,12 +145,14 @@ public class FingerPath extends View{
                 writer.flush();
                 writer.close();
 
-//                fos.write(content.getBytes());
-//                fos.write('\n');
-//                fos.write(',');
-//
-//                fos.flush();
-//                fos.close();
+
+
+                fos.write(content.getBytes());
+                fos.write('\n');
+                fos.write(',');
+
+                fos.flush();
+                fos.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e){
