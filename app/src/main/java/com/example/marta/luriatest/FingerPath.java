@@ -138,21 +138,20 @@ public class FingerPath extends View{
 
         if(file.exists() && !file.isDirectory()){
             try {
-                FileOutputStream fos = new FileOutputStream(file);
-                FileWriter writer = new FileWriter(fileName);
+                //FileOutputStream fos = new FileOutputStream(file);
+                FileWriter writer = new FileWriter(file);
                 writer.append(content);
-                writer.write("%n");
+                writer.append(System.getProperty("line.separator"));
+                writer.append(System.getProperty("line.separator") + content);
                 writer.flush();
                 writer.close();
 
-
-
-                fos.write(content.getBytes());
-                fos.write('\n');
-                fos.write(',');
-
-                fos.flush();
-                fos.close();
+//                fos.write(content.getBytes());
+//                fos.write('\n');
+//                fos.write(',');
+//
+//                fos.flush();
+//                fos.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e){
