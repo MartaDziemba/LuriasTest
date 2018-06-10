@@ -11,6 +11,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -100,37 +101,28 @@ public class FingerPath extends View{
     String fileName = "AnalysisDataSaveCanvas.csv";
     String filePath = baseDir + File.separator + fileName;
     File f = new File(filePath);
-    CSVWriter writer;
+    //CSVWriter writer;
 
-    public void saveCanvas(float x, float y){
-        if(f.exists() && !f.isDirectory()){
-            FileWriter mFileWriter = null;
-            try {
-                mFileWriter = new FileWriter(filePath, true);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            writer = new CSVWriter(mFileWriter);
-        }
-        else{
-            try {
-                writer = new CSVWriter(new FileWriter(filePath));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    FileWriter writer;
 
-        Float[] data = {x,y};
-        for (int i = 0; i < data.length - 2; i++) {
-            writer.write(data[i] + ";");
-            writer.write(data[i + 1] + ";");
-            writer.write(data[i + 2] + ";" + "\n");
-
+    private void createCSVfile() {
+        File root = Environment.getExternalStorageDirectory();
+        File file = new File(root, "NazwaPliku.csv");
+        try {
+            writer = new FileWriter(file, true);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        //writer.writeNext(data.toString());
-        invalidate();
     }
 
+    private void writeToCsvFile(String string) {
+        try {
+            writer.write(string);
+            writer.flush();
+        } catch (IOException error) {
+            Log.d("writetoCSV", error.getMessage());
+        }
+    }
 
     private void saveAsFile(String content){
         String fileName = "AnalysisData.csv";
@@ -168,46 +160,6 @@ public class FingerPath extends View{
         }
     }
 
-
-    public void save(float x, float y){
-
-        File path= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        File file = new File(path, "AnalysisDataSave.csv");
-        FileOutputStream outputStream = null;
-        try {
-            outputStream = new FileOutputStream(file,true);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        OutputStreamWriter streamWriter = new OutputStreamWriter(outputStream);
-
-        float[] data ={x,y};
-        for (int i=0; i<data.length-2; i++){
-            try {
-                streamWriter.write(data[i]+";");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                streamWriter.write(data[i+1]+";");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                streamWriter.write(data[i+2]+";");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
-        try {
-            streamWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -219,36 +171,25 @@ public class FingerPath extends View{
                 startTouch(x,y);
                 //otwarcie pliku
 
-                saveCanvas(x, y);
-                save(x,y);
-
-                saveAsFile(x + "\n" + y);
-
+                saveAsFile(x + "\n" + y + ";");
+                //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 moveTouch(x,y);
                 //zapisywanie
 
-                saveCanvas(x, y);
-                save(x,y);
-
-                saveAsFile(x + "\n" + y);
-
+                saveAsFile(x + "\n" + y + ";");
+                //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
                 upTouch();
                 //koniec zapisu
 
-                //writer.close();
-                saveCanvas(x, y);
-
                 //saveAsFile("ACTION UP - PRZERWANIE PISANIA.");
-
-                saveAsFile(x + "\n" + y );
-                save(x,y);
-
+                saveAsFile(x + "\n" + y  + ";");
+                //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
         }
