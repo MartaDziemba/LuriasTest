@@ -38,11 +38,6 @@ public class FingerPath extends View{
     Context context;
     Button buttonSave;
 
-
-
-
-
-
     public FingerPath(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.context=context;
@@ -130,11 +125,23 @@ public class FingerPath extends View{
 
         if(file.exists() && !file.isDirectory()){
             try {
-                //FileOutputStream fos = new FileOutputStream(file);
+                //FileOutputStream fos = new FileOutputStream(file,true);
+                //OutputStreamWriter outputWriter = new OutputStreamWriter(fos);
                 FileWriter writer = new FileWriter(file);
-                writer.append(content);
-                writer.append(System.getProperty("line.separator"));
+                //writer.append(content);
+                //writer.append(System.getProperty("line.separator"));
                 writer.append(System.getProperty("line.separator") + content);
+                writer.append("\n\r");
+
+//                Float[] data = {};
+//                for (int i = 0; i < data.length - 2; i++) {
+//                    outputWriter.write(data[i] + ";");
+//                    outputWriter.write(data[i + 1] + ";");
+//                    outputWriter.write(data[i + 2] + ";" + "\n");
+//
+//                }
+
+                //outputWriter.close();
                 writer.flush();
                 writer.close();
 
@@ -171,7 +178,7 @@ public class FingerPath extends View{
                 startTouch(x,y);
                 //otwarcie pliku
 
-                saveAsFile(x + "\n" + y + ";");
+                saveAsFile(x + "\n" + y + "\n\r");
                 //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
@@ -179,7 +186,7 @@ public class FingerPath extends View{
                 moveTouch(x,y);
                 //zapisywanie
 
-                saveAsFile(x + "\n" + y + ";");
+                saveAsFile(x + "\n" + y + "\n\r");
                 //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
@@ -188,7 +195,7 @@ public class FingerPath extends View{
                 //koniec zapisu
 
                 //saveAsFile("ACTION UP - PRZERWANIE PISANIA.");
-                saveAsFile(x + "\n" + y  + ";");
+                saveAsFile(x + "\n" + y + "\n\r");
                 //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
