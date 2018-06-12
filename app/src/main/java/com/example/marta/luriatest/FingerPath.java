@@ -93,7 +93,7 @@ public class FingerPath extends View{
     }
 
     private void saveAsFile(String content){
-        String fileName = "AnalysisData.csv";
+        String fileName = "PiontAnalysisData.csv";
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
 
         if(file.exists() && !file.isDirectory()){
@@ -104,9 +104,9 @@ public class FingerPath extends View{
                 //writer.append(content);
                 //writer.append(System.getProperty("line.separator"));
                 //writer.append(System.getProperty("line.separator") + content);
-                //writer.append(',');
                 writer.append(content);
-                //writer.append('\n');
+                writer.append(',');
+                writer.append('\n');
                 //writer.append("\n\r");
 
 //                Float[] data = {};
