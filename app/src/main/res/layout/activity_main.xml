@@ -23,34 +23,40 @@
 
     <Button
         android:text="CLEAR"
-        android:layout_width="120dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
         android:onClick="clearCanvas"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:id="@+id/buttonClear"/>
 
-    <Button
-        android:text="SAVE"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@id/buttonClear"
-        android:layout_toLeftOf="@id/buttonOptions"
-        android:id="@+id/buttonSave" />
+    <!--<Button-->
+        <!--android:text="SAVE"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_toRightOf="@id/buttonClear"-->
+        <!--android:layout_toLeftOf="@id/buttonOptions"-->
+        <!--android:id="@+id/buttonSave" />-->
 
     <Button
         android:text="MORE"
-        android:layout_width="120dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
         android:id="@+id/buttonOptions"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         />
 
 </RelativeLayout>

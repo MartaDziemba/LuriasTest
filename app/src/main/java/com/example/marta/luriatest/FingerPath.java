@@ -92,33 +92,6 @@ public class FingerPath extends View{
         mPath.lineTo(mX,mY);
     }
 
-    String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
-    String fileName = "AnalysisDataSaveCanvas.csv";
-    String filePath = baseDir + File.separator + fileName;
-    File f = new File(filePath);
-    //CSVWriter writer;
-
-    FileWriter writer;
-
-    private void createCSVfile() {
-        File root = Environment.getExternalStorageDirectory();
-        File file = new File(root, "NazwaPliku.csv");
-        try {
-            writer = new FileWriter(file, true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void writeToCsvFile(String string) {
-        try {
-            writer.write(string);
-            writer.flush();
-        } catch (IOException error) {
-            Log.d("writetoCSV", error.getMessage());
-        }
-    }
-
     private void saveAsFile(String content){
         String fileName = "AnalysisData.csv";
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
@@ -127,11 +100,14 @@ public class FingerPath extends View{
             try {
                 //FileOutputStream fos = new FileOutputStream(file,true);
                 //OutputStreamWriter outputWriter = new OutputStreamWriter(fos);
-                FileWriter writer = new FileWriter(file);
+                FileWriter writer = new FileWriter(file,true);
                 //writer.append(content);
                 //writer.append(System.getProperty("line.separator"));
-                writer.append(System.getProperty("line.separator") + content);
-                writer.append("\n\r");
+                //writer.append(System.getProperty("line.separator") + content);
+                //writer.append(',');
+                writer.append(content);
+                //writer.append('\n');
+                //writer.append("\n\r");
 
 //                Float[] data = {};
 //                for (int i = 0; i < data.length - 2; i++) {
@@ -178,7 +154,7 @@ public class FingerPath extends View{
                 startTouch(x,y);
                 //otwarcie pliku
 
-                saveAsFile(x + "\n" + y + "\n\r");
+                saveAsFile(x + "," + y);
                 //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
@@ -186,7 +162,7 @@ public class FingerPath extends View{
                 moveTouch(x,y);
                 //zapisywanie
 
-                saveAsFile(x + "\n" + y + "\n\r");
+                saveAsFile(x + "," + y);
                 //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
@@ -194,8 +170,8 @@ public class FingerPath extends View{
                 upTouch();
                 //koniec zapisu
 
-                //saveAsFile("ACTION UP - PRZERWANIE PISANIA.");
-                saveAsFile(x + "\n" + y + "\n\r");
+                saveAsFile("ACTION UP - PRZERWANIE PISANIA.");
+                //saveAsFile(x + "\n" + y + "\n\r");
                 //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
