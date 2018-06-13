@@ -98,35 +98,12 @@ public class FingerPath extends View{
 
         if(file.exists() && !file.isDirectory()){
             try {
-                //FileOutputStream fos = new FileOutputStream(file,true);
-                //OutputStreamWriter outputWriter = new OutputStreamWriter(fos);
                 FileWriter writer = new FileWriter(file,true);
-                //writer.append(content);
-                //writer.append(System.getProperty("line.separator"));
-                //writer.append(System.getProperty("line.separator") + content);
                 writer.append(content);
                 writer.append(',');
                 writer.append('\n');
-                //writer.append("\n\r");
-
-//                Float[] data = {};
-//                for (int i = 0; i < data.length - 2; i++) {
-//                    outputWriter.write(data[i] + ";");
-//                    outputWriter.write(data[i + 1] + ";");
-//                    outputWriter.write(data[i + 2] + ";" + "\n");
-//
-//                }
-
-                //outputWriter.close();
                 writer.flush();
                 writer.close();
-
-//                fos.write(content.getBytes());
-//                fos.write('\n');
-//                fos.write(',');
-//
-//                fos.flush();
-//                fos.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e){
@@ -153,26 +130,19 @@ public class FingerPath extends View{
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
-
                 saveAsFile(x + "," + y);
-                //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 moveTouch(x,y);
                 //zapisywanie
-
                 saveAsFile(x + "," + y);
-                //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
                 upTouch();
                 //koniec zapisu
-
                 saveAsFile("ACTION UP - PRZERWANIE PISANIA.");
-                //saveAsFile(x + "\n" + y + "\n\r");
-                //writeToCsvFile(x + "\n" + y + ";");
                 invalidate();
                 break;
         }
