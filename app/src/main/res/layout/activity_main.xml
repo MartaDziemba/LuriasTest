@@ -35,16 +35,6 @@
         android:background="@color/colorPrimary"
         android:id="@+id/buttonClear"/>
 
-    <!--<Button-->
-        <!--android:text="SAVE"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_toRightOf="@id/buttonClear"-->
-        <!--android:layout_toLeftOf="@id/buttonOptions"-->
-        <!--android:id="@+id/buttonSave" />-->
-
     <Button
         android:text="MORE"
         android:layout_width="160dp"

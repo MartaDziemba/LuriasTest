@@ -1,34 +1,25 @@
 package com.example.marta.luriatest;
 
-import android.Manifest;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.opengl.GLSurfaceView;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.text.SimpleDateFormat;
 
 public class FingerPath extends View{
 
-    public int width;
-    public int height;
     private Bitmap mBitmap;
     private Canvas mCanvas;
     private Path mPath;
@@ -36,14 +27,11 @@ public class FingerPath extends View{
     private float mX, mY;
     private static final float TOLERANCE = 5;
     Context context;
-    Button buttonSave;
 
     public FingerPath(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.context=context;
-
         mPath = new Path();
-
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setColor(Color.BLACK);
@@ -113,7 +101,6 @@ public class FingerPath extends View{
         else{
             try {
                 FileOutputStream fos = new FileOutputStream(file);
-                //writer = new CSVWriter(new FileWriter(filePath));
             } catch (IOException e) {
                 e.printStackTrace();
             }
