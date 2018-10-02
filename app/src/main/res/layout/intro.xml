@@ -2,35 +2,38 @@
 <RelativeLayout
     android:id="@+id/intro"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:background="#ffffff"
+    android:paddingTop="0dp">
 
     <Button
-        android:text="CLEAR"
+        android:text="Edytuj profil"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="true"
+        android:layout_marginTop="200dp"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
-        android:onClick="clearCanvas"
         android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorPrimary"
-        android:id="@+id/buttonClear"/>
+        android:id="@+id/buttonEditProfile"/>
 
     <Button
-        android:text="MORE"
+        android:text="Dodaj nowy profil"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
-        android:id="@+id/buttonOptions"
+        android:background="@drawable/mybutton"
+        android:id="@+id/buttonAddProfile"
         android:textColor="@color/colorPrimaryDark"
-        android:background="@color/colorPrimary"
         />
 
 </RelativeLayout>
