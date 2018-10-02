@@ -6,34 +6,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:background="#ffffff"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/colorAccent"
     android:paddingTop="0dp">
 
     <Button
         android:text="Edytuj profil"
-        android:layout_width="160dp"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+
         android:textColor="@color/colorPrimaryDark"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/mybutton"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
         android:id="@+id/buttonEditProfile"/>
 
     <Button
         android:text="Dodaj nowy profil"
-        android:layout_width="160dp"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
+
         android:layout_centerHorizontal="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/mybutton"
-        android:id="@+id/buttonAddProfile"
+        android:layout_below="@id/buttonEditProfile"
+
         android:textColor="@color/colorPrimaryDark"
-        />
+        android:background="@drawable/mybutton"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        android:id="@+id/buttonAddProfile"/>
+
+    <Button
+        android:text="Dodaj nowy profil"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonEditProfile"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+
+
+
+        android:id="@+id/buttonEditData"/>
 
 </RelativeLayout>
