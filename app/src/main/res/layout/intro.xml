@@ -8,11 +8,10 @@
     android:paddingBottom="0dp"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
-    android:background="@color/colorAccent"
     android:paddingTop="0dp">
 
     <Button
-        android:text="Edytuj profil"
+        android:text="@string/buttonNewTest_pl"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
@@ -26,16 +25,16 @@
         android:textAllCaps="false"
         android:textSize="20dp"
 
-        android:id="@+id/buttonEditProfile"/>
+        android:id="@+id/buttonNewTest"/>
 
     <Button
-        android:text="Dodaj nowy profil"
+        android:text="@string/buttonRepeatTeste_pl"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/buttonEditProfile"
+
+        android:layout_below="@id/buttonNewTest"
 
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
@@ -45,21 +44,24 @@
         android:textAllCaps="false"
         android:textSize="20dp"
 
-        android:id="@+id/buttonAddProfile"/>
+        android:id="@+id/buttonRepeatTest"/>
 
     <Button
-        android:text="Dodaj nowy profil"
+        android:text="@string/buttonEditData_pl"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/buttonEditProfile"
+
+        android:layout_below="@id/buttonRepeatTest"
 
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
 
-
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
 
         android:id="@+id/buttonEditData"/>
 
