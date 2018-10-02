@@ -8,4 +8,10 @@
     <string name="buttonNewTest_pl">"Nowy test"</string>
     <string name="buttonRepeatTeste_pl">"Powtórz test"</string>
     <string name="buttonEditData_pl">"Edytuj dane"</string>
+
+    <string name="buttonClear_eng">"Clear"</string>
+    <string name="buttonMore_eng">"More"</string>
+
+    <string name="buttonClear_pl">"Wyczyść"</string>
+    <string name="buttonMore_pl">"Więcej"</string>
 </resources>

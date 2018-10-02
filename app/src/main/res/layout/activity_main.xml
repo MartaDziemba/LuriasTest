@@ -19,7 +19,7 @@
         android:id="@+id/canvas"/>
 
     <Button
-        android:text="CLEAR"
+        android:text="@string/buttonClear_pl"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -34,7 +34,7 @@
         android:id="@+id/buttonClear"/>
 
     <Button
-        android:text="MORE"
+        android:text="@string/buttonMore_pl"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -45,6 +45,6 @@
 
         android:textColor="@color/colorPrimaryDark"
 
-        android:id="@+id/buttonOptions"/>
+        android:id="@+id/buttonMore"/>
 
 </RelativeLayout>
