@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    android:padding="15dp"
+    android:padding="10dp"
     tools:context="com.example.marta.luriatest.MainActivity">
 
     <com.example.marta.luriatest.FingerPath
@@ -23,6 +23,8 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="true"
 
@@ -38,6 +40,8 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
 
