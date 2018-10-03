@@ -19,7 +19,7 @@
         android:id="@+id/canvas"/>
 
     <Button
-        android:text="@string/buttonClear_pl"
+        android:text="@string/buttonClear"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -34,7 +34,7 @@
         android:id="@+id/buttonClear"/>
 
     <Button
-        android:text="@string/buttonMore_pl"
+        android:text="@string/buttonMore"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

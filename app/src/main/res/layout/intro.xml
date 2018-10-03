@@ -11,7 +11,7 @@
     android:paddingTop="0dp">
 
     <Button
-        android:text="@string/buttonNewTest_pl"
+        android:text="@string/buttonNewTest"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
@@ -28,7 +28,7 @@
         android:id="@+id/buttonNewTest"/>
 
     <Button
-        android:text="@string/buttonRepeatTeste_pl"
+        android:text="@string/buttonRepeatTest"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -47,7 +47,7 @@
         android:id="@+id/buttonRepeatTest"/>
 
     <Button
-        android:text="@string/buttonEditData_pl"
+        android:text="@string/buttonEditData"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
