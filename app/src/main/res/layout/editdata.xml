@@ -6,19 +6,20 @@
     android:padding="15dp">
 
     <TextView
-    android:text="@string/textFirstName"
-    android:layout_width="110dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="100dp"
+        android:id="@+id/textFirstName"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
 
-    android:textColor="@color/colorPrimaryDark"
+        android:layout_alignBaseline="@+id/editTextFirstName"
 
-    android:fontFamily="sans-serif"
-    android:typeface="monospace"
-    android:textAllCaps="false"
-    android:textSize="20dp"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif"
+        android:text="@string/textFirstName"
 
-    android:id="@+id/textFirstName"/>
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        android:typeface="monospace" />
 
     <EditText
         android:hint="@string/editTextFirstName"
