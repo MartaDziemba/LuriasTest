@@ -9,12 +9,18 @@
     <string name="buttonMore">"More"</string>
 
     <string name="textFirstName">"First name"</string>
-    <string name="editTextFirstName">"Enter your firts name here"</string>
+    <string name="editTextFirstName">"Enter your first name here"</string>
 
     <string name="textLastName">"Last name"</string>
     <string name="editTextLastName">"Enter your last name here"</string>
 
     <string name="textAge">"Age"</string>
     <string name="editTextAge">"Enter your age here"</string>
+
+    <string name="textIDNumber">"ID number"</string>
+    <string name="editTextIDNumber">"Enter your ID number here"</string>
+
+    <string name="textDescription">"Description (if needed)"</string>
+    <string name="editTextDescription">"Enter description here"</string>
 
 </resources>

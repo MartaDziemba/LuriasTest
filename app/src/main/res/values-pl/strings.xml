@@ -16,4 +16,10 @@
     <string name="textAge">"Wiek"</string>
     <string name="editTextAge">"Wprowadź wiek"</string>
 
+    <string name="textIDNumber">"PESEL"</string>
+    <string name="editTextIDNumber">"Wprowadź PESEL"</string>
+
+    <string name="textDescription">"Opis (dodatkowo)"</string>
+    <string name="editTextDescription">"Wprowadź opis"</string>
+
 </resources>
