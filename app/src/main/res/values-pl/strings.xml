@@ -6,4 +6,14 @@
 
     <string name="buttonClear">"Wyczyść"</string>
     <string name="buttonMore">"Więcej"</string>
+
+    <string name="textFirstName">"Imię"</string>
+    <string name="editTextFirstName">"Wprowadź imię"</string>
+
+    <string name="textLastName">"Nazwisko"</string>
+    <string name="editTextLastName">"Wprowadź nazwisko"</string>
+
+    <string name="textAge">"Wiek"</string>
+    <string name="editTextAge">"Wprowadź wiek"</string>
+
 </resources>

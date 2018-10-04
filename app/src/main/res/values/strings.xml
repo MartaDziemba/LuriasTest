@@ -7,4 +7,14 @@
 
     <string name="buttonClear">"Clear"</string>
     <string name="buttonMore">"More"</string>
+
+    <string name="textFirstName">"First name"</string>
+    <string name="editTextFirstName">"Enter your firts name here"</string>
+
+    <string name="textLastName">"Last name"</string>
+    <string name="editTextLastName">"Enter your last name here"</string>
+
+    <string name="textAge">"Age"</string>
+    <string name="editTextAge">"Enter your age here"</string>
+
 </resources>

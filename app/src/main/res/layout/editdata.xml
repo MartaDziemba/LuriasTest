@@ -2,6 +2,113 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <TextView
+    android:text="@string/textFirstName"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp"
+
+    android:textColor="@color/colorPrimaryDark"
+
+    android:fontFamily="sans-serif"
+    android:typeface="monospace"
+    android:textAllCaps="false"
+    android:textSize="20dp"
+
+    android:id="@+id/textFirstName"/>
+
+    <EditText
+        android:text="@string/editTextFirstName"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="10dp"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+
+        android:layout_toRightOf="@id/textFirstName"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        android:id="@+id/editTextFirstName"/>
+
+    <TextView
+        android:text="@string/textLastName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/textFirstName"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        android:id="@+id/textLastName"/>
+
+    <EditText
+        android:text="@string/editTextLastName"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+
+        android:layout_toRightOf="@id/textLastName"
+        android:layout_below="@id/editTextFirstName"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        android:id="@+id/editTextLastName"/>
+
+    <TextView
+        android:text="@string/textAge"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/textLastName"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        android:id="@+id/textAge"/>
+
+    <EditText
+        android:text="@string/editTextAge"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+
+        android:layout_toRightOf="@id/textAge"
+        android:layout_below="@id/editTextLastName"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        android:id="@+id/editTextAge"/>
 
 </RelativeLayout>
