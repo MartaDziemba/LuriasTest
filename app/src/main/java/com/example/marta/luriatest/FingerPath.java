@@ -17,6 +17,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class FingerPath extends View{
 
@@ -107,23 +111,45 @@ public class FingerPath extends View{
         }
     }
 
+    public static void timeInMilis(String[] args) {
+        System.out.print("Current Time in milliseconds = ");
+        System.out.println(System.currentTimeMillis());
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         float x = event.getX();
         float y = event.getY();
+        long startTime = System.currentTimeMillis();
 
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
-                saveAsFile(x + "," + y);
+                saveAsFile( "To jest czas:" + ",");
+
+                //long date = System.currentTimeMillis();
+
+                //SimpleDateFormat sdf = new SimpleDateFormat("ss-ms");
+                //String dateString = sdf.format(millis);
+
+                long millisStart = System.currentTimeMillis() - startTime;
+                int secondsStart = (int) (millisStart / 1000);
+
+                //saveAsFile();
+                //saveAsFile( dateString);
+
+                saveAsFile( "To są punkty:" + ",");
+                saveAsFile(x + "," + y + "," + String.format("%d:%02d", secondsStart, millisStart));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 moveTouch(x,y);
                 //zapisywanie
-                saveAsFile(x + "," + y);
+                long millis = System.currentTimeMillis() - startTime;
+                int seconds = (int) (millis / 1000);
+                saveAsFile(x + "," + y + "," + String.format("%d:%02d", seconds, millis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:

@@ -1,6 +1,7 @@
 package com.example.marta.luriatest;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.opengl.GLSurfaceView;
@@ -13,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
