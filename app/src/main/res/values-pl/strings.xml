@@ -21,7 +21,9 @@
     <string name="textIDNumber">"PESEL"</string>
     <string name="editTextIDNumber">"Wprowadź PESEL"</string>
 
-    <string name="textDescription">"Opis (dodatkowo)"</string>
+    <string name="textDescription">"Opis"\n"(dodatkowo)"</string>
     <string name="editTextDescription">"Wprowadź opis"</string>
+
+    <string name="buttonTest">"Przejdź do testu"</string>
 
 </resources>
