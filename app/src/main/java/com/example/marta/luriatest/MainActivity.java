@@ -22,48 +22,27 @@ import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonNewTest)
-    void OnClick(){
-        Intent intent = new Intent(MainActivity.this, FingerPath.class);
+    void OnClickNewTest(){
+        Intent intent = new Intent(MainActivity.this, moveToFingerPath.class);
         startActivity(intent);
     }
 
-    private static final String TAG = "";
-    private FingerPath fingerPath;
-    Button buttonSave;
+    @OnClick(R.id.buttonEditData)
+    void OnClickEditData(){
+        Intent intent = new Intent(MainActivity.this, moveToFingerPath.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        fingerPath = (FingerPath) findViewById(R.id.canvas);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-        }
-    }
-
-    public void clearCanvas(View v){
-        fingerPath.clearCanvas();
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-        case 1000:
-            if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this,"Permission granted!", Toast.LENGTH_SHORT).show();
-            }
-            else{
-                Toast.makeText(this, "Permission not granted!", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }
+        setContentView(R.layout.intro);
+        ButterKnife.bind(this);
     }
 }

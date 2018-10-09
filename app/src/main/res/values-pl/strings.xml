@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">"Test Łurii"</string>
+
     <string name="buttonNewTest">"Nowy test"</string>
-    <string name="buttonRepeatTeste">"Powtórz test"</string>
+    <string name="buttonRepeatTest">"Powtórz test"</string>
     <string name="buttonEditData">"Edytuj dane"</string>
 
     <string name="buttonClear">"Wyczyść"</string>
