@@ -7,18 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class editData extends AppCompatActivity {
-
-    @OnClick(R.id.buttonTest)
-    void OnClickEditData(){
-        Intent intent = new Intent(editData.this, moveToFingerPath.class);
-        startActivity(intent);
-    }
+public class editExistingData extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.editdata);
+        setContentView(R.layout.edit_existing_data);
         ButterKnife.bind(this);
     }
 }

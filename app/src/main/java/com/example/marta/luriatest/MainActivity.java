@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonNewTest)
     void OnClickNewTest(){
-        Intent intent = new Intent(MainActivity.this, moveToFingerPath.class);
+        Intent intent = new Intent(MainActivity.this, editData.class);
         startActivity(intent);
     }
 
     @OnClick(R.id.buttonEditData)
     void OnClickEditData(){
-        Intent intent = new Intent(MainActivity.this, editData.class);
+        Intent intent = new Intent(MainActivity.this, editExistingData.class);
         startActivity(intent);
     }
 
