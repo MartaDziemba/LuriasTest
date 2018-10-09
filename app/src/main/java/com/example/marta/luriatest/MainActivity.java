@@ -22,7 +22,15 @@ import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
+
+    @OnClick(R.id.buttonNewTest)
+    void OnClick(){
+        Intent intent = new Intent(MainActivity.this, FingerPath.class);
+        startActivity(intent);
+    }
 
     private static final String TAG = "";
     private FingerPath fingerPath;

@@ -111,11 +111,6 @@ public class FingerPath extends View{
         }
     }
 
-    public static void timeInMilis(String[] args) {
-        System.out.print("Current Time in milliseconds = ");
-        System.out.println(System.currentTimeMillis());
-    }
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
