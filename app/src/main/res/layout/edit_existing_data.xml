@@ -3,7 +3,7 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:padding="15dp">
+android:padding="10dp">
 
 <ImageView
     android:id="@+id/logo"
@@ -13,13 +13,22 @@ android:padding="15dp">
     android:layout_centerHorizontal="true"
     android:padding="5dp"/>
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="160dp"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
 <TextView
     android:id="@+id/textFirstName"
     android:layout_width="120dp"
     android:layout_height="wrap_content"
 
     android:layout_alignBaseline="@+id/editTextFirstName"
-    android:layout_below="@id/logo"
 
     android:fontFamily="sans-serif"
     android:text="@string/textFirstName"
@@ -192,4 +201,6 @@ android:padding="15dp">
 
     android:id="@+id/editTextDescription"/>
 
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
