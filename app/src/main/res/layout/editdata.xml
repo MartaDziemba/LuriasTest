@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:src="@drawable/logo_luria"
         android:layout_centerHorizontal="true"
         android:padding="5dp"/>
@@ -16,7 +16,8 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="160dp">
+        android:layout_marginTop="160dp"
+        android:padding="5dp">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -47,7 +48,6 @@
             android:background="@drawable/mybutton"
 
             android:layout_toRightOf="@id/textFirstName"
-            android:layout_below="@id/logo"
 
             android:fontFamily="sans-serif"
             android:typeface="monospace"
@@ -206,8 +206,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="15dp"
             android:layout_alignParentRight="true"
 
