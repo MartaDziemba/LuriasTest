@@ -84,12 +84,16 @@ public class FingerPath extends View{
         mPath.lineTo(mX,mY);
     }
 
+    private void createNewFile(String fileName){
+        
+    }
+
     private void saveAsFile(String content){
         //String fileName = "PiontAnalysisData.csv";
 
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss.csv");
-        String fileName = sdf.format(date);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+        String fileName = sdf.format(date) + ".csv";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
 
@@ -127,24 +131,10 @@ public class FingerPath extends View{
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
-                saveAsFile( "To jest czas:" + ",");
-
-                //long date = System.currentTimeMillis();
-                //SimpleDateFormat sdf = new SimpleDateFormat("ss-ms");
-                //String dateString = sdf.format(millis);
-
-                Long date = System.currentTimeMillis();
-                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy \n hh-mm-ss");
-                String dateString = sdf.format(date);
-                saveAsFile(dateString);
-
-                //long millisStart = System.currentTimeMillis() - startTime;
-                //int secondsStart = (int) (millisStart / 1000);
-
-                //saveAsFile();
-
                 saveAsFile( "To są punkty:" + ",");
-                //saveAsFile(x + "," + y + "," + String.format("%d:%02d", secondsStart, millisStart));
+                long millisStart = System.currentTimeMillis() - startTime;
+                int secondsStart = (int) (millisStart / 1000);
+                saveAsFile(x + "," + y + "," + String.format("%d:%02d", secondsStart, millisStart));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
