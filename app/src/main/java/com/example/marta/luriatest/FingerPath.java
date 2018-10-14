@@ -84,13 +84,8 @@ public class FingerPath extends View{
         mPath.lineTo(mX,mY);
     }
 
-    private void createNewFile(String fileName){
-        
-    }
-
     private void saveAsFile(String content){
         //String fileName = "PiontAnalysisData.csv";
-
         Long date = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
         String fileName = sdf.format(date) + ".csv";
