@@ -21,6 +21,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class FingerPath extends View{
 
@@ -31,6 +32,7 @@ public class FingerPath extends View{
     private float mX, mY;
     private static final float TOLERANCE = 5;
     Context context;
+    long startTime = System.currentTimeMillis();
 
     public FingerPath(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -120,15 +122,13 @@ public class FingerPath extends View{
 
         float x = event.getX();
         float y = event.getY();
-        long startTime = System.currentTimeMillis();
+        long millisStart = System.currentTimeMillis() - startTime;
+        int secondsStart = (int) (millisStart / 1000);
 
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
-                saveAsFile( "To są punkty:" + ",");
-                long millisStart = System.currentTimeMillis() - startTime;
-                int secondsStart = (int) (millisStart / 1000);
                 saveAsFile(x + "," + y + "," + String.format("%d:%02d", secondsStart, millisStart));
                 invalidate();
                 break;

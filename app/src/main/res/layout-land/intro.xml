@@ -22,7 +22,7 @@
         android:layout_marginTop="200dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
 
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
@@ -30,7 +30,7 @@
         android:fontFamily="sans-serif"
         android:typeface="monospace"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
 
         android:id="@+id/buttonNewTest"/>
 
@@ -42,7 +42,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
 
-        android:layout_toRightOf="@id/buttonNewTest"
+        android:layout_toEndOf="@id/buttonNewTest"
 
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
@@ -50,7 +50,7 @@
         android:fontFamily="sans-serif"
         android:typeface="monospace"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
 
         android:id="@+id/buttonRepeatTest"/>
 
@@ -61,9 +61,9 @@
         android:layout_marginTop="200dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
 
-        android:layout_toRightOf="@id/buttonRepeatTest"
+        android:layout_toEndOf="@id/buttonRepeatTest"
 
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
@@ -71,7 +71,7 @@
         android:fontFamily="sans-serif"
         android:typeface="monospace"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
 
         android:id="@+id/buttonEditData"/>
 
