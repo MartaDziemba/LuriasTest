@@ -225,7 +225,7 @@
             android:textAllCaps="false"
             android:textSize="20sp"
 
-            android:onClick="createFile"
+            android:onClick="saveData"
             android:id="@+id/buttonTest"/>
 
         </RelativeLayout>
