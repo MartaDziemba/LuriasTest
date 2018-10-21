@@ -87,10 +87,10 @@ public class FingerPath extends View{
     }
 
     private void saveAsFile(String content){
-        //String fileName = "PiontAnalysisData.csv";
-        Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
-        String fileName = sdf.format(date) + ".csv";
+        String fileName = "PiontAnalysisData.csv";
+        //Long date = System.currentTimeMillis();
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+        //String fileName = sdf.format(date) + ".csv";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
 

@@ -43,9 +43,10 @@ public class editData extends AppCompatActivity {
     }
 
     public void saveData(View v){
-        Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
-        String fileName = sdf.format(date) + ".csv";
+        //Long date = System.currentTimeMillis();
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+        //String fileName = sdf.format(date) + ".txt";
+        String fileName = "DaneOsobowe.txt";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
 

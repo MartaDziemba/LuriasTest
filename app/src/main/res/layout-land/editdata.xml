@@ -20,213 +20,213 @@
         android:padding="5dp">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textFirstName"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textFirstName"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
 
-            android:layout_alignBaseline="@+id/editTextFirstName"
+                android:layout_alignBaseline="@+id/editTextFirstName"
 
-            android:fontFamily="sans-serif"
-            android:text="@string/textFirstName"
+                android:fontFamily="sans-serif"
+                android:text="@string/textFirstName"
 
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            android:typeface="monospace" />
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace" />
 
-        <EditText
-            android:hint="@string/editTextFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/textFirstName"
+                android:background="@drawable/mybutton"
 
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
+                android:hint="@string/editTextFirstName"
 
-            android:layout_toEndOf="@id/textFirstName"
+                android:paddingEnd="10dp"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
 
-            android:id="@+id/editTextFirstName"/>
+                android:typeface="monospace" />
 
-        <TextView
-            android:text="@string/textLastName"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            <TextView
+                android:id="@+id/textLastName"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textFirstName"
 
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_below="@id/textFirstName"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:text="@string/textLastName"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
 
-            android:id="@+id/textLastName"/>
+                android:typeface="monospace" />
 
-        <EditText
-            android:hint="@string/editTextLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextFirstName"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textLastName"
 
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/mybutton"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
 
-            android:layout_toEndOf="@id/textLastName"
-            android:layout_below="@id/editTextFirstName"
+                android:hint="@string/editTextLastName"
+                android:paddingEnd="10dp"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
 
-            android:id="@+id/editTextLastName"/>
+                android:typeface="monospace" />
 
-        <TextView
-        android:text="@string/textAge"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+            <TextView
+                android:id="@+id/textAge"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textLastName"
 
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_below="@id/textLastName"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
 
-        android:fontFamily="sans-serif"
-        android:typeface="monospace"
-        android:textAllCaps="false"
-        android:textSize="20sp"
+                android:text="@string/textAge"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
 
-        android:id="@+id/textAge"/>
+                android:typeface="monospace" />
 
-        <EditText
-            android:hint="@string/editTextAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            <EditText
+                android:id="@+id/editTextAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextLastName"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textAge"
 
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/mybutton"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
 
-            android:layout_toEndOf="@id/textAge"
-            android:layout_below="@id/editTextLastName"
+                android:hint="@string/editTextAge"
+                android:paddingEnd="10dp"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
 
-            android:id="@+id/editTextAge"/>
+                android:typeface="monospace" />
 
-        <TextView
-            android:text="@string/textIDNumber"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            <TextView
+                android:id="@+id/textIDNumber"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textAge"
 
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_below="@id/textAge"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:text="@string/textIDNumber"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
 
-            android:id="@+id/textIDNumber"/>
+                android:typeface="monospace" />
 
-        <EditText
-            android:hint="@string/editTextIDNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            <EditText
+                android:id="@+id/editTextIDNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextAge"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textIDNumber"
 
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/mybutton"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
 
-            android:layout_toEndOf="@id/textIDNumber"
-            android:layout_below="@id/editTextAge"
+                android:hint="@string/editTextIDNumber"
+                android:paddingEnd="10dp"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
 
-            android:id="@+id/editTextIDNumber"/>
+                android:typeface="monospace" />
 
-        <TextView
-            android:text="@string/textDescription"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textIDNumber"
 
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_below="@id/textIDNumber"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:text="@string/textDescription"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
 
-            android:id="@+id/textDescription"/>
+                android:typeface="monospace" />
 
-        <EditText
-            android:hint="@string/editTextDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextIDNumber"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textDescription"
 
-            android:textColor="@color/colorAccent"
-            android:background="@drawable/mybutton"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
 
-            android:layout_toEndOf="@id/textDescription"
-            android:layout_below="@id/editTextIDNumber"
+                android:hint="@string/editTextDescription"
+                android:paddingEnd="10dp"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
 
-            android:id="@+id/editTextDescription"/>
+                android:typeface="monospace" />
 
-        <Button
-            android:text="@string/buttonTest"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="15dp"
-            android:layout_alignParentEnd="true"
+            <Button
+                android:id="@+id/buttonTest"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/editTextDescription"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="15dp"
 
-            android:textColor="@color/colorPrimaryDark"
-            android:background="@drawable/mybutton"
-            android:layout_below="@id/editTextDescription"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
 
-            android:fontFamily="sans-serif"
-            android:typeface="monospace"
-            android:textAllCaps="false"
-            android:textSize="20sp"
+                android:onClick="saveData"
+                android:text="@string/buttonTest"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
 
-            android:onClick="saveData"
-            android:id="@+id/buttonTest"/>
+                android:textSize="20sp"
+                android:typeface="monospace" />
 
         </RelativeLayout>
     </ScrollView>
