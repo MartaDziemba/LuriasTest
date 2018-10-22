@@ -65,7 +65,7 @@ public class editData extends AppCompatActivity {
                 fos.write(editTextDescription.getText().toString().getBytes());
                 fos.close();
 
-                Toast.makeText(this, "File saved!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "File saved!", Toast.LENGTH_SHORT).show();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e){
@@ -73,7 +73,7 @@ public class editData extends AppCompatActivity {
             }
         }
         else{
-            Toast.makeText(this, "File not saved!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "File not saved!", Toast.LENGTH_SHORT).show();
         }
     }
 }
