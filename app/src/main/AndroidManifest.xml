@@ -29,6 +29,8 @@
             android:screenOrientation="landscape"></activity>
         <activity android:name=".editExistingData"
             android:screenOrientation="landscape"></activity>
+        <activity android:name=".listViewMemory"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
