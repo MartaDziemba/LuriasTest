@@ -1,3 +1,5 @@
+package com.example.marta.luriatest;
+
 public class XYValue {
     private double x;
     private double y;

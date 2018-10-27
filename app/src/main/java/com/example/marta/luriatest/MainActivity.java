@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.buttonRepeatTest)
+    void OnClickRepeatTest(){
+        Intent intent = new Intent(MainActivity.this, listViewMemory.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.buttonEditData)
     void OnClickEditData(){
         Intent intent = new Intent(MainActivity.this, editExistingData.class);
@@ -45,5 +51,4 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.intro);
         ButterKnife.bind(this);
     }
-
 }
