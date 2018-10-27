@@ -26,4 +26,7 @@
 
     <string name="buttonTest">"Przejdź do testu"</string>
 
+    <string name="buttonBack">"Wróć"</string>
+    <string name="buttonMemory">"Pamięć telefonu"</string>
+
 </resources>

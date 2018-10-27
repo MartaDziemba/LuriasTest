@@ -1,7 +1,3 @@
-/**
- * Created by Marta on 27.10.2018.
- */
-
 public class XYValue {
     private double x;
     private double y;

@@ -25,4 +25,7 @@
 
     <string name="buttonTest">"Start test now"</string>
 
+    <string name="buttonBack">"Back"</string>
+    <string name="buttonMemory">"Memory"</string>
+
 </resources>

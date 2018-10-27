@@ -3,10 +3,48 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:text="@string/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="10dp"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+        android:layout_below="@id/editTextDescription"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        android:id="@+id/buttonBack"/>
+
+    <Button
+        android:text="@string/buttonMemory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="10dp"
+
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+        android:layout_below="@id/editTextDescription"
+
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        android:id="@+id/buttonMemory"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView">
+        android:id="@+id/listViewInternalStorage"
+        android:layout_below="@id/buttonBack">
     </ListView>
 
 </RelativeLayout>
