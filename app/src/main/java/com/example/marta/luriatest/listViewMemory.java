@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -24,8 +25,8 @@ public class listViewMemory extends AppCompatActivity {
 
     private static final String TAG = "listViewMemory";
 
-    private String[] filePathStrings;
-    private String[] fileNameStrings;
+    private String[] FilePathStrings;
+    private String[] FileNameStrings;
     private File[] listFile;
     File file;
 
@@ -66,11 +67,39 @@ public class listViewMemory extends AppCompatActivity {
                 else{
                     count++;
                     pathHistory.add(count, (String) adapterView.getItemAtPosition(i));
-                    //checkInternalStorage();
+                    checkInternalStorage();
                     Log.d(TAG,  "listViewInternalStorage: "+pathHistory.get(count));
                 }
             }
         });
+    }
+
+    private void checkInternalStorage() {
+        Log.d(TAG, "checkInternalStorage: Started.");
+        try{
+            if(!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+                toastMessage("No SD card found.");
+            }
+            else {
+                file = new File(pathHistory.get(count));
+                Log.d(TAG, "checkInternalStorage: directory path: " + pathHistory.get(count));
+            }
+            listFile = file.listFiles();
+            FilePathStrings = new String[listFile.length];
+            FileNameStrings = new String[listFile.length];
+
+            for(int i=0; i<listFile.length; i++){
+                FilePathStrings[i] = listFile[i].getAbsolutePath();
+                FileNameStrings[i] = listFile[i].getName();
+            }
+
+            for(int i=0; i<listFile.length; i++){
+                Log.d(TAG, "Files", "FileName: " + listFile[i].getName());
+            }
+
+        }catch(NullPointerException e){
+            Log.e(TAG, "checkInternalStorage: NullPointerException " + e.getMessage());
+        }
     }
 
     @Override
@@ -98,8 +127,9 @@ public class listViewMemory extends AppCompatActivity {
             Log.d(TAG, "checkBTPermissions: No need to check permissions. SDK version < LOLLIPOP.");
         }
     }
+    */
     private void toastMessage(String message){
         Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
     }
-    */
+
 }
