@@ -10,13 +10,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.marta.luriatest.R;
 
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -62,7 +71,7 @@ public class listViewMemory extends AppCompatActivity {
                 lastDirectory = pathHistory.get(count);
                 if(lastDirectory.equals(adapterView.getItemAtPosition(i))){
                     Log.d(TAG, "listViewInternalStorage: Selected a file for upload: " + lastDirectory);
-                    //readExcelData(lastDirectory);
+                    readExcelData(lastDirectory);
                 }
                 else{
                     count++;
@@ -72,6 +81,23 @@ public class listViewMemory extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void readExcelData(String filePath) {
+        Log.d(TAG, "readExcelData: Reading Excel File.");
+        File inputFile = new File(filePath);
+        try {
+            InputStream inputStream = new FileInputStream(inputFile);
+            XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+            int rowCount = sheet.getPhysicalNumberOfRows();
+            FormulaEvaluator formulaEvaluator = workbook.getCreationHelper().createFormulaEvaluator();
+            
+        }catch (FileNotFoundException e){
+            Log.d(TAG, "readExcelData: FileNotFoundException. " + e.getMessage());
+        }catch (IOException e){
+            Log.d(TAG, "readExcelData: Error reading inputstream. " + e.getMessage());
+        }
     }
 
     private void checkInternalStorage() {
@@ -94,8 +120,11 @@ public class listViewMemory extends AppCompatActivity {
             }
 
             for(int i=0; i<listFile.length; i++){
-                Log.d(TAG, "Files", "FileName: " + listFile[i].getName());
+                Log.d(TAG, "FileName: " + listFile[i].getName());
             }
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, FilePathStrings);
+            listViewInternalStorage.setAdapter(adapter);
 
         }catch(NullPointerException e){
             Log.e(TAG, "checkInternalStorage: NullPointerException " + e.getMessage());
