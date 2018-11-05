@@ -23,8 +23,8 @@ public class editData extends AppCompatActivity {
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
 
     @OnClick(R.id.buttonTest)
-    void OnClickEditData(){
-
+    void OnClickEditData() {
+        saveData();
         Intent intent = new Intent(editData.this, moveToFingerPath.class);
         startActivity(intent);
     }
@@ -42,15 +42,19 @@ public class editData extends AppCompatActivity {
         editTextDescription = findViewById(R.id.editTextDescription);
     }
 
-    public void saveData(View v){
+    public void saveData() {
         //Long date = System.currentTimeMillis();
-        //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh");
         //String fileName = sdf.format(date) + ".txt";
         String fileName = "DaneOsobowe.txt";
 
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-
-        if(file.exists() && !file.isDirectory()){
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), fileName);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (file.exists() && !file.isDirectory()) {
 
             try {
                 FileOutputStream fos = new FileOutputStream(file);
@@ -65,15 +69,14 @@ public class editData extends AppCompatActivity {
                 fos.write(editTextDescription.getText().toString().getBytes());
                 fos.close();
 
-                //Toast.makeText(this, "File saved!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "File saved!", Toast.LENGTH_SHORT).show();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-            } catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else{
-            //Toast.makeText(this, "File not saved!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "File not saved!", Toast.LENGTH_SHORT).show();
         }
     }
 }

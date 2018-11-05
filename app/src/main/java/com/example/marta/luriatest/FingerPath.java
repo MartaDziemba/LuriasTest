@@ -33,6 +33,7 @@ public class FingerPath extends View{
     private static final float TOLERANCE = 5;
     Context context;
     long startTime = System.currentTimeMillis();
+    private File file;
 
     public FingerPath(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -44,6 +45,11 @@ public class FingerPath extends View{
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
+        this.setBackground(getResources().getDrawable(R.drawable.logo_luria));
+        createSample();
+    }
+
+    private void createSample() {
     }
 
     @Override
@@ -87,13 +93,6 @@ public class FingerPath extends View{
     }
 
     private void saveAsFile(String content){
-        String fileName = "PiontAnalysisData.csv";
-        //Long date = System.currentTimeMillis();
-        //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
-        //String fileName = sdf.format(date) + ".csv";
-
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-
         if(file.exists() && !file.isDirectory()){
             try {
                 FileWriter writer = new FileWriter(file,true);
@@ -148,5 +147,9 @@ public class FingerPath extends View{
                 break;
         }
         return true;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
     }
 }

@@ -92,7 +92,7 @@ public class listViewMemory extends AppCompatActivity {
             XSSFSheet sheet = workbook.getSheetAt(0);
             int rowCount = sheet.getPhysicalNumberOfRows();
             FormulaEvaluator formulaEvaluator = workbook.getCreationHelper().createFormulaEvaluator();
-            
+
         }catch (FileNotFoundException e){
             Log.d(TAG, "readExcelData: FileNotFoundException. " + e.getMessage());
         }catch (IOException e){
