@@ -45,7 +45,7 @@ public class FingerPath extends View{
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
-        this.setBackground(getResources().getDrawable(R.drawable.logo_luria));
+        this.setBackground(getResources().getDrawable(R.drawable.background));
         createSample();
     }
 
