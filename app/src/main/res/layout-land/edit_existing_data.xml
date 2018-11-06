@@ -48,7 +48,8 @@ android:padding="10dp">
     android:typeface="monospace"
     android:textAllCaps="false"
     android:textSize="20sp"
-    android:id="@+id/editTextFirstName"/>
+    android:id="@+id/editTextFirstName"
+    android:imeOptions="actionDone"/>
 
 <TextView
     android:text="@string/textLastName"
@@ -78,7 +79,8 @@ android:padding="10dp">
     android:typeface="monospace"
     android:textAllCaps="false"
     android:textSize="20sp"
-    android:id="@+id/editTextLastName"/>
+    android:id="@+id/editTextLastName"
+    android:imeOptions="actionDone"/>
 
 <TextView
     android:text="@string/textAge"
@@ -108,7 +110,8 @@ android:padding="10dp">
     android:typeface="monospace"
     android:textAllCaps="false"
     android:textSize="20sp"
-    android:id="@+id/editTextAge"/>
+    android:id="@+id/editTextAge"
+    android:imeOptions="actionDone"/>
 
 <TextView
     android:text="@string/textIDNumber"
@@ -138,7 +141,8 @@ android:padding="10dp">
     android:typeface="monospace"
     android:textAllCaps="false"
     android:textSize="20sp"
-    android:id="@+id/editTextIDNumber"/>
+    android:id="@+id/editTextIDNumber"
+    android:imeOptions="actionDone"/>
 
 <TextView
     android:text="@string/textDescription"
@@ -168,8 +172,8 @@ android:padding="10dp">
     android:typeface="monospace"
     android:textAllCaps="false"
     android:textSize="20sp"
-
-    android:id="@+id/editTextDescription"/>
+    android:id="@+id/editTextDescription"
+    android:imeOptions="actionDone"/>
 
         </RelativeLayout>
     </ScrollView>

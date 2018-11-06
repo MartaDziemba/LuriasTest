@@ -38,6 +38,7 @@
                 android:id="@+id/editTextFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/textFirstName"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
                 android:background="@drawable/mybutton"
@@ -48,7 +49,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
 
             <TextView
                 android:id="@+id/textLastName"
@@ -78,7 +80,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
 
             <TextView
                 android:id="@+id/textAge"
@@ -108,7 +111,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
 
             <TextView
                 android:id="@+id/textIDNumber"
@@ -138,7 +142,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
 
             <TextView
                 android:id="@+id/textDescription"
@@ -151,7 +156,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-                android:typeface="monospace" />
+                android:typeface="monospace"/>
 
             <EditText
                 android:id="@+id/editTextDescription"
@@ -168,7 +173,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
 
             <Button
                 android:id="@+id/buttonTest"

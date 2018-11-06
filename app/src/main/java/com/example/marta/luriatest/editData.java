@@ -1,10 +1,12 @@
 package com.example.marta.luriatest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -40,6 +42,14 @@ public class editData extends AppCompatActivity {
         editTextAge = findViewById(R.id.editTextAge);
         editTextIDNumber = findViewById(R.id.editTextIDNumber);
         editTextDescription = findViewById(R.id.editTextDescription);
+    }
+
+    public void closeKeybord(){
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     public void saveData() {
