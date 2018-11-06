@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -22,6 +23,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import butterknife.ButterKnife;
 
 public class FingerPath extends View{
 
@@ -45,11 +48,13 @@ public class FingerPath extends View{
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
-        this.setBackground(getResources().getDrawable(R.drawable.background));
-        createSample();
+        //this.setBackground(getResources().getDrawable(R.drawable.background));
+        createSample(mCanvas);
     }
 
-    private void createSample() {
+    private void createSample(Canvas canvas) {
+        canvas.drawLine(600, 600, 600, 600, mPaint);
+        canvas.drawLine(600, 600, 600, 600, mPaint);
     }
 
     @Override
@@ -58,6 +63,7 @@ public class FingerPath extends View{
 
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
+
     }
 
     @Override
@@ -65,6 +71,9 @@ public class FingerPath extends View{
         super.onDraw(canvas);
 
         canvas.drawPath(mPath, mPaint);
+
+        //canvas.drawLine(600, 600, 600, 600, mPaint);
+        //canvas.drawLine(600, 600, 600, 600, mPaint);
     }
 
     private void startTouch(float x, float y){

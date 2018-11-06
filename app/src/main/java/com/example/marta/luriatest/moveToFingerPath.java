@@ -29,7 +29,7 @@ public class moveToFingerPath extends AppCompatActivity {
         fingerPath = (FingerPath) findViewById(R.id.canvas);
         //String fileName = "PiontAnalysisData.csv";
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ssf");
         String fileName = sdf.format(date) + ".csv";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
