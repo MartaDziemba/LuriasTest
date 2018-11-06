@@ -26,12 +26,9 @@
                 android:id="@+id/textFirstName"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-
                 android:layout_alignBaseline="@+id/editTextFirstName"
-
                 android:fontFamily="sans-serif"
                 android:text="@string/textFirstName"
-
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
@@ -42,17 +39,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-
                 android:layout_alignParentTop="true"
                 android:background="@drawable/mybutton"
-
                 android:fontFamily="sans-serif"
-
                 android:hint="@string/editTextFirstName"
                 android:paddingEnd="10dp"
                 android:paddingStart="10dp"
                 android:textAllCaps="false"
-
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 android:typeface="monospace" />
@@ -62,15 +55,12 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textFirstName"
-
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-
                 android:text="@string/textLastName"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <EditText
@@ -80,18 +70,14 @@
                 android:layout_below="@id/editTextFirstName"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textLastName"
-
                 android:background="@drawable/mybutton"
                 android:fontFamily="sans-serif"
-
                 android:hint="@string/editTextLastName"
                 android:paddingEnd="10dp"
-
                 android:paddingStart="10dp"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <TextView
@@ -99,15 +85,12 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textLastName"
-
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-
                 android:text="@string/textAge"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <EditText
@@ -117,18 +100,14 @@
                 android:layout_below="@id/editTextLastName"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textAge"
-
                 android:background="@drawable/mybutton"
                 android:fontFamily="sans-serif"
-
                 android:hint="@string/editTextAge"
                 android:paddingEnd="10dp"
-
                 android:paddingStart="10dp"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <TextView
@@ -136,15 +115,12 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textAge"
-
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-
                 android:text="@string/textIDNumber"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <EditText
@@ -154,18 +130,14 @@
                 android:layout_below="@id/editTextAge"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textIDNumber"
-
                 android:background="@drawable/mybutton"
                 android:fontFamily="sans-serif"
-
                 android:hint="@string/editTextIDNumber"
                 android:paddingEnd="10dp"
-
                 android:paddingStart="10dp"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <TextView
@@ -173,15 +145,12 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textIDNumber"
-
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-
                 android:text="@string/textDescription"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <EditText
@@ -191,18 +160,14 @@
                 android:layout_below="@id/editTextIDNumber"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textDescription"
-
                 android:background="@drawable/mybutton"
                 android:fontFamily="sans-serif"
-
                 android:hint="@string/editTextDescription"
                 android:paddingEnd="10dp"
-
                 android:paddingStart="10dp"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:textSize="20sp"
-
                 android:typeface="monospace" />
 
             <Button
@@ -215,14 +180,12 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
                 android:layout_marginEnd="15dp"
-
                 android:layout_marginTop="25dp"
                 android:background="@drawable/mybutton"
                 android:fontFamily="sans-serif"
                 android:text="@string/buttonTest"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
-
                 android:textSize="20sp"
                 android:typeface="monospace" />
 

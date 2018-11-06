@@ -23,15 +23,12 @@
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_alignParentStart="true"
-
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
-
         android:fontFamily="sans-serif"
         android:typeface="monospace"
         android:textAllCaps="false"
         android:textSize="20sp"
-
         android:id="@+id/buttonNewTest"/>
 
     <Button
@@ -41,17 +38,13 @@
         android:layout_marginTop="200dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-
         android:layout_toEndOf="@id/buttonNewTest"
-
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
-
         android:fontFamily="sans-serif"
         android:typeface="monospace"
         android:textAllCaps="false"
         android:textSize="20sp"
-
         android:id="@+id/buttonRepeatTest"/>
 
     <Button
@@ -62,17 +55,13 @@
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_alignParentEnd="true"
-
         android:layout_toEndOf="@id/buttonRepeatTest"
-
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
-
         android:fontFamily="sans-serif"
         android:typeface="monospace"
         android:textAllCaps="false"
         android:textSize="20sp"
-
         android:id="@+id/buttonEditData"/>
 
 </RelativeLayout>

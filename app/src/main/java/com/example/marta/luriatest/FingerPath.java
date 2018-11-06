@@ -49,7 +49,7 @@ public class FingerPath extends View{
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
         //this.setBackground(getResources().getDrawable(R.drawable.background));
-        createSample(mCanvas);
+        //createSample(mCanvas);
     }
 
     private void createSample(Canvas canvas) {
@@ -63,7 +63,6 @@ public class FingerPath extends View{
 
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-
     }
 
     @Override
@@ -72,8 +71,8 @@ public class FingerPath extends View{
 
         canvas.drawPath(mPath, mPaint);
 
-        //canvas.drawLine(600, 600, 600, 600, mPaint);
-        //canvas.drawLine(600, 600, 600, 600, mPaint);
+        canvas.drawLine(600, 600, 600, 600, mPaint);
+        canvas.drawLine(600, 600, 600, 600, mPaint);
     }
 
     private void startTouch(float x, float y){
