@@ -71,8 +71,15 @@ public class FingerPath extends View{
 
         canvas.drawPath(mPath, mPaint);
 
-        canvas.drawLine(600, 600, 600, 600, mPaint);
-        canvas.drawLine(600, 600, 600, 600, mPaint);
+        canvas.drawLine(10, 250, 100, 250, mPaint);
+        canvas.drawLine(100, 250, 100, 150, mPaint);
+        canvas.drawLine(100, 150, 200, 150, mPaint);
+        canvas.drawLine(200, 150, 200, 250, mPaint);
+
+        canvas.drawLine(200, 250, 300, 250, mPaint);
+        canvas.drawLine(300, 250, 350, 150, mPaint);
+        canvas.drawLine(350, 150, 400, 250, mPaint);
+        canvas.drawLine(400, 250, 500, 250, mPaint);
     }
 
     private void startTouch(float x, float y){
