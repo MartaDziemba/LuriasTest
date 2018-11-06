@@ -44,14 +44,6 @@ public class editData extends AppCompatActivity {
         editTextDescription = findViewById(R.id.editTextDescription);
     }
 
-    public void closeKeybord(){
-        View view = this.getCurrentFocus();
-        if (view != null) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
-
     public void saveData() {
         Long date = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm");
