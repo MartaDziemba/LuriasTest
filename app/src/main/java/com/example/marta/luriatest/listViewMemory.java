@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -52,7 +53,8 @@ public class listViewMemory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item);
-        //ButterKnife.bind(this);
+        ButterKnife.bind(this);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         listViewInternalStorage = (ListView) findViewById(R.id.listViewInternalStorage);
         buttonUpDirectiry = (Button) findViewById(R.id.buttonBack);
         buttonSDCard = (Button) findViewById(R.id.buttonMemory);
