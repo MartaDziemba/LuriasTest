@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Clear"
+    android:id="@+id/menuButtonClear"></item>
+    <item android:title="More"
+        android:id="@+id/menuButtonMore"></item>
+</menu>

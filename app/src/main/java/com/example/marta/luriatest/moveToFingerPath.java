@@ -2,20 +2,27 @@ package com.example.marta.luriatest;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+
+import butterknife.OnClick;
 
 public class moveToFingerPath extends AppCompatActivity {
 
@@ -47,7 +54,7 @@ public class moveToFingerPath extends AppCompatActivity {
         }
     }
 
-    public void clearCanvas(View v){
+    public void clearCanvas(){
         fingerPath.clearCanvas();
     }
 
@@ -63,5 +70,34 @@ public class moveToFingerPath extends AppCompatActivity {
                     finish();
                 }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        PopupMenu popup = new PopupMenu(this,v);
+        getMenuInflater().inflate(R.menu.dotsmenu,menu);
+        return true;
+    }
+
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.dotsmenu, popup.getMenu());
+        popup.show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        switch (id){
+            case R.id.menuButtonClear:
+                clearCanvas();
+                Toast.makeText(this,"Cleared.",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menuButtonMore:
+                Toast.makeText(this,"See more.",Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 }
