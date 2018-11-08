@@ -10,12 +10,6 @@
     android:padding="10dp"
     tools:context="com.example.marta.luriatest.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@android:color/transparent"/>
-
     <com.example.marta.luriatest.FingerPath
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"

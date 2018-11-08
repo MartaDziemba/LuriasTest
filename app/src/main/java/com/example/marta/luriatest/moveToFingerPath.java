@@ -74,17 +74,17 @@ public class moveToFingerPath extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        PopupMenu popup = new PopupMenu(this,v);
+        //PopupMenu popup = new PopupMenu(this,v);
         getMenuInflater().inflate(R.menu.dotsmenu,menu);
         return true;
     }
 
-    public void showPopup(View v) {
-        PopupMenu popup = new PopupMenu(this, v);
-        MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.dotsmenu, popup.getMenu());
-        popup.show();
-    }
+//    public void showPopup(View v) {
+//        PopupMenu popup = new PopupMenu(this, v);
+//        MenuInflater inflater = popup.getMenuInflater();
+//        inflater.inflate(R.menu.dotsmenu, popup.getMenu());
+//        popup.show();
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
