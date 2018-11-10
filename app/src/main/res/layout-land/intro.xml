@@ -13,7 +13,6 @@
         android:layout_height="270dp"
         android:src="@drawable/logo_luria"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/linearLayout"
         android:padding="25dp"/>
 
 <LinearLayout
@@ -21,6 +20,7 @@
     android:layout_height="wrap_content"
     android:layout_centerVertical="true"
     android:layout_centerHorizontal="true"
+    android:layout_below="@id/logo"
     android:id="@+id/linearLayout">
 
     <Button
