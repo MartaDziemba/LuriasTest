@@ -24,39 +24,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/relativeLayout">
 
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/left_guideLine"
-                app:layout_constraintGuide_percent=".10"
-                android:orientation="vertical"/>
-
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/top_guideLine"
-                app:layout_constraintGuide_percent=".10"
-                android:orientation="horizontal"/>
-
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/right_guideLine"
-                app:layout_constraintGuide_percent=".90"
-                android:orientation="vertical"/>
-
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bottom_guideLine"
-                app:layout_constraintGuide_percent=".90"
-                android:orientation="horizontal"/>
-
             <TextView
                 android:id="@+id/textFirstName"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-
                 android:layout_alignBaseline="@+id/editTextFirstName"
                 android:fontFamily="sans-serif"
                 android:text="@string/textFirstName"

@@ -53,15 +53,26 @@ public class FingerPath extends View{
     }
 
     private void createSample(Canvas canvas) {
-        canvas.drawLine(10, 250, 100, 250, mPaint);
-        canvas.drawLine(100, 250, 100, 150, mPaint);
-        canvas.drawLine(100, 150, 200, 150, mPaint);
-        canvas.drawLine(200, 150, 200, 250, mPaint);
+//        canvas.drawLine(10, 250, 100, 250, mPaint);
+//        canvas.drawLine(100, 250, 100, 150, mPaint);
+//        canvas.drawLine(100, 150, 200, 150, mPaint);
+//        canvas.drawLine(200, 150, 200, 250, mPaint);
+//
+//        canvas.drawLine(200, 250, 300, 250, mPaint);
+//        canvas.drawLine(300, 250, 350, 150, mPaint);
+//        canvas.drawLine(350, 150, 400, 250, mPaint);
+//        canvas.drawLine(400, 250, 500, 250, mPaint);
 
-        canvas.drawLine(200, 250, 300, 250, mPaint);
-        canvas.drawLine(300, 250, 350, 150, mPaint);
-        canvas.drawLine(350, 150, 400, 250, mPaint);
-        canvas.drawLine(400, 250, 500, 250, mPaint);
+
+        canvas.drawLine(10, 400, 60, 400, mPaint);
+        canvas.drawLine(60, 400, 60, 340, mPaint);
+        canvas.drawLine(60, 340, 120, 340, mPaint);
+        canvas.drawLine(120, 340, 120, 400, mPaint);
+
+        canvas.drawLine(120, 400, 180, 400, mPaint);
+        canvas.drawLine(180, 400, 210, 340, mPaint);
+        canvas.drawLine(210, 340, 240, 400, mPaint);
+        canvas.drawLine(240, 400, 300, 400, mPaint);
     }
 
     @Override

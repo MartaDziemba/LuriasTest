@@ -2,8 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/allRelativeLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
 
     <ImageView
         android:id="@+id/logo"
@@ -42,7 +46,7 @@
                 android:id="@+id/editTextFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/editdata_rightMargin"
+                android:layout_marginEnd="@dimen/editdata_editTextMargin"
                 android:layout_toEndOf="@id/textFirstName"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
@@ -76,7 +80,7 @@
                 android:id="@+id/editTextLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/editdata_rightMargin"
+                android:layout_marginEnd="@dimen/editdata_editTextMargin"
                 android:layout_below="@id/editTextFirstName"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textLastName"
@@ -110,7 +114,7 @@
                 android:id="@+id/editTextAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/editdata_rightMargin"
+                android:layout_marginEnd="@dimen/editdata_editTextMargin"
                 android:layout_below="@id/editTextLastName"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textAge"
@@ -144,7 +148,7 @@
                 android:id="@+id/editTextIDNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/editdata_rightMargin"
+                android:layout_marginEnd="@dimen/editdata_editTextMargin"
                 android:layout_below="@id/editTextAge"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textIDNumber"
@@ -178,7 +182,7 @@
                 android:id="@+id/editTextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/editdata_rightMargin"
+                android:layout_marginEnd="@dimen/editdata_editTextMargin"
                 android:layout_below="@id/editTextIDNumber"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textDescription"
@@ -195,7 +199,7 @@
 
             <Button
                 android:id="@+id/buttonTest"
-                android:layout_width="200dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"

@@ -9,4 +9,5 @@
     <dimen name="editdata_bottomMargin">50dp</dimen>
 
     <dimen name="editdata_textWidth">220dp</dimen>
+    <dimen name="editdata_editTextMargin">60dp</dimen>
 </resources>
