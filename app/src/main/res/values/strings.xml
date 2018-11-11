@@ -20,7 +20,7 @@
     <string name="textIDNumber">"ID number"</string>
     <string name="editTextIDNumber">"Enter your ID number"</string>
 
-    <string name="textDescription">"Description"\n"(if needed)"</string>
+    <string name="textDescription">"Description (if needed)"</string>
     <string name="editTextDescription">"Enter description"</string>
 
     <string name="buttonTest">"Start test now"</string>

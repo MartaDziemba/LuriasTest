@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
         android:layout_centerHorizontal="true"
         android:padding="5dp"
         android:src="@drawable/logo_luria" />
@@ -24,39 +24,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/relativeLayout">
 
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/left_guideLine"
-                app:layout_constraintGuide_percent=".10"
-                android:orientation="vertical"/>
-
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/top_guideLine"
-                app:layout_constraintGuide_percent=".10"
-                android:orientation="horizontal"/>
-
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/right_guideLine"
-                app:layout_constraintGuide_percent=".90"
-                android:orientation="vertical"/>
-
-            <android.support.constraint.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bottom_guideLine"
-                app:layout_constraintGuide_percent=".90"
-                android:orientation="horizontal"/>
-
             <TextView
                 android:id="@+id/textFirstName"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/editdata_textWidth"
                 android:layout_height="wrap_content"
-
+                android:layout_marginStart="@dimen/editdata_leftMargin"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_alignBaseline="@+id/editTextFirstName"
                 android:fontFamily="sans-serif"
                 android:text="@string/textFirstName"
@@ -69,6 +42,7 @@
                 android:id="@+id/editTextFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_toEndOf="@id/textFirstName"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
@@ -85,8 +59,10 @@
 
             <TextView
                 android:id="@+id/textLastName"
-                android:layout_width="120dp"
+                android:layout_width="@dimen/editdata_textWidth"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/editdata_leftMargin"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/textFirstName"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
@@ -100,6 +76,7 @@
                 android:id="@+id/editTextLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/editTextFirstName"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textLastName"
@@ -116,8 +93,10 @@
 
             <TextView
                 android:id="@+id/textAge"
-                android:layout_width="120dp"
+                android:layout_width="@dimen/editdata_textWidth"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/editdata_leftMargin"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/textLastName"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
@@ -131,6 +110,7 @@
                 android:id="@+id/editTextAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/editTextLastName"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textAge"
@@ -147,8 +127,10 @@
 
             <TextView
                 android:id="@+id/textIDNumber"
-                android:layout_width="120dp"
+                android:layout_width="@dimen/editdata_textWidth"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/editdata_leftMargin"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/textAge"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
@@ -162,6 +144,7 @@
                 android:id="@+id/editTextIDNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/editTextAge"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textIDNumber"
@@ -178,8 +161,10 @@
 
             <TextView
                 android:id="@+id/textDescription"
-                android:layout_width="120dp"
+                android:layout_width="@dimen/editdata_textWidth"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/editdata_leftMargin"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/textIDNumber"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
@@ -193,6 +178,7 @@
                 android:id="@+id/editTextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_below="@id/editTextIDNumber"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@id/textDescription"
@@ -216,7 +202,7 @@
                 android:layout_below="@id/editTextDescription"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="@dimen/editdata_rightMargin"
                 android:layout_marginTop="25dp"
                 android:background="@drawable/mybutton"
                 android:fontFamily="sans-serif"

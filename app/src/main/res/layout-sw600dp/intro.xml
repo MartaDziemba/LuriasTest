@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/intro"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:src="@drawable/logo_luria"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/buttonRepeatTest"
+        android:padding="25dp"/>
+
+    <Button
+        android:text="@string/buttonNewTest"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toLeftOf="@id/buttonRepeatTest"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:id="@+id/buttonNewTest"/>
+
+    <Button
+        android:text="@string/buttonRepeatTest"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:id="@+id/buttonRepeatTest"/>
+
+    <Button
+        android:text="@string/buttonEditData"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/buttonRepeatTest"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/mybutton"
+        android:fontFamily="sans-serif"
+        android:typeface="monospace"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:id="@+id/buttonEditData"/>
+</RelativeLayout>

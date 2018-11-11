@@ -2,4 +2,11 @@
 <resources>
     <dimen name="activity_horizontal_margin">50dp</dimen>
     <dimen name="activity_vertical_margin">50dp</dimen>
+
+    <dimen name="editdata_leftMargin">140dp</dimen>
+    <dimen name="editdata_rightMargin">20dp</dimen>
+    <dimen name="editdata_topMargin">50dp</dimen>
+    <dimen name="editdata_bottomMargin">50dp</dimen>
+
+    <dimen name="editdata_textWidth">220dp</dimen>
 </resources>
