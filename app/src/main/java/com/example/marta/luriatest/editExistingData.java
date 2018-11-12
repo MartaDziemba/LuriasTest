@@ -20,7 +20,7 @@ public class editExistingData extends AppCompatActivity {
         ButterKnife.bind(this);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        findViewById(R.id.allRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.eedRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
