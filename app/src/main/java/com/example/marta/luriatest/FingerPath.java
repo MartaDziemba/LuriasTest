@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toolbar;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -53,6 +54,8 @@ public class FingerPath extends View{
         mPaint.setStrokeWidth(4f);
         //this.setBackground(getResources().getDrawable(R.drawable.background));
         //createSample(mCanvas);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
     }
 
     private void createSample(Canvas canvas) {
