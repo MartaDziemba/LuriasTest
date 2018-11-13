@@ -126,7 +126,8 @@ public class FingerPath extends View{
 
         readData(canvas);
         for(int i=0; i<pointsXY.size(); i++) {
-            PointXY currentX = pointsXY.get(i);
+            PointXY point = pointsXY.get(i);
+            //canvas.drawCircle(Float.parseFloat(point.getX()), point.getY(), 1, mPaint);
             // Do something with the value
         }
 
