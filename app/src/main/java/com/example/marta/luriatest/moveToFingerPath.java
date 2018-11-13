@@ -37,7 +37,7 @@ public class moveToFingerPath extends AppCompatActivity {
 
         fingerPath = (FingerPath) findViewById(R.id.canvas);
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm");
         String fileName = sdf.format(date) + ".csv";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);

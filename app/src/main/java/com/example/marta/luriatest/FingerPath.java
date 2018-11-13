@@ -39,8 +39,8 @@ public class FingerPath extends View{
     private float mX, mY;
     private static final float TOLERANCE = 5;
     Context context;
-    long startTime = System.currentTimeMillis();
     private File file;
+    long startTime = System.currentTimeMillis();
 
     public FingerPath(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -54,8 +54,6 @@ public class FingerPath extends View{
         mPaint.setStrokeWidth(4f);
         //this.setBackground(getResources().getDrawable(R.drawable.background));
         //createSample(mCanvas);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
     }
 
     private void createSample(Canvas canvas) {
@@ -160,7 +158,7 @@ public class FingerPath extends View{
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
-                saveAsFile(x + "," + y + "," + String.format("%d:%02d", secondsStart, millisStart));
+                saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", secondsStart, millisStart));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -168,7 +166,7 @@ public class FingerPath extends View{
                 //zapisywanie
                 long millis = System.currentTimeMillis() - startTime;
                 int seconds = (int) (millis / 1000);
-                saveAsFile(x + "," + y + "," + String.format("%d:%02d", seconds, millis));
+                saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", seconds, millis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:

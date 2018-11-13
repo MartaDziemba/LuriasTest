@@ -5,4 +5,6 @@
     <color name="colorAccent">#37474F</color>
     <color name="background">#FAFAFA</color>
     <color name="text">#01579B</color>
+    <color name="buttonCanvas">#F5F5F5</color>
+    <color name="buttonTextCanvas">#E0E0E0</color>
 </resources>
