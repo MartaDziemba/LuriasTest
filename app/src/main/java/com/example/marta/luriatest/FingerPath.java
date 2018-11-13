@@ -11,21 +11,28 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toolbar;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import butterknife.ButterKnife;
@@ -57,6 +64,7 @@ public class FingerPath extends View{
     }
 
     private void createSample(Canvas canvas) {
+        //fest duze
 //        canvas.drawLine(10, 250, 100, 250, mPaint);
 //        canvas.drawLine(100, 250, 100, 150, mPaint);
 //        canvas.drawLine(100, 150, 200, 150, mPaint);
@@ -67,16 +75,87 @@ public class FingerPath extends View{
 //        canvas.drawLine(350, 150, 400, 250, mPaint);
 //        canvas.drawLine(400, 250, 500, 250, mPaint);
 
+        //calkiem spoko
+//        canvas.drawLine(10, 400, 60, 400, mPaint);
+//        canvas.drawLine(60, 400, 60, 340, mPaint);
+//        canvas.drawLine(60, 340, 120, 340, mPaint);
+//        canvas.drawLine(120, 340, 120, 400, mPaint);
 
-        canvas.drawLine(10, 400, 60, 400, mPaint);
-        canvas.drawLine(60, 400, 60, 340, mPaint);
-        canvas.drawLine(60, 340, 120, 340, mPaint);
-        canvas.drawLine(120, 340, 120, 400, mPaint);
+        //dwa rzedy
+//        canvas.drawLine(10, 300, 60, 300, mPaint);
+//        canvas.drawLine(60, 300, 60, 240, mPaint);
+//        canvas.drawLine(60, 240, 120, 240, mPaint);
+//        canvas.drawLine(120, 240, 120, 300, mPaint);
+//
+//        canvas.drawLine(120, 300, 180, 300, mPaint);
+//        canvas.drawLine(180, 300, 210, 240, mPaint);
+//        canvas.drawLine(210, 240, 240, 300, mPaint);
+//        canvas.drawLine(240, 300, 300, 300, mPaint);
+//
+//        canvas.drawLine(10, 600, 60, 600, mPaint);
+//        canvas.drawLine(60, 600, 60, 540, mPaint);
+//        canvas.drawLine(60, 540, 120, 540, mPaint);
+//        canvas.drawLine(120, 540, 120, 600, mPaint);
+//
+//        canvas.drawLine(120, 600, 180, 600, mPaint);
+//        canvas.drawLine(180, 600, 210, 540, mPaint);
+//        canvas.drawLine(210, 540, 240, 600, mPaint);
+//        canvas.drawLine(240, 600, 300, 600, mPaint);
 
-        canvas.drawLine(120, 400, 180, 400, mPaint);
-        canvas.drawLine(180, 400, 210, 340, mPaint);
-        canvas.drawLine(210, 340, 240, 400, mPaint);
-        canvas.drawLine(240, 400, 300, 400, mPaint);
+        //srednie i sa super
+        canvas.drawLine(10, 350, 50, 350, mPaint);
+        canvas.drawLine(50, 350, 50, 300, mPaint);
+        canvas.drawLine(50, 300, 100, 300, mPaint);
+        canvas.drawLine(100, 300, 100, 350, mPaint);
+
+        canvas.drawLine(100, 350, 150, 350, mPaint);
+        canvas.drawLine(150, 350, 175, 300, mPaint);
+        canvas.drawLine(175, 300, 200, 350, mPaint);
+        canvas.drawLine(200, 350, 250, 350, mPaint);
+
+        //male
+//        canvas.drawLine(10, 400, 40, 400, mPaint);
+//        canvas.drawLine(40, 400, 40, 360, mPaint);
+//        canvas.drawLine(40, 360, 80, 360, mPaint);
+//        canvas.drawLine(80, 360, 80, 400, mPaint);
+//
+//        canvas.drawLine(80, 400, 120, 400, mPaint);
+//        canvas.drawLine(120, 400, 140, 360, mPaint);
+//        canvas.drawLine(140, 360, 160, 400, mPaint);
+//        canvas.drawLine(160, 400, 200, 400, mPaint);
+
+        readData(canvas);
+        for(int i=0; i<pointsXY.size(); i++) {
+            PointXY currentX = pointsXY.get(i);
+            // Do something with the value
+        }
+
+    }
+
+    private List<PointXY> pointsXY= new ArrayList<>();
+    private void readData(Canvas canvas) {
+        InputStream is = getResources().openRawResource(R.raw.points);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(is, Charset.forName("UTF-8"))
+        );
+
+        String line ="";
+        try {
+            while((line = reader.readLine()) != null){
+                Log.d("FingerPath","Line: " + line);
+
+                String[] tokens = line.split(";");
+                PointXY pointXY = new PointXY();
+                pointXY.setX(Float.parseFloat(tokens[0]));
+                pointXY.setY(Float.parseFloat(tokens[1]));
+                pointsXY.add(pointXY);
+
+                Log.d("FingerPath","Just created: " + pointXY);
+            }
+        }catch (IOException e) {
+            Log.wtf("FingerPath","Error reading data file" + line,e);
+                e.printStackTrace();
+        }
     }
 
     @Override
