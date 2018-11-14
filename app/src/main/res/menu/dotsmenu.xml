@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:title="Clear"
+<item
+    android:title="Clear"
     android:id="@+id/menuButtonClear"
-    android:visible="true"></item>
-    <item android:title="More"
-        android:id="@+id/menuButtonMore"></item>
+    android:visible="true">
+</item>
+    <item
+        android:title="More"
+        android:id="@+id/menuButtonMore"
+        android:visible="true">
+    </item>
 </menu>

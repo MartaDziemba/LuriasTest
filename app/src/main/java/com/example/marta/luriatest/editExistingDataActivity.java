@@ -11,7 +11,7 @@ import android.view.inputmethod.InputMethodManager;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class editExistingData extends AppCompatActivity {
+public class editExistingDataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

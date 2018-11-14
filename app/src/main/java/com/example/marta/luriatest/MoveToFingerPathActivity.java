@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
 
 import butterknife.OnClick;
 
-public class MoveToFingerPath extends AppCompatActivity {
+public class MoveToFingerPathActivity extends AppCompatActivity {
 
     private static final String TAG = "";
     private FingerPath fingerPath;
@@ -83,13 +83,6 @@ public class MoveToFingerPath extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.dotsmenu,menu);
         return true;
     }
-
-//    public void showPopup(View v) {
-//        PopupMenu popup = new PopupMenu(this, v);
-//        MenuInflater inflater = popup.getMenuInflater();
-//        inflater.inflate(R.menu.dotsmenu, popup.getMenu());
-//        popup.show();
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

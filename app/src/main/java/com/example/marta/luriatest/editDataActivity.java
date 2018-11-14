@@ -20,14 +20,14 @@ import java.text.SimpleDateFormat;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class editData extends AppCompatActivity {
+public class editDataActivity extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
 
     @OnClick(R.id.buttonTest)
     void OnClickEditData() {
         saveData();
-        Intent intent = new Intent(editData.this, MoveToFingerPath.class);
+        Intent intent = new Intent(editDataActivity.this, MoveToFingerPathActivity.class);
         startActivity(intent);
     }
 
