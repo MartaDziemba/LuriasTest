@@ -60,9 +60,6 @@ public class FingerPath extends View{
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
         //this.setBackground(getResources().getDrawable(R.drawable.background));
-        /*mBitmap = Bitmap.createBitmap(this.getWidth(),this.getHeight(),Bitmap.Config.ARGB_8888);
-        mCanvas = new Canvas(mBitmap);
-        createSample(mCanvas);*/
     }
 
     private void createSample(Canvas canvas) {
@@ -164,8 +161,9 @@ public class FingerPath extends View{
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
-
+        mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
+        mCanvas = new Canvas(mBitmap);
+        //createSample(mCanvas);
     }
 
     @Override
@@ -173,9 +171,9 @@ public class FingerPath extends View{
         super.onDraw(canvas);
 
         canvas.drawPath(mPath, mPaint);
-        //createSample(canvas);
+        createSample(canvas);
 
-        canvas.drawCircle(600, 200, 1, mPaint);
+        //canvas.drawCircle(600, 200, 1, mPaint);
     }
 
     private void startTouch(float x, float y){

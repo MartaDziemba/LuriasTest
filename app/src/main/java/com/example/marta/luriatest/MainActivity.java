@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonNewTest)
     void OnClickNewTest(){
-        Intent intent = new Intent(MainActivity.this, editDataActivity.class);
+        Intent intent = new Intent(MainActivity.this, EditDataActivity.class);
         startActivity(intent);
     }
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonEditData)
     void OnClickEditData(){
-        Intent intent = new Intent(MainActivity.this, editExistingDataActivity.class);
+        Intent intent = new Intent(MainActivity.this, EditExistingDataActivity.class);
         startActivity(intent);
     }
 

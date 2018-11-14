@@ -79,7 +79,6 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //PopupMenu popup = new PopupMenu(this,v);
         getMenuInflater().inflate(R.menu.dotsmenu,menu);
         return true;
     }
