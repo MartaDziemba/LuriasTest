@@ -1,14 +1,11 @@
 package com.example.marta.luriatest;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -17,7 +14,6 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
@@ -31,7 +27,7 @@ public class editData extends AppCompatActivity {
     @OnClick(R.id.buttonTest)
     void OnClickEditData() {
         saveData();
-        Intent intent = new Intent(editData.this, moveToFingerPath.class);
+        Intent intent = new Intent(editData.this, MoveToFingerPath.class);
         startActivity(intent);
     }
 

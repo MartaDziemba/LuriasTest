@@ -60,7 +60,9 @@ public class FingerPath extends View{
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
         //this.setBackground(getResources().getDrawable(R.drawable.background));
-        //createSample(mCanvas);
+        /*mBitmap = Bitmap.createBitmap(this.getWidth(),this.getHeight(),Bitmap.Config.ARGB_8888);
+        mCanvas = new Canvas(mBitmap);
+        createSample(mCanvas);*/
     }
 
     private void createSample(Canvas canvas) {
@@ -103,7 +105,7 @@ public class FingerPath extends View{
 //        canvas.drawLine(240, 600, 300, 600, mPaint);
 
         //srednie i sa super
-        canvas.drawLine(10, 350, 50, 350, mPaint);
+       /* canvas.drawLine(10, 350, 50, 350, mPaint);
         canvas.drawLine(50, 350, 50, 300, mPaint);
         canvas.drawLine(50, 300, 100, 300, mPaint);
         canvas.drawLine(100, 300, 100, 350, mPaint);
@@ -112,7 +114,7 @@ public class FingerPath extends View{
         canvas.drawLine(150, 350, 175, 300, mPaint);
         canvas.drawLine(175, 300, 200, 350, mPaint);
         canvas.drawLine(200, 350, 250, 350, mPaint);
-
+*/
         //male
 //        canvas.drawLine(10, 400, 40, 400, mPaint);
 //        canvas.drawLine(40, 400, 40, 360, mPaint);
@@ -127,7 +129,7 @@ public class FingerPath extends View{
         readData(canvas);
         for(int i=0; i<pointsXY.size(); i++) {
             PointXY point = pointsXY.get(i);
-            //canvas.drawCircle(Float.parseFloat(point.getX()), point.getY(), 1, mPaint);
+            canvas.drawCircle(point.getX(), point.getY(), 1, mPaint);
             // Do something with the value
         }
 
@@ -163,8 +165,7 @@ public class FingerPath extends View{
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
-        mCanvas = new Canvas(mBitmap);
+
     }
 
     @Override
@@ -172,7 +173,7 @@ public class FingerPath extends View{
         super.onDraw(canvas);
 
         canvas.drawPath(mPath, mPaint);
-        createSample(canvas);
+        //createSample(canvas);
 
         canvas.drawCircle(600, 200, 1, mPaint);
     }

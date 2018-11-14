@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,7 +25,7 @@ import java.text.SimpleDateFormat;
 
 import butterknife.OnClick;
 
-public class moveToFingerPath extends AppCompatActivity {
+public class MoveToFingerPath extends AppCompatActivity {
 
     private static final String TAG = "";
     private FingerPath fingerPath;
@@ -52,6 +53,10 @@ public class moveToFingerPath extends AppCompatActivity {
             requestPermissions(new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
         }
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.inflateMenu(R.menu.dotsmenu);
     }
 
     public void clearCanvas(){

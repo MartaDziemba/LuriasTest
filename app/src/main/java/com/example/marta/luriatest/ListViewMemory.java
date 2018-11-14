@@ -31,9 +31,9 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 
-public class listViewMemory extends AppCompatActivity {
+public class ListViewMemory extends AppCompatActivity {
 
-    private static final String TAG = "listViewMemory";
+    private static final String TAG = "ListViewMemory";
 
     private String[] FilePathStrings;
     private String[] FileNameStrings;

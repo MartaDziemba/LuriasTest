@@ -23,13 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".moveToFingerPath"
+        <activity android:name=".MoveToFingerPath"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".editData"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".editExistingData"
             android:screenOrientation="landscape"></activity>
-        <activity android:name=".listViewMemory"
+        <activity android:name=".ListViewMemory"
             android:screenOrientation="landscape"></activity>
     </application>
 

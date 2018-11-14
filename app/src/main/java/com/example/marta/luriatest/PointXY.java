@@ -13,7 +13,7 @@ public class PointXY {
 
     }
 
-    public double getX() {
+    public float getX() {
         return x;
     }
 
@@ -21,7 +21,7 @@ public class PointXY {
         this.x = x;
     }
 
-    public double getY() {
+    public float getY() {
         return y;
     }
 
