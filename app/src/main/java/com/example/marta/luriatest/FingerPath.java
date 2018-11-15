@@ -95,6 +95,7 @@ public class FingerPath extends View{
 //        canvas.drawLine(60, 600, 60, 540, mPaint);
 //        canvas.drawLine(60, 540, 120, 540, mPaint);
 //        canvas.drawLine(120, 540, 120, 600, mPaint);
+
 //
 //        canvas.drawLine(120, 600, 180, 600, mPaint);
 //        canvas.drawLine(180, 600, 210, 540, mPaint);
@@ -102,7 +103,7 @@ public class FingerPath extends View{
 //        canvas.drawLine(240, 600, 300, 600, mPaint);
 
         //srednie i sa super
-       /* canvas.drawLine(10, 350, 50, 350, mPaint);
+        canvas.drawLine(10, 350, 50, 350, mPaint);
         canvas.drawLine(50, 350, 50, 300, mPaint);
         canvas.drawLine(50, 300, 100, 300, mPaint);
         canvas.drawLine(100, 300, 100, 350, mPaint);
@@ -111,7 +112,7 @@ public class FingerPath extends View{
         canvas.drawLine(150, 350, 175, 300, mPaint);
         canvas.drawLine(175, 300, 200, 350, mPaint);
         canvas.drawLine(200, 350, 250, 350, mPaint);
-*/
+
         //male
 //        canvas.drawLine(10, 400, 40, 400, mPaint);
 //        canvas.drawLine(40, 400, 40, 360, mPaint);
