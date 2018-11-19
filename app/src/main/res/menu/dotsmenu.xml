@@ -5,9 +5,4 @@
     android:id="@+id/menuButtonClear"
     android:visible="true">
 </item>
-    <item
-        android:title="@string/buttonMore"
-        android:id="@+id/menuButtonMore"
-        android:visible="true">
-    </item>
 </menu>

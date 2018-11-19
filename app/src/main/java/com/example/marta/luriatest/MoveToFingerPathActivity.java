@@ -91,9 +91,6 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
                 clearCanvas();
                 Toast.makeText(this,"Cleared.",Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.menuButtonMore:
-                Toast.makeText(this,"See more.",Toast.LENGTH_SHORT).show();
-                break;
         }
         return true;
     }

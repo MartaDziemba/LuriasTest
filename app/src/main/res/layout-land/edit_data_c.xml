@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:id="@+id/allRelativeLayout"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:src="@drawable/logo_luria" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/logo"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout">
+
+            <TextView
+                android:id="@+id/textFirstName"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/editTextFirstName"
+                android:fontFamily="sans-serif"
+                android:text="@string/textFirstName"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/textFirstName"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
+                android:hint="@string/editTextFirstName"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
+
+            <TextView
+                android:id="@+id/textLastName"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textFirstName"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/textLastName"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextFirstName"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textLastName"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
+                android:hint="@string/editTextLastName"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
+
+            <TextView
+                android:id="@+id/textAge"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textLastName"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/textAge"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
+            <EditText
+                android:id="@+id/editTextAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextLastName"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textAge"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
+                android:hint="@string/editTextAge"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
+
+            <TextView
+                android:id="@+id/textIDNumber"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textAge"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/textIDNumber"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
+            <EditText
+                android:id="@+id/editTextIDNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextAge"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textIDNumber"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
+                android:hint="@string/editTextIDNumber"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textIDNumber"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/textDescription"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace"/>
+
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextIDNumber"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/textDescription"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
+                android:hint="@string/editTextDescription"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:typeface="monospace"
+                android:imeOptions="actionDone"/>
+
+            <Button
+                android:id="@+id/buttonTest"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/editTextDescription"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/mybutton"
+                android:fontFamily="sans-serif"
+                android:text="@string/buttonTest"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

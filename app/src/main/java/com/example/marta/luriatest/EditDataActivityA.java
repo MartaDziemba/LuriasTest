@@ -20,21 +20,21 @@ import java.text.SimpleDateFormat;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class EditDataActivity extends AppCompatActivity {
+public class EditDataActivityA extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
 
     @OnClick(R.id.buttonTest)
     void OnClickEditData() {
         saveData();
-        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivity.class);
+        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivity.class);
         startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.editdata);
+        setContentView(R.layout.edit_data_a);
         ButterKnife.bind(this);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         editTextFirstName = findViewById(R.id.editTextFirstName);
