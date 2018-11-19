@@ -27,7 +27,7 @@ public class EditDataActivityA extends AppCompatActivity {
     @OnClick(R.id.buttonTest)
     void OnClickEditData() {
         saveData();
-        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivity.class);
+        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
         startActivity(intent);
     }
 

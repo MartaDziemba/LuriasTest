@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="10dp"
+    tools:context="com.example.marta.luriatest.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <com.example.marta.luriatest.FingerPathA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/canvas"/>
+    <!--android:layout_above="@+id/buttonClear"-->
+
+    <!--<Button-->
+    <!--android:text="@string/buttonClear"-->
+    <!--android:layout_width="120dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_marginStart="5dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:onClick="clearCanvas"-->
+    <!--android:background="@drawable/buttoncanvas"-->
+    <!--android:textColor="@color/buttonTextCanvas"-->
+    <!--android:id="@+id/buttonClear"/>-->
+
+    <!--<Button-->
+    <!--android:text="@string/buttonMore"-->
+    <!--android:layout_width="120dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_marginEnd="5dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:background="@drawable/buttoncanvas"-->
+    <!--android:textColor="@color/buttonTextCanvas"-->
+    <!--android:id="@+id/buttonMore"/>-->
+
+</RelativeLayout>

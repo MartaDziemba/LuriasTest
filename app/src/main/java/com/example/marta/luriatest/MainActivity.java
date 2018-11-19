@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonRepeatTest)
     void OnClickRepeatTest(){
-        Intent intent = new Intent(MainActivity.this, ListViewMemory.class);
+        Intent intent = new Intent(MainActivity.this, EditDataActivityB.class);
         startActivity(intent);
     }
 
     @OnClick(R.id.buttonEditData)
     void OnClickEditData(){
-        Intent intent = new Intent(MainActivity.this, EditExistingDataActivity.class);
+        Intent intent = new Intent(MainActivity.this, EditDataActivityC.class);
         startActivity(intent);
     }
 

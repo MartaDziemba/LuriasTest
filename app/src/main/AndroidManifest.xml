@@ -23,9 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MoveToFingerPathActivity"
+        <activity android:name=".MoveToFingerPathActivityA"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".MoveToFingerPathActivityB"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".MoveToFingerPathActivityC"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".EditDataActivityA"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".EditDataActivityB"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".EditDataActivityC"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".EditExistingDataActivity"
             android:screenOrientation="landscape"></activity>

@@ -37,7 +37,7 @@ import java.util.Locale;
 
 import butterknife.ButterKnife;
 
-public class FingerPath extends View{
+public class FingerPathC extends View{
 
     private Bitmap mBitmap;
     private Canvas mCanvas;
@@ -49,7 +49,7 @@ public class FingerPath extends View{
     private File file;
     long startTime = System.currentTimeMillis();
 
-    public FingerPath(Context context, @Nullable AttributeSet attrs) {
+    public FingerPathC(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.context=context;
         mPath = new Path();
@@ -103,15 +103,15 @@ public class FingerPath extends View{
 //        canvas.drawLine(240, 600, 300, 600, mPaint);
 
         //srednie i sa super
-        canvas.drawLine(10, 350, 50, 350, mPaint);
-        canvas.drawLine(50, 350, 50, 300, mPaint);
-        canvas.drawLine(50, 300, 100, 300, mPaint);
-        canvas.drawLine(100, 300, 100, 350, mPaint);
-
-        canvas.drawLine(100, 350, 150, 350, mPaint);
-        canvas.drawLine(150, 350, 175, 300, mPaint);
-        canvas.drawLine(175, 300, 200, 350, mPaint);
-        canvas.drawLine(200, 350, 250, 350, mPaint);
+//        canvas.drawLine(10, 350, 50, 350, mPaint);
+//        canvas.drawLine(50, 350, 50, 300, mPaint);
+//        canvas.drawLine(50, 300, 100, 300, mPaint);
+//        canvas.drawLine(100, 300, 100, 350, mPaint);
+//
+//        canvas.drawLine(100, 350, 150, 350, mPaint);
+//        canvas.drawLine(150, 350, 175, 300, mPaint);
+//        canvas.drawLine(175, 300, 200, 350, mPaint);
+//        canvas.drawLine(200, 350, 250, 350, mPaint);
 
         //male
 //        canvas.drawLine(10, 400, 40, 400, mPaint);
@@ -155,7 +155,7 @@ public class FingerPath extends View{
             }
         }catch (IOException e) {
             Log.wtf("FingerPath","Error reading data file" + line,e);
-                e.printStackTrace();
+            e.printStackTrace();
         }
     }
 

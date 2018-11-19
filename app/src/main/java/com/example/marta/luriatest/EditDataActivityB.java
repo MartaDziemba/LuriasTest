@@ -27,14 +27,14 @@ public class EditDataActivityB extends AppCompatActivity {
     @OnClick(R.id.buttonTest)
     void OnClickEditData() {
         saveData();
-        Intent intent = new Intent(EditDataActivityB.this, MoveToFingerPathActivity.class);
+        Intent intent = new Intent(EditDataActivityB.this, MoveToFingerPathActivityB.class);
         startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.edit_data_a);
+        setContentView(R.layout.edit_data_b);
         ButterKnife.bind(this);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         editTextFirstName = findViewById(R.id.editTextFirstName);
