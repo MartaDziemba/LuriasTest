@@ -19,7 +19,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <com.example.marta.luriatest.FingerPathA
+    <com.example.marta.luriatest.FingerPathC
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="45dp"

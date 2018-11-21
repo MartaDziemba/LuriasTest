@@ -28,4 +28,9 @@
     <string name="buttonBack">"Back"</string>
     <string name="buttonMemory">"Memory"</string>
 
+    <string name="alertTitle">"Warning"</string>
+    <string name="alert">"Are you sure you want to clear canvas?"</string>
+    <string name="clear">"Clear"</string>
+    <string name="cancel">"Cancel"</string>
+
 </resources>

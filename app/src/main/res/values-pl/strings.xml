@@ -29,4 +29,9 @@
     <string name="buttonBack">"Wróć"</string>
     <string name="buttonMemory">"Pamięć telefonu"</string>
 
+    <string name="alertTitle">"Ostrzeżenie"</string>
+    <string name="alert">"Czy na pewno chcesz wyszyścić pole?"</string>
+    <string name="clear">"Wyczyść"</string>
+    <string name="cancel">"Anuluj"</string>
+
 </resources>

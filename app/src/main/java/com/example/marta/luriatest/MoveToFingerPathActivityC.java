@@ -1,21 +1,30 @@
 package com.example.marta.luriatest;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MoveToFingerPathActivityC extends AppCompatActivity {
 
@@ -25,7 +34,7 @@ public class MoveToFingerPathActivityC extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_b);
+        setContentView(R.layout.activity_main_c);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         fingerPath = (FingerPathC) findViewById(R.id.canvas);
@@ -80,10 +89,30 @@ public class MoveToFingerPathActivityC extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.menuButtonClear:
-                clearCanvas();
+                openAlertDialog();
                 Toast.makeText(this,"Cleared.",Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
+    }
+
+    private void openAlertDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityC.this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("Are you sure you want to clear canvas?");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Clear",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        clearCanvas();
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 }

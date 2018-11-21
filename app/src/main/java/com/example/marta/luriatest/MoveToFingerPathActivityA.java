@@ -1,6 +1,8 @@
 package com.example.marta.luriatest;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -80,10 +82,30 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.menuButtonClear:
-                clearCanvas();
+                openAlertDialog();
                 Toast.makeText(this,"Cleared.",Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
+    }
+
+    private void openAlertDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("Are you sure you want to clear canvas?");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Clear",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        clearCanvas();
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 }
