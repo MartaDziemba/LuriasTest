@@ -98,13 +98,12 @@ public class MoveToFingerPathActivityC extends AppCompatActivity {
 
     private void openAlertDialog() {
         AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityC.this).create();
-        alertDialog.setTitle("Alert");
+        alertDialog.setTitle("Warning");
         alertDialog.setMessage("Are you sure you want to clear canvas?");
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Clear",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         clearCanvas();
-                        dialog.dismiss();
                     }
                 });
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",

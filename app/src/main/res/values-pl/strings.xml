@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">"Test Łurii"</string>
 
-    <string name="buttonNewTest">"Nowy test: wariant A"</string>
-    <string name="buttonRepeatTest">"Nowy test: wariant B"</string>
-    <string name="buttonEditData">"Nowy test: wariant C"</string>
+    <string name="buttonNewTest">"Test A"</string>
+    <string name="buttonRepeatTest">"Test B"</string>
+    <string name="buttonEditData">"Test C"</string>
 
     <string name="buttonClear">"Wyczyść"</string>
     <string name="buttonMore">"Więcej"</string>
