@@ -103,15 +103,12 @@ public class FingerPathB extends View{
 //        canvas.drawLine(240, 600, 300, 600, mPaint);
 
         //srednie i sa super
-        canvas.drawLine(10, 350, 50, 350, mPaint);
-        canvas.drawLine(50, 350, 50, 300, mPaint);
-        canvas.drawLine(50, 300, 100, 300, mPaint);
-        canvas.drawLine(100, 300, 100, 350, mPaint);
+        canvas.drawLine(10, 350, 10, 300, mPaint);
+        canvas.drawLine(10, 300, 50, 300, mPaint);
+        canvas.drawLine(50, 300, 50, 350, mPaint);
 
-        canvas.drawLine(100, 350, 150, 350, mPaint);
-        canvas.drawLine(150, 350, 175, 300, mPaint);
-        canvas.drawLine(175, 300, 200, 350, mPaint);
-        canvas.drawLine(200, 350, 250, 350, mPaint);
+        canvas.drawLine(50, 350, 75, 300, mPaint);
+        canvas.drawLine(75, 300, 100, 350, mPaint);
 
         //male
 //        canvas.drawLine(10, 400, 40, 400, mPaint);
