@@ -114,10 +114,11 @@ public class FingerPathA extends View{
 //        canvas.drawLine(200, 350, 250, 350, mPaint);
 
         //male
-        canvas.drawLine(15, 5, 15, 40, mPaint);
-        canvas.drawLine(5, 15, 40, 15, mPaint);
-        canvas.drawLine(15, 665, 15, 665, mPaint);
-        canvas.drawLine(5, 700, 40, 660, mPaint);
+        canvas.drawLine(15, 5, 15, 45, mPaint);
+        canvas.drawLine(5, 15, 45, 15, mPaint);
+
+        canvas.drawLine(5, 690, 45, 690, mPaint);
+        canvas.drawLine(15, 700, 15, 660, mPaint);
 
 //        readData(canvas);
 //        for(int i=0; i<pointsXY.size(); i++) {

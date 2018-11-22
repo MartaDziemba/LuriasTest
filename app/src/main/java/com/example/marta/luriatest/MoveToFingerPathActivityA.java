@@ -83,7 +83,6 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         switch (id){
             case R.id.menuButtonClear:
                 openAlertDialog();
-                Toast.makeText(this,"Cleared.",Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;

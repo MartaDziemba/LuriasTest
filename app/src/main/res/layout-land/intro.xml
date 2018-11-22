@@ -25,11 +25,14 @@
 
     <Button
         android:text="@string/buttonNewTest"
-        android:layout_width="120dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="viewEnd"
+        android:drawablePadding="20dp"
+        android:drawableEnd="@mipmap/test_a_round"
         android:background="@drawable/mybutton"
         android:fontFamily="sans-serif"
         android:typeface="monospace"
@@ -39,11 +42,14 @@
 
     <Button
         android:text="@string/buttonRepeatTest"
-        android:layout_width="120dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="viewEnd"
+        android:drawablePadding="20dp"
+        android:drawableEnd="@mipmap/test_b_round"
         android:background="@drawable/mybutton"
         android:fontFamily="sans-serif"
         android:typeface="monospace"
@@ -53,11 +59,14 @@
 
     <Button
         android:text="@string/buttonEditData"
-        android:layout_width="120dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="viewEnd"
+        android:drawablePadding="20dp"
+        android:drawableEnd="@mipmap/test_c_round"
         android:background="@drawable/mybutton"
         android:fontFamily="sans-serif"
         android:typeface="monospace"

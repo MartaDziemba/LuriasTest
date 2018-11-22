@@ -28,7 +28,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textAlignment="viewEnd"
         android:drawablePadding="20dp"
-        android:drawableEnd="@mipmap/test_c_round"
+        android:drawableEnd="@mipmap/test_a_round"
         android:background="@drawable/mybutton"
         android:fontFamily="sans-serif"
         android:typeface="monospace"
