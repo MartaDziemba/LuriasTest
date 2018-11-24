@@ -1,9 +1,12 @@
 package com.example.marta.luriatest;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -20,12 +23,19 @@ import java.text.SimpleDateFormat;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class EditDataActivityA extends AppCompatActivity {
+public class EditDataActivityA extends AppCompatActivity implements TextWatcher {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
 
     @OnClick(R.id.buttonTest)
-    void OnClickEditData() {
+    void OnClickTest() {
+        //saveData();
+        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.buttonSave)
+    void OnClickSave() {
         saveData();
         Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
         startActivity(intent);
@@ -42,6 +52,54 @@ public class EditDataActivityA extends AppCompatActivity {
         editTextAge = findViewById(R.id.editTextAge);
         editTextIDNumber = findViewById(R.id.editTextIDNumber);
         editTextDescription = findViewById(R.id.editTextDescription);
+
+        //Tutorial 1
+        editTextFirstName.addTextChangedListener(this);
+        editTextLastName.addTextChangedListener(this);
+        editTextAge.addTextChangedListener(this);
+        editTextIDNumber.addTextChangedListener(this);
+        editTextDescription.addTextChangedListener(this);
+
+        //Tutorial 2
+        editTextFirstName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                String editTextFirstNameString = editTextFirstName.getText().toString();
+                if(editTextFirstNameString==""){
+                   editTextFirstName.setError("Pole nie moze byc puste!");
+                 }
+            }
+        });
+
+        editTextLastName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                String editTextLastNameString = editTextLastName.getText().toString();
+                if(editTextLastNameString==""){
+                    editTextLastName.setError("Pole nie moze byc puste!");
+                }
+            }
+        });
+
+        editTextAge.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                String editTextAgeString = editTextAge.getText().toString();
+                if(editTextAgeString==""){
+                    editTextAge.setError("Pole nie moze byc puste!");
+                }
+            }
+        });
+
+        editTextIDNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                String editTextIDNumberString = editTextIDNumber.getText().toString();
+                if(editTextIDNumberString==""){
+                    editTextIDNumber.setError("Pole nie moze byc puste!");
+                }
+            }
+        });
 
         findViewById(R.id.allRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -88,6 +146,37 @@ public class EditDataActivityA extends AppCompatActivity {
             }
         } else {
             Toast.makeText(this, "File not saved!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @SuppressLint("ShowToast")
+    @Override
+    public void afterTextChanged(Editable editable) {
+        String editTextFirstNameString = editTextFirstName.getText().toString();
+        if(editTextFirstNameString==""){
+            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
+        }
+        String editTextLastNameString = editTextLastName.getText().toString();
+        if(editTextLastNameString==""){
+            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
+        }
+        String editTextAgeString = editTextAge.getText().toString();
+        if(editTextAgeString==""){
+            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
+        }
+        String editTextIDNumberString = editTextIDNumber.getText().toString();
+        if(editTextIDNumberString==""){
+            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
         }
     }
 }

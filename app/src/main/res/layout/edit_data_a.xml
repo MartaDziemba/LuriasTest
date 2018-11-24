@@ -42,6 +42,7 @@
         <EditText
             android:hint="@string/editTextFirstName"
             android:maxLines="1"
+            android:lines="1"
             android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,6 +74,7 @@
         <EditText
             android:hint="@string/editTextLastName"
             android:maxLines="1"
+            android:lines="1"
             android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,6 +108,7 @@
         <EditText
             android:hint="@string/editTextAge"
             android:maxLines="1"
+            android:lines="1"
             android:inputType="numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,7 +142,9 @@
         <EditText
             android:hint="@string/editTextIDNumber"
             android:maxLines="1"
+            android:lines="1"
             android:inputType="number"
+            android:maxLength="11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -171,8 +176,6 @@
 
         <EditText
             android:hint="@string/editTextDescription"
-            android:maxLines="1"
-            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
