@@ -180,6 +180,25 @@
                 android:imeOptions="actionDone"/>
 
             <Button
+                android:text="@string/buttonSave"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/buttonTest"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/mybutton"
+                android:layout_below="@id/editTextDescription"
+                android:fontFamily="sans-serif"
+                android:typeface="monospace"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:id="@+id/buttonSave"/>
+
+            <Button
                 android:text="@string/buttonTest"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"

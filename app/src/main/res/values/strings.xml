@@ -23,6 +23,7 @@
     <string name="textDescription">"Description (if needed)"</string>
     <string name="editTextDescription">"Enter description"</string>
 
+    <string name="buttonSave">"Save"</string>
     <string name="buttonTest">"Start test now"</string>
 
     <string name="buttonBack">"Back"</string>

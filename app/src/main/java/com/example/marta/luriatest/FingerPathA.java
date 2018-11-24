@@ -59,77 +59,18 @@ public class FingerPathA extends View{
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
-        //this.setBackground(getResources().getDrawable(R.drawable.background));
     }
 
     private void createSample(Canvas canvas) {
-        //fest duze
-//        canvas.drawLine(10, 250, 100, 250, mPaint);
-//        canvas.drawLine(100, 250, 100, 150, mPaint);
-//        canvas.drawLine(100, 150, 200, 150, mPaint);
-//        canvas.drawLine(200, 150, 200, 250, mPaint);
-//
-//        canvas.drawLine(200, 250, 300, 250, mPaint);
-//        canvas.drawLine(300, 250, 350, 150, mPaint);
-//        canvas.drawLine(350, 150, 400, 250, mPaint);
-//        canvas.drawLine(400, 250, 500, 250, mPaint);
-
-        //calkiem spoko
-//        canvas.drawLine(10, 400, 60, 400, mPaint);
-//        canvas.drawLine(60, 400, 60, 340, mPaint);
-//        canvas.drawLine(60, 340, 120, 340, mPaint);
-//        canvas.drawLine(120, 340, 120, 400, mPaint);
-
-        //dwa rzedy
-//        canvas.drawLine(10, 300, 60, 300, mPaint);
-//        canvas.drawLine(60, 300, 60, 240, mPaint);
-//        canvas.drawLine(60, 240, 120, 240, mPaint);
-//        canvas.drawLine(120, 240, 120, 300, mPaint);
-//
-//        canvas.drawLine(120, 300, 180, 300, mPaint);
-//        canvas.drawLine(180, 300, 210, 240, mPaint);
-//        canvas.drawLine(210, 240, 240, 300, mPaint);
-//        canvas.drawLine(240, 300, 300, 300, mPaint);
-//
-//        canvas.drawLine(10, 600, 60, 600, mPaint);
-//        canvas.drawLine(60, 600, 60, 540, mPaint);
-//        canvas.drawLine(60, 540, 120, 540, mPaint);
-//        canvas.drawLine(120, 540, 120, 600, mPaint);
-
-//
-//        canvas.drawLine(120, 600, 180, 600, mPaint);
-//        canvas.drawLine(180, 600, 210, 540, mPaint);
-//        canvas.drawLine(210, 540, 240, 600, mPaint);
-//        canvas.drawLine(240, 600, 300, 600, mPaint);
-
-        //srednie i sa super
-//        canvas.drawLine(10, 350, 50, 350, mPaint);
-//        canvas.drawLine(50, 350, 50, 300, mPaint);
-//        canvas.drawLine(50, 300, 100, 300, mPaint);
-//        canvas.drawLine(100, 300, 100, 350, mPaint);
-//
-//        canvas.drawLine(100, 350, 150, 350, mPaint);
-//        canvas.drawLine(150, 350, 175, 300, mPaint);
-//        canvas.drawLine(175, 300, 200, 350, mPaint);
-//        canvas.drawLine(200, 350, 250, 350, mPaint);
-
-        //male
         canvas.drawLine(15, 5, 15, 45, mPaint);
         canvas.drawLine(5, 15, 45, 15, mPaint);
 
         canvas.drawLine(5, 690, 45, 690, mPaint);
         canvas.drawLine(15, 700, 15, 660, mPaint);
-
-//        readData(canvas);
-//        for(int i=0; i<pointsXY.size(); i++) {
-//            PointXY point = pointsXY.get(i);
-//            canvas.drawCircle(point.getX(), point.getY(), 1, mPaint);
-//            // Do something with the value
-//        }
-
     }
 
     private List<PointXY> pointsXY= new ArrayList<>();
+
     private void readData(Canvas canvas) {
         InputStream is = getResources().openRawResource(R.raw.points);
         BufferedReader reader = new BufferedReader(
@@ -139,15 +80,11 @@ public class FingerPathA extends View{
         String line ="";
         try {
             while((line = reader.readLine()) != null){
-                Log.d("FingerPath","Line: " + line);
-
                 String[] tokens = line.split(";");
                 PointXY pointXY = new PointXY();
                 pointXY.setX(Float.parseFloat(tokens[0]));
                 pointXY.setY(Float.parseFloat(tokens[1]));
                 pointsXY.add(pointXY);
-
-                Log.d("FingerPath","Just created: " + pointXY);
             }
         }catch (IOException e) {
             Log.wtf("FingerPath","Error reading data file" + line,e);
@@ -169,8 +106,6 @@ public class FingerPathA extends View{
 
         canvas.drawPath(mPath, mPaint);
         createSample(canvas);
-
-        //canvas.drawCircle(600, 200, 1, mPaint);
     }
 
     private void startTouch(float x, float y){
@@ -217,6 +152,7 @@ public class FingerPathA extends View{
             try {
                 FileOutputStream fos = new FileOutputStream(file);
             } catch (IOException e) {
+                Log.wtf("FingerPathA","Error saving as file: " + e);
                 e.printStackTrace();
             }
         }

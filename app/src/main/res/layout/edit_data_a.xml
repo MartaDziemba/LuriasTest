@@ -41,6 +41,8 @@
 
         <EditText
             android:hint="@string/editTextFirstName"
+            android:maxLines="1"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
@@ -70,6 +72,8 @@
 
         <EditText
             android:hint="@string/editTextLastName"
+            android:maxLines="1"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -101,6 +105,8 @@
 
         <EditText
             android:hint="@string/editTextAge"
+            android:maxLines="1"
+            android:inputType="numberDecimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -132,6 +138,8 @@
 
         <EditText
             android:hint="@string/editTextIDNumber"
+            android:maxLines="1"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -163,6 +171,8 @@
 
         <EditText
             android:hint="@string/editTextDescription"
+            android:maxLines="1"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -178,6 +188,25 @@
             android:textSize="20sp"
             android:id="@+id/editTextDescription"
             android:imeOptions="actionDone"/>
+
+            <Button
+                android:text="@string/buttonSave"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/buttonTest"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/mybutton"
+                android:layout_below="@id/editTextDescription"
+                android:fontFamily="sans-serif"
+                android:typeface="monospace"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:id="@+id/buttonSave"/>
 
         <Button
             android:text="@string/buttonTest"

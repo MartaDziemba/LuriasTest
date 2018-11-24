@@ -59,78 +59,19 @@ public class FingerPathB extends View{
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
-        //this.setBackground(getResources().getDrawable(R.drawable.background));
     }
 
     private void createSample(Canvas canvas) {
-        //fest duze
-//        canvas.drawLine(10, 250, 100, 250, mPaint);
-//        canvas.drawLine(100, 250, 100, 150, mPaint);
-//        canvas.drawLine(100, 150, 200, 150, mPaint);
-//        canvas.drawLine(200, 150, 200, 250, mPaint);
-//
-//        canvas.drawLine(200, 250, 300, 250, mPaint);
-//        canvas.drawLine(300, 250, 350, 150, mPaint);
-//        canvas.drawLine(350, 150, 400, 250, mPaint);
-//        canvas.drawLine(400, 250, 500, 250, mPaint);
-
-        //calkiem spoko
-//        canvas.drawLine(10, 400, 60, 400, mPaint);
-//        canvas.drawLine(60, 400, 60, 340, mPaint);
-//        canvas.drawLine(60, 340, 120, 340, mPaint);
-//        canvas.drawLine(120, 340, 120, 400, mPaint);
-
-        //dwa rzedy
-//        canvas.drawLine(10, 300, 60, 300, mPaint);
-//        canvas.drawLine(60, 300, 60, 240, mPaint);
-//        canvas.drawLine(60, 240, 120, 240, mPaint);
-//        canvas.drawLine(120, 240, 120, 300, mPaint);
-//
-//        canvas.drawLine(120, 300, 180, 300, mPaint);
-//        canvas.drawLine(180, 300, 210, 240, mPaint);
-//        canvas.drawLine(210, 240, 240, 300, mPaint);
-//        canvas.drawLine(240, 300, 300, 300, mPaint);
-//
-//        canvas.drawLine(10, 600, 60, 600, mPaint);
-//        canvas.drawLine(60, 600, 60, 540, mPaint);
-//        canvas.drawLine(60, 540, 120, 540, mPaint);
-//        canvas.drawLine(120, 540, 120, 600, mPaint);
-
-//
-//        canvas.drawLine(120, 600, 180, 600, mPaint);
-//        canvas.drawLine(180, 600, 210, 540, mPaint);
-//        canvas.drawLine(210, 540, 240, 600, mPaint);
-//        canvas.drawLine(240, 600, 300, 600, mPaint);
-
-        //srednie i sa super
         canvas.drawLine(10, 350, 10, 300, mPaint);
         canvas.drawLine(10, 300, 50, 300, mPaint);
         canvas.drawLine(50, 300, 50, 350, mPaint);
 
         canvas.drawLine(50, 350, 75, 300, mPaint);
         canvas.drawLine(75, 300, 100, 350, mPaint);
-
-        //male
-//        canvas.drawLine(10, 400, 40, 400, mPaint);
-//        canvas.drawLine(40, 400, 40, 360, mPaint);
-//        canvas.drawLine(40, 360, 80, 360, mPaint);
-//        canvas.drawLine(80, 360, 80, 400, mPaint);
-//
-//        canvas.drawLine(80, 400, 120, 400, mPaint);
-//        canvas.drawLine(120, 400, 140, 360, mPaint);
-//        canvas.drawLine(140, 360, 160, 400, mPaint);
-//        canvas.drawLine(160, 400, 200, 400, mPaint);
-
-//        readData(canvas);
-//        for(int i=0; i<pointsXY.size(); i++) {
-//            PointXY point = pointsXY.get(i);
-//            canvas.drawCircle(point.getX(), point.getY(), 1, mPaint);
-//            // Do something with the value
-//        }
-
     }
 
     private List<PointXY> pointsXY= new ArrayList<>();
+
     private void readData(Canvas canvas) {
         InputStream is = getResources().openRawResource(R.raw.points);
         BufferedReader reader = new BufferedReader(
@@ -218,6 +159,7 @@ public class FingerPathB extends View{
             try {
                 FileOutputStream fos = new FileOutputStream(file);
             } catch (IOException e) {
+                Log.wtf("FingerPathB","Error saving as file: " + e);
                 e.printStackTrace();
             }
         }

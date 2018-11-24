@@ -24,6 +24,7 @@
     <string name="textDescription">"Opis (dodatkowo)"</string>
     <string name="editTextDescription">"Wprowadź opis"</string>
 
+    <string name="buttonSave">"Zapisz dane"</string>
     <string name="buttonTest">"Przejdź do testu"</string>
 
     <string name="buttonBack">"Wróć"</string>

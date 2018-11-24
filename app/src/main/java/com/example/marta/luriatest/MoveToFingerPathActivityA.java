@@ -51,6 +51,8 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         myToolbar.inflateMenu(R.menu.dotsmenu);
+
+        openTutorialDialog();
     }
 
     public void clearCanvas(){
@@ -84,6 +86,9 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
             case R.id.menuButtonClear:
                 openAlertDialog();
                 break;
+            case R.id.menuButtonMore:
+                openTutorialDialog();
+                break;
         }
         return true;
     }
@@ -99,6 +104,20 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
                     }
                 });
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+    }
+
+    private void openTutorialDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
+        alertDialog.setTitle("");
+        alertDialog.setMessage("Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony.");
+        alertDialog.setIcon(R.drawable.tutorial);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
