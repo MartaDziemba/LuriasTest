@@ -2,6 +2,7 @@ package com.example.marta.luriatest;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -12,7 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
@@ -23,6 +27,8 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
 
     private static final String TAG = "";
     private FingerPathA fingerPath;
+    Dialog dialogTutorial;
+    Button buttonOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,16 +119,30 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     private void openTutorialDialog() {
-        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
-        alertDialog.setTitle("");
-        alertDialog.setMessage("Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony.");
-        alertDialog.setIcon(R.drawable.tutorial);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+//        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
+//        alertDialog.setTitle("");
+//        alertDialog.setMessage("Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony.");
+//        alertDialog.setIcon(R.drawable.tutorial);
+//        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//        alertDialog.show();
+        dialogTutorial = new Dialog(MoveToFingerPathActivityA.this);
+        dialogTutorial.setContentView(R.layout.alert_dialog);
+        dialogTutorial.setTitle("Help");
+        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
+        buttonOk.setEnabled(true);
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Let's get started.", Toast.LENGTH_SHORT).show();
+                dialogTutorial.dismiss();
+            }
+        });
+
+        dialogTutorial.show();
     }
 }

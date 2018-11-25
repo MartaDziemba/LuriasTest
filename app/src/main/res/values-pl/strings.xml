@@ -7,7 +7,7 @@
     <string name="buttonEditData">"Test C"</string>
 
     <string name="buttonClear">"Wyczyść"</string>
-    <string name="buttonMore">"Więcej"</string>
+    <string name="buttonMore">"Pomoc"</string>
 
     <string name="textFirstName">"Imię"</string>
     <string name="editTextFirstName">"Wprowadź imię"</string>
@@ -34,5 +34,7 @@
     <string name="alert">"Czy na pewno chcesz wyszyścić pole?"</string>
     <string name="clear">"Wyczyść"</string>
     <string name="cancel">"Anuluj"</string>
+
+    <string name="tutorialTitle">"Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony."</string>
 
 </resources>

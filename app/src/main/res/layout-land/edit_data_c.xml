@@ -184,7 +184,7 @@
 
             <Button
                 android:text="@string/buttonSave"
-                android:layout_width="140dp"
+                android:layout_width="@dimen/editdata_buttonSave"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"

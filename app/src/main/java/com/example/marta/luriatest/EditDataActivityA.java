@@ -140,8 +140,10 @@ public class EditDataActivityA extends AppCompatActivity implements TextWatcher 
 
                 Toast.makeText(this, "File saved!", Toast.LENGTH_SHORT).show();
             } catch (FileNotFoundException e) {
+                Toast.makeText(this, "Problem: " + e, Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             } catch (IOException e) {
+                Toast.makeText(this, "Problem: " + e, Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         } else {
