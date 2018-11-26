@@ -34,6 +34,6 @@
     <string name="clear">"Clear"</string>
     <string name="cancel">"Cancel"</string>
 
-    <string name="tutorialTitle">"Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony."</string>
+    <string name="tutorialTitle">"Look at the symbol below. Try to draw the same symbol 10 times starting on the left of the screen, between two marks."</string>
 
 </resources>

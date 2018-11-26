@@ -3,27 +3,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp">
+    android:padding="15dp">
 
     <TextView
         android:id="@+id/tutorialTitle"
-        android:layout_width="360dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif"
         android:text="@string/tutorialTitle"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
         android:typeface="serif"
         android:textAlignment="gravity"
-        android:padding="25dp"/>
+        android:padding="5dp"/>
 
     <ImageView
         android:id="@+id/tutorial"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:src="@drawable/tutorial"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/test_b"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tutorialTitle"
         android:padding="5dp" />
@@ -37,7 +37,6 @@
         android:layout_marginBottom="10dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="15dp"
-        android:layout_toStartOf="@id/buttonTest"
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/mybutton"
         android:layout_below="@id/tutorial"

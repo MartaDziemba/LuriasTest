@@ -119,17 +119,6 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     private void openTutorialDialog() {
-//        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
-//        alertDialog.setTitle("");
-//        alertDialog.setMessage("Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony.");
-//        alertDialog.setIcon(R.drawable.tutorial);
-//        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-//                new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.dismiss();
-//                    }
-//                });
-//        alertDialog.show();
         dialogTutorial = new Dialog(MoveToFingerPathActivityA.this);
         dialogTutorial.setContentView(R.layout.alert_dialog);
         dialogTutorial.setTitle("Help");
@@ -142,7 +131,6 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
                 dialogTutorial.dismiss();
             }
         });
-
         dialogTutorial.show();
     }
 }
