@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,17 +27,10 @@ import butterknife.OnClick;
 public class EditDataActivityA extends AppCompatActivity implements TextWatcher {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
+    Button buttonSave;
 
     @OnClick(R.id.buttonTest)
     void OnClickTest() {
-        //saveData();
-        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.buttonSave)
-    void OnClickSave() {
-        saveData();
         Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
         startActivity(intent);
     }
@@ -60,47 +54,6 @@ public class EditDataActivityA extends AppCompatActivity implements TextWatcher 
         editTextIDNumber.addTextChangedListener(this);
         editTextDescription.addTextChangedListener(this);
 
-        //Tutorial 2
-        editTextFirstName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                String editTextFirstNameString = editTextFirstName.getText().toString();
-                if(editTextFirstNameString==""){
-                   editTextFirstName.setError("Pole nie moze byc puste!");
-                 }
-            }
-        });
-
-        editTextLastName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                String editTextLastNameString = editTextLastName.getText().toString();
-                if(editTextLastNameString==""){
-                    editTextLastName.setError("Pole nie moze byc puste!");
-                }
-            }
-        });
-
-        editTextAge.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                String editTextAgeString = editTextAge.getText().toString();
-                if(editTextAgeString==""){
-                    editTextAge.setError("Pole nie moze byc puste!");
-                }
-            }
-        });
-
-        editTextIDNumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                String editTextIDNumberString = editTextIDNumber.getText().toString();
-                if(editTextIDNumberString==""){
-                    editTextIDNumber.setError("Pole nie moze byc puste!");
-                }
-            }
-        });
-
         findViewById(R.id.allRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -109,6 +62,45 @@ public class EditDataActivityA extends AppCompatActivity implements TextWatcher 
                 return true;
             }
         });
+
+        buttonSave = (Button) findViewById(R.id.buttonSave);
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (editTextFirstName.length() == 0){
+                    editTextFirstName.setError("Enter your name!");
+                }
+                if(editTextLastName.length()==0){
+                    editTextLastName.setError("Enter your last name!");
+                }
+                if(editTextAge.length()==0){
+                    editTextAge.setError("Enter your age!");
+                }
+                if(editTextIDNumber.length()==0){
+                    editTextIDNumber.setError("Enter your ID number!");
+                }
+
+
+                if (editTextFirstName.length() == 0){
+                    editTextFirstName.setError("Enter your name!");
+                }
+                if(editTextLastName.length()==0){
+                    editTextLastName.setError("Enter your last name!");
+                }
+                if(editTextAge.length()==0){
+                    editTextAge.setError("Enter your age!");
+                }
+                if(editTextIDNumber.length()==0){
+                    editTextIDNumber.setError("Enter your ID number!");
+                }
+                else {
+                    saveData();
+                    Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
 
     public void saveData() {

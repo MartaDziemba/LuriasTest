@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import butterknife.OnClick;
 public class EditDataActivityB extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
+    Button buttonSave;
 
     @OnClick(R.id.buttonTest)
     void OnClickEditData() {
@@ -49,6 +51,44 @@ public class EditDataActivityB extends AppCompatActivity {
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 return true;
+            }
+        });
+
+        buttonSave = (Button) findViewById(R.id.buttonSave);
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (editTextFirstName.length() == 0){
+                    editTextFirstName.setError("Enter your name!");
+                }
+                if(editTextLastName.length()==0){
+                    editTextLastName.setError("Enter your last name!");
+                }
+                if(editTextAge.length()==0){
+                    editTextAge.setError("Enter your age!");
+                }
+                if(editTextIDNumber.length()==0){
+                    editTextIDNumber.setError("Enter your ID number!");
+                }
+
+
+                if (editTextFirstName.length() == 0){
+                    editTextFirstName.setError("Enter your name!");
+                }
+                if(editTextLastName.length()==0){
+                    editTextLastName.setError("Enter your last name!");
+                }
+                if(editTextAge.length()==0){
+                    editTextAge.setError("Enter your age!");
+                }
+                if(editTextIDNumber.length()==0){
+                    editTextIDNumber.setError("Enter your ID number!");
+                }
+                else {
+                    saveData();
+                    Intent intent = new Intent(EditDataActivityB.this, MoveToFingerPathActivityB.class);
+                    startActivity(intent);
+                }
             }
         });
     }
