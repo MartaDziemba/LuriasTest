@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class EditDataActivityA extends AppCompatActivity implements TextWatcher {
+public class EditDataActivityA extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
     Button buttonSave;
@@ -46,13 +46,6 @@ public class EditDataActivityA extends AppCompatActivity implements TextWatcher 
         editTextAge = findViewById(R.id.editTextAge);
         editTextIDNumber = findViewById(R.id.editTextIDNumber);
         editTextDescription = findViewById(R.id.editTextDescription);
-
-        //Tutorial 1
-        editTextFirstName.addTextChangedListener(this);
-        editTextLastName.addTextChangedListener(this);
-        editTextAge.addTextChangedListener(this);
-        editTextIDNumber.addTextChangedListener(this);
-        editTextDescription.addTextChangedListener(this);
 
         findViewById(R.id.allRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -90,7 +83,7 @@ public class EditDataActivityA extends AppCompatActivity implements TextWatcher 
                 if(editTextAge.length()==0){
                     editTextAge.setError("Enter your age!");
                 }
-                if(editTextIDNumber.length()==0){
+                if(editTextIDNumber.length()!=11){
                     editTextIDNumber.setError("Enter your ID number!");
                 }
                 else {
@@ -105,9 +98,8 @@ public class EditDataActivityA extends AppCompatActivity implements TextWatcher 
 
     public void saveData() {
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy-hh-mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
         String fileName = sdf.format(date) + ".txt";
-        //String fileName = "DaneOsobowe.txt";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), fileName);
         try {
@@ -140,37 +132,6 @@ public class EditDataActivityA extends AppCompatActivity implements TextWatcher 
             }
         } else {
             Toast.makeText(this, "File not saved!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
-
-    @SuppressLint("ShowToast")
-    @Override
-    public void afterTextChanged(Editable editable) {
-        String editTextFirstNameString = editTextFirstName.getText().toString();
-        if(editTextFirstNameString==""){
-            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
-        }
-        String editTextLastNameString = editTextLastName.getText().toString();
-        if(editTextLastNameString==""){
-            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
-        }
-        String editTextAgeString = editTextAge.getText().toString();
-        if(editTextAgeString==""){
-            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
-        }
-        String editTextIDNumberString = editTextIDNumber.getText().toString();
-        if(editTextIDNumberString==""){
-            Toast.makeText(this,"Wpisz imie.",Toast.LENGTH_SHORT);
         }
     }
 }
