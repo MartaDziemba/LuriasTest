@@ -127,6 +127,11 @@ public class FingerPathC extends View{
 
     public void clearCanvas(){
         mPath.reset();
+        try {
+            FileWriter writer = new FileWriter(file,false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         invalidate();
     }
 

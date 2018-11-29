@@ -66,7 +66,7 @@ public class EditDataActivityA extends AppCompatActivity {
                 Matcher msFN = psFN.matcher(editTextFirstName.getText().toString());
                 boolean bsFN = msFN.matches();
 
-                Pattern psLN = Pattern.compile("^[a-zA-Z ]+$");
+                Pattern psLN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
                 Matcher msLN = psLN.matcher(editTextLastName.getText().toString());
                 boolean bsLN = msLN.matches();
 
@@ -80,13 +80,13 @@ public class EditDataActivityA extends AppCompatActivity {
                 else if(editTextFirstName.length() == 0){
                     editTextFirstName.setError("Enter your name!");
                 }
-                else if(bsFN==false) {
+                else if(!bsFN) {
                     editTextFirstName.setError("Your name should consist of letters, not numbers!");
                 }
                 else if(editTextLastName.length()==0){
                     editTextLastName.setError("Enter your last name!");
                 }
-                else if(bsLN==false) {
+                else if(!bsLN) {
                     editTextLastName.setError("Your name should consist of letters, not numbers!");
                 }
                 else if(editTextAge.length()==0){
