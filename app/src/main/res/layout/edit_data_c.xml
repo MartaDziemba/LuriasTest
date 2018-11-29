@@ -41,6 +41,9 @@
 
             <EditText
                 android:hint="@string/editTextFirstName"
+                android:maxLines="1"
+                android:lines="1"
+                android:inputType="textCapSentences"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
@@ -70,6 +73,9 @@
 
             <EditText
                 android:hint="@string/editTextLastName"
+                android:maxLines="1"
+                android:lines="1"
+                android:inputType="textCapSentences"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -101,6 +107,10 @@
 
             <EditText
                 android:hint="@string/editTextAge"
+                android:maxLines="1"
+                android:lines="1"
+                android:inputType="number"
+                android:maxLength="3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -132,6 +142,9 @@
 
             <EditText
                 android:hint="@string/editTextIDNumber"
+                android:maxLines="1"
+                android:lines="1"
+                android:inputType="textCapCharacters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -163,6 +176,7 @@
 
             <EditText
                 android:hint="@string/editTextDescription"
+                android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

@@ -35,5 +35,7 @@
     <string name="cancel">"Cancel"</string>
 
     <string name="tutorialTitle">"Look at the symbol below. Try to draw the same symbol 10 times starting on the left of the screen, between two marks."</string>
+    <string name="helpBTitle">"Look at the symbol below. Try to draw the same symbol 10 times starting on the left of the screen. Start where the symbol on the screen ends."</string>
+    <string name="helpCTitle">"Try to connect the dots on the screen, to make it looks like the symbol below."</string>
 
 </resources>

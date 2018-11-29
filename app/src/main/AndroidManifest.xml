@@ -35,8 +35,6 @@
             android:screenOrientation="landscape"></activity>
         <activity android:name=".EditDataActivityC"
             android:screenOrientation="landscape"></activity>
-        <activity android:name=".EditExistingDataActivity"
-            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.example.marta.luriatest;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -9,27 +10,24 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 public class MoveToFingerPathActivityC extends AppCompatActivity {
 
     private static final String TAG = "";
     private FingerPathC fingerPath;
+    Dialog dialogTutorial;
+    Button buttonOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +88,9 @@ public class MoveToFingerPathActivityC extends AppCompatActivity {
         switch (id){
             case R.id.menuButtonClear:
                 openAlertDialog();
-                Toast.makeText(this,"Cleared.",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menuButtonMore:
+                openTutorialDialog();
                 break;
         }
         return true;
@@ -113,5 +113,20 @@ public class MoveToFingerPathActivityC extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+    private void openTutorialDialog() {
+        dialogTutorial = new Dialog(MoveToFingerPathActivityC.this);
+        dialogTutorial.setContentView(R.layout.tutorial_c);
+        dialogTutorial.setTitle("Help");
+        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
+        buttonOk.setEnabled(true);
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogTutorial.dismiss();
+            }
+        });
+        dialogTutorial.show();
     }
 }

@@ -2,6 +2,7 @@ package com.example.marta.luriatest;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -12,7 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
@@ -23,6 +26,8 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
 
     private static final String TAG = "";
     private FingerPathB fingerPath;
+    Dialog dialogTutorial;
+    Button buttonOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +89,9 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
             case R.id.menuButtonClear:
                 openAlertDialog();
                 break;
+            case R.id.menuButtonMore:
+                openTutorialDialog();
+                break;
         }
         return true;
     }
@@ -105,5 +113,20 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+    private void openTutorialDialog() {
+        dialogTutorial = new Dialog(MoveToFingerPathActivityB.this);
+        dialogTutorial.setContentView(R.layout.tutorial_b);
+        dialogTutorial.setTitle("Help");
+        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
+        buttonOk.setEnabled(true);
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogTutorial.dismiss();
+            }
+        });
+        dialogTutorial.show();
     }
 }

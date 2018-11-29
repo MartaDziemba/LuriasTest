@@ -127,7 +127,6 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Let's get started.", Toast.LENGTH_SHORT).show();
                 dialogTutorial.dismiss();
             }
         });

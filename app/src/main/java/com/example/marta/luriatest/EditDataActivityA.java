@@ -20,6 +20,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -60,30 +62,37 @@ public class EditDataActivityA extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (editTextFirstName.length() == 0){
+                Pattern psFN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
+                Matcher msFN = psFN.matcher(editTextFirstName.getText().toString());
+                boolean bsFN = msFN.matches();
+
+                Pattern psLN = Pattern.compile("^[a-zA-Z ]+$");
+                Matcher msLN = psLN.matcher(editTextLastName.getText().toString());
+                boolean bsLN = msLN.matches();
+
+                if(editTextFirstName.length() == 0 & editTextFirstName.length() == 0 & editTextLastName.length()==0 & editTextAge.length()==0 & editTextIDNumber.length()==0){
                     editTextFirstName.setError("Enter your name!");
-                }
-                if(editTextLastName.length()==0){
+                    editTextFirstName.setError("Enter your name!");
                     editTextLastName.setError("Enter your last name!");
-                }
-                if(editTextAge.length()==0){
                     editTextAge.setError("Enter your age!");
-                }
-                if(editTextIDNumber.length()==0){
                     editTextIDNumber.setError("Enter your ID number!");
                 }
-
-
-                if (editTextFirstName.length() == 0){
+                else if(editTextFirstName.length() == 0){
                     editTextFirstName.setError("Enter your name!");
                 }
-                if(editTextLastName.length()==0){
+                else if(bsFN==false) {
+                    editTextFirstName.setError("Your name should consist of letters, not numbers!");
+                }
+                else if(editTextLastName.length()==0){
                     editTextLastName.setError("Enter your last name!");
                 }
-                if(editTextAge.length()==0){
+                else if(bsLN==false) {
+                    editTextLastName.setError("Your name should consist of letters, not numbers!");
+                }
+                else if(editTextAge.length()==0){
                     editTextAge.setError("Enter your age!");
                 }
-                if(editTextIDNumber.length()!=11){
+                else if(editTextIDNumber.length()==0){
                     editTextIDNumber.setError("Enter your ID number!");
                 }
                 else {
