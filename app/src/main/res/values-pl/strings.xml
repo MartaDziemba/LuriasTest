@@ -37,6 +37,6 @@
 
     <string name="tutorialTitle">"Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony."</string>
     <string name="helpBTitle">"Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, z lewej strony. Zacznij w miejscu, gdzie kończy się widoczny na ekranie symbol."</string>
-    <string name="helpCTitle">"Narysuj wzór, starając się łączyć wszystkie kropki, tak, by wyglądał jak symbol poniżej."</string>
+    <string name="helpCTitle">"Narysuj poniższy wzór tak, by wyglądał jak symbol poniżej, starając się łączyć wszystkie kropki."</string>
 
 </resources>
