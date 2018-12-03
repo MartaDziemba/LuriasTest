@@ -106,7 +106,7 @@ public class FingerPathC extends View{
         super.onDraw(canvas);
 
         canvas.drawPath(mPath, mPaint);
-        //createSample(canvas);
+        createSample(canvas);
     }
 
     private void startTouch(float x, float y){
