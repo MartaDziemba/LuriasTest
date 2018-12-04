@@ -103,7 +103,7 @@ public class FingerPathC extends View{
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+        //super.onDraw(canvas);
 
         canvas.drawPath(mPath, mPaint);
         createSample(canvas);
@@ -176,6 +176,7 @@ public class FingerPathC extends View{
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
+                saveAsFile(".PEN_DOWN");
                 saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", secondsStart, millisStart));
                 invalidate();
                 break;
@@ -190,7 +191,7 @@ public class FingerPathC extends View{
             case MotionEvent.ACTION_UP:
                 upTouch();
                 //koniec zapisu
-                saveAsFile("ACTION UP - PRZERWANIE PISANIA.");
+                saveAsFile(".PEN_UP");
                 invalidate();
                 break;
         }

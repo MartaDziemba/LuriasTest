@@ -56,6 +56,8 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         myToolbar.inflateMenu(R.menu.dotsmenu);
+
+        openTutorialDialog();
     }
 
     public void clearCanvas(){
