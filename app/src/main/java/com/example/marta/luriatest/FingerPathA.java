@@ -101,6 +101,7 @@ public class FingerPathA extends View{
         super.onSizeChanged(w, h, oldw, oldh);
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
+        saveAsFile("widthX=" + mBitmap.getWidth() + "\nheightY=" + mBitmap.getHeight() + "\nradius=652,799988");
         //createSample(mCanvas);
     }
 
@@ -132,11 +133,12 @@ public class FingerPathA extends View{
 
     public void clearCanvas(){
         mPath.reset();
-        try {
-            FileWriter writer = new FileWriter(file,false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            FileWriter writer = new FileWriter(file,false);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        saveAsFile(".COMMENT CLEAR");
         invalidate();
     }
 
@@ -181,7 +183,7 @@ public class FingerPathA extends View{
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
-                saveAsFile(".PEN_DOWN");
+                saveAsFile('\n' + ".PEN_DOWN");
                 saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", secondsStart, millisStart));
                 invalidate();
                 break;
@@ -205,5 +207,14 @@ public class FingerPathA extends View{
 
     public void setFile(File file) {
         this.file = file;
+        saveAsFile(".VERSION 1.0 0\n" +
+                ".COORD X Y T\n" +
+                ".HIERARCHY CHARACTER\n" +
+                ".DATA_SOURCE minicog 20160802_105856\n" +
+                ".X_POINTS_PER_INCH 300000\n" +
+                ".Y_POINTS_PER_INCH 300000\n" +
+                ".COMMENT\n" +
+                " widthX=");
     }
+    //+ mBitmap.getWidth() + "heightY=" + mBitmap.getHeight() + "radius=652,799988"
 }
