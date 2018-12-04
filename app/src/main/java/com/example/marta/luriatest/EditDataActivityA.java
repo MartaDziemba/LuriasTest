@@ -29,10 +29,10 @@ import butterknife.OnClick;
 public class EditDataActivityA extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
-    Button buttonSave;
 
     @OnClick(R.id.buttonTest)
     void OnClickTest() {
+        saveData();
         Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
         startActivity(intent);
     }
@@ -58,51 +58,50 @@ public class EditDataActivityA extends AppCompatActivity {
             }
         });
 
-        buttonSave = (Button) findViewById(R.id.buttonSave);
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Pattern psFN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
-                Matcher msFN = psFN.matcher(editTextFirstName.getText().toString());
-                boolean bsFN = msFN.matches();
-
-                Pattern psLN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
-                Matcher msLN = psLN.matcher(editTextLastName.getText().toString());
-                boolean bsLN = msLN.matches();
-
-                if(editTextFirstName.length() == 0 & editTextFirstName.length() == 0 & editTextLastName.length()==0 & editTextAge.length()==0 & editTextIDNumber.length()==0){
-                    editTextFirstName.setError("Enter your name!");
-                    editTextFirstName.setError("Enter your name!");
-                    editTextLastName.setError("Enter your last name!");
-                    editTextAge.setError("Enter your age!");
-                    editTextIDNumber.setError("Enter your ID number!");
-                }
-                else if(editTextFirstName.length() == 0){
-                    editTextFirstName.setError("Enter your name!");
-                }
-                else if(!bsFN) {
-                    editTextFirstName.setError("Your name should consist of letters, not numbers!");
-                }
-                else if(editTextLastName.length()==0){
-                    editTextLastName.setError("Enter your last name!");
-                }
-                else if(!bsLN) {
-                    editTextLastName.setError("Your name should consist of letters, not numbers!");
-                }
-                else if(editTextAge.length()==0){
-                    editTextAge.setError("Enter your age!");
-                }
-                else if(editTextIDNumber.length()==0){
-                    editTextIDNumber.setError("Enter your ID number!");
-                }
-                else {
-                    saveData();
-                    Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
-                    startActivity(intent);
-                }
-            }
-        });
-
+//        buttonSave = (Button) findViewById(R.id.buttonSave);
+//        buttonSave.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Pattern psFN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
+//                Matcher msFN = psFN.matcher(editTextFirstName.getText().toString());
+//                boolean bsFN = msFN.matches();
+//
+//                Pattern psLN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
+//                Matcher msLN = psLN.matcher(editTextLastName.getText().toString());
+//                boolean bsLN = msLN.matches();
+//
+//                if(editTextFirstName.length() == 0 & editTextFirstName.length() == 0 & editTextLastName.length()==0 & editTextAge.length()==0 & editTextIDNumber.length()==0){
+//                    editTextFirstName.setError("Enter your name!");
+//                    editTextFirstName.setError("Enter your name!");
+//                    editTextLastName.setError("Enter your last name!");
+//                    editTextAge.setError("Enter your age!");
+//                    editTextIDNumber.setError("Enter your ID number!");
+//                }
+//                else if(editTextFirstName.length() == 0){
+//                    editTextFirstName.setError("Enter your name!");
+//                }
+//                else if(!bsFN) {
+//                    editTextFirstName.setError("Your name should consist of letters, not numbers!");
+//                }
+//                else if(editTextLastName.length()==0){
+//                    editTextLastName.setError("Enter your last name!");
+//                }
+//                else if(!bsLN) {
+//                    editTextLastName.setError("Your name should consist of letters, not numbers!");
+//                }
+//                else if(editTextAge.length()==0){
+//                    editTextAge.setError("Enter your age!");
+//                }
+//                else if(editTextIDNumber.length()==0){
+//                    editTextIDNumber.setError("Enter your ID number!");
+//                }
+//                else {
+//                    saveData();
+//                    Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        });
     }
 
     public void saveData() {
@@ -120,14 +119,19 @@ public class EditDataActivityA extends AppCompatActivity {
 
             try {
                 FileOutputStream fos = new FileOutputStream(file);
+                fos.write("First name: ".getBytes());
                 fos.write(editTextFirstName.getText().toString().getBytes());
                 fos.write('\n');
+                fos.write("Last name: ".getBytes());
                 fos.write(editTextLastName.getText().toString().getBytes());
                 fos.write('\n');
+                fos.write("Age: ".getBytes());
                 fos.write(editTextAge.getText().toString().getBytes());
                 fos.write('\n');
+                fos.write("ID number: ".getBytes());
                 fos.write(editTextIDNumber.getText().toString().getBytes());
                 fos.write('\n');
+                fos.write("Description: ".getBytes());
                 fos.write(editTextDescription.getText().toString().getBytes());
                 fos.close();
 

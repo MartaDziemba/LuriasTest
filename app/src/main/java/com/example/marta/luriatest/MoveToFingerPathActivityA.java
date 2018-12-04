@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,15 +21,19 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+
+import butterknife.OnClick;
 
 public class MoveToFingerPathActivityA extends AppCompatActivity {
 
     private static final String TAG = "";
     private FingerPathA fingerPath;
     Dialog dialogTutorial;
-    Button buttonOk;
+    Button buttonOk, buttonEnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,10 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         myToolbar.inflateMenu(R.menu.dotsmenu);
 
         openTutorialDialog();
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
     public void clearCanvas(){
@@ -122,6 +131,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         dialogTutorial = new Dialog(MoveToFingerPathActivityA.this);
         dialogTutorial.setContentView(R.layout.alert_dialog);
         dialogTutorial.setTitle("Help");
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
         buttonOk.setEnabled(true);
         buttonOk.setOnClickListener(new View.OnClickListener() {
@@ -131,5 +141,24 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
             }
         });
         dialogTutorial.show();
+    }
+
+    private void openAlertBackDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
+        alertDialog.setTitle("Warning");
+        alertDialog.setMessage("Are you sure you want to go back?");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Clear",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        clearCanvas();
+                    }
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 }

@@ -8,6 +8,7 @@
 
     <string name="buttonClear">"Wyczyść"</string>
     <string name="buttonMore">"Pomoc"</string>
+    <string name="buttonEnd">"Zakończ"</string>
 
     <string name="textFirstName">"Imię"</string>
     <string name="editTextFirstName">"Wprowadź imię"</string>
@@ -38,5 +39,11 @@
     <string name="tutorialTitle">"Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, między dwoma znacznikami, z lewej strony."</string>
     <string name="helpBTitle">"Narysuj 10 razy symbol taki jak poniżej. Umieść go na środku ekranu, z lewej strony. Zacznij w miejscu, gdzie kończy się widoczny na ekranie symbol."</string>
     <string name="helpCTitle">"Narysuj poniższy wzór tak, by wyglądał jak symbol poniżej, starając się łączyć wszystkie kropki."</string>
+
+    <string name="firstName">"Imię: "</string>
+    <string name="lastName">"Nazwisko: "</string>
+    <string name="age">"Wiek: "</string>
+    <string name="ID">"PESEL: "</string>
+    <string name="description">"Opis: "</string>
 
 </resources>

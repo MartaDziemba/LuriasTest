@@ -7,6 +7,7 @@
 
     <string name="buttonClear">"Clear"</string>
     <string name="buttonMore">"Help"</string>
+    <string name="buttonEnd">"End test"</string>
 
     <string name="textFirstName">"First name"</string>
     <string name="editTextFirstName">"Enter your first name"</string>
@@ -37,5 +38,11 @@
     <string name="tutorialTitle">"Look at the symbol below. Try to draw the same symbol 10 times starting on the left of the screen, between two marks."</string>
     <string name="helpBTitle">"Look at the symbol below. Try to draw the same symbol 10 times starting on the left of the screen. Start where the symbol on the screen ends."</string>
     <string name="helpCTitle">"Try to connect the dots on the screen, to make it looks like the symbol below."</string>
+
+    <string name="firstName">"First name: "</string>
+    <string name="lastName">"Last name: "</string>
+    <string name="age">"Age: "</string>
+    <string name="ID">"ID number: "</string>
+    <string name="description">"Description: "</string>
 
 </resources>

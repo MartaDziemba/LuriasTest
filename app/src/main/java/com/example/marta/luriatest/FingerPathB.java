@@ -182,6 +182,7 @@ public class FingerPathB extends View{
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
+                saveAsFile(".PEN_DOWN");
                 saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", secondsStart, millisStart));
                 invalidate();
                 break;
@@ -196,7 +197,7 @@ public class FingerPathB extends View{
             case MotionEvent.ACTION_UP:
                 upTouch();
                 //koniec zapisu
-                saveAsFile("ACTION UP - PRZERWANIE PISANIA.");
+                saveAsFile(".PEN_UP");
                 invalidate();
                 break;
         }
