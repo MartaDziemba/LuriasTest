@@ -101,7 +101,7 @@ public class FingerPathA extends View{
         super.onSizeChanged(w, h, oldw, oldh);
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-        saveAsFile("widthX=" + mBitmap.getWidth() + "\nheightY=" + mBitmap.getHeight() + "\nradius=652,799988");
+        saveAsFile("widthX=" + mBitmap.getWidth() + "\nheightY=" + mBitmap.getHeight() + "\nradius=652.799988");
         //createSample(mCanvas);
     }
 
@@ -213,8 +213,7 @@ public class FingerPathA extends View{
                 ".DATA_SOURCE minicog 20160802_105856\n" +
                 ".X_POINTS_PER_INCH 300000\n" +
                 ".Y_POINTS_PER_INCH 300000\n" +
-                ".COMMENT\n" +
-                " widthX=");
+                ".COMMENT\n");
     }
     //+ mBitmap.getWidth() + "heightY=" + mBitmap.getHeight() + "radius=652,799988"
 }
