@@ -57,51 +57,6 @@ public class EditDataActivityA extends AppCompatActivity {
                 return true;
             }
         });
-
-//        buttonSave = (Button) findViewById(R.id.buttonSave);
-//        buttonSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Pattern psFN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
-//                Matcher msFN = psFN.matcher(editTextFirstName.getText().toString());
-//                boolean bsFN = msFN.matches();
-//
-//                Pattern psLN = Pattern.compile("^[a-zA-Z ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+");
-//                Matcher msLN = psLN.matcher(editTextLastName.getText().toString());
-//                boolean bsLN = msLN.matches();
-//
-//                if(editTextFirstName.length() == 0 & editTextFirstName.length() == 0 & editTextLastName.length()==0 & editTextAge.length()==0 & editTextIDNumber.length()==0){
-//                    editTextFirstName.setError("Enter your name!");
-//                    editTextFirstName.setError("Enter your name!");
-//                    editTextLastName.setError("Enter your last name!");
-//                    editTextAge.setError("Enter your age!");
-//                    editTextIDNumber.setError("Enter your ID number!");
-//                }
-//                else if(editTextFirstName.length() == 0){
-//                    editTextFirstName.setError("Enter your name!");
-//                }
-//                else if(!bsFN) {
-//                    editTextFirstName.setError("Your name should consist of letters, not numbers!");
-//                }
-//                else if(editTextLastName.length()==0){
-//                    editTextLastName.setError("Enter your last name!");
-//                }
-//                else if(!bsLN) {
-//                    editTextLastName.setError("Your name should consist of letters, not numbers!");
-//                }
-//                else if(editTextAge.length()==0){
-//                    editTextAge.setError("Enter your age!");
-//                }
-//                else if(editTextIDNumber.length()==0){
-//                    editTextIDNumber.setError("Enter your ID number!");
-//                }
-//                else {
-//                    saveData();
-//                    Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
     }
 
     public void saveData() {

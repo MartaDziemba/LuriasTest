@@ -59,7 +59,7 @@ public class FingerPathC extends View{
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeWidth(4f);
-        //this.setBackground(getResources().getDrawable(R.drawable.background));
+        this.setBackground(getResources().getDrawable(R.drawable.test_c));
     }
 
     private void createSample(Canvas canvas) {
@@ -102,11 +102,23 @@ public class FingerPathC extends View{
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
-        //super.onDraw(canvas);
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        //todo
+        //createSample(mCanvas);
+    }
 
-        canvas.drawPath(mPath, mPaint);
-        createSample(canvas);
+    boolean firstDraw = true;
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        //if (firstDraw){
+            //todo
+          //  createSample(canvas);
+          //  firstDraw = false;
+        //}{
+            canvas.drawPath(mPath, mPaint);
+        //}
     }
 
     private void startTouch(float x, float y){

@@ -106,13 +106,23 @@ public class FingerPathA extends View{
     }
 
     @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        //todo
+        //createSample(mCanvas);
+    }
+
+    boolean firstDraw = true;
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-        canvas.drawPath(mPath, mPaint);
-        createSample(canvas);
-
-        //canvas.drawCircle(600, 200, 1, mPaint);
+        if (firstDraw){
+            //todo
+            createSample(canvas);
+            firstDraw = false;
+        }{
+            canvas.drawPath(mPath, mPaint);
+        }
     }
 
     private void startTouch(float x, float y){
@@ -133,11 +143,6 @@ public class FingerPathA extends View{
 
     public void clearCanvas(){
         mPath.reset();
-//        try {
-//            FileWriter writer = new FileWriter(file,false);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         saveAsFile(".COMMENT CLEAR");
         invalidate();
     }
@@ -184,7 +189,7 @@ public class FingerPathA extends View{
                 startTouch(x,y);
                 //otwarcie pliku
                 saveAsFile('\n' + ".PEN_DOWN");
-                saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", secondsStart, millisStart));
+                saveAsFile(x + "," + y + "," +  secondsStart + "/" + millisStart + "");
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -215,5 +220,4 @@ public class FingerPathA extends View{
                 ".Y_POINTS_PER_INCH 300000\n" +
                 ".COMMENT\n");
     }
-    //+ mBitmap.getWidth() + "heightY=" + mBitmap.getHeight() + "radius=652,799988"
 }
