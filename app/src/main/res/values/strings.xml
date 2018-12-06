@@ -45,4 +45,7 @@
     <string name="ID">"ID number: "</string>
     <string name="description">"Description: "</string>
 
+    <string name="textTime">"Date:"</string>
+    <string name="stringDate">"date"</string>
+
 </resources>

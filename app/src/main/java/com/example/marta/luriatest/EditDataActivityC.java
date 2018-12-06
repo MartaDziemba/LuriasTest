@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -26,6 +28,7 @@ import butterknife.OnClick;
 public class EditDataActivityC extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
+    TextView stringDate = (TextView) findViewById(R.id.stringDate);
 
     @OnClick(R.id.buttonTest)
     void OnClickEditData() {
@@ -44,7 +47,8 @@ public class EditDataActivityC extends AppCompatActivity {
         editTextLastName = findViewById(R.id.editTextLastName);
         editTextAge = findViewById(R.id.editTextAge);
         editTextIDNumber = findViewById(R.id.editTextIDNumber);
-        editTextDescription = findViewById(R.id.editTextDescription);
+
+        stringDate.setText(DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_12HOUR));
 
         findViewById(R.id.allRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
             @Override

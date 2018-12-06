@@ -30,6 +30,29 @@
             android:id="@+id/relativeLayout">
 
             <TextView
+                android:id="@+id/textTime"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/stringDate"
+                android:fontFamily="sans-serif"
+                android:text="@string/textTime"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:id="@+id/stringDate"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/textTime"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:typeface="monospace"/>
+
+            <TextView
                 android:id="@+id/textFirstName"
                 android:layout_width="@dimen/editdata_textWidth"
                 android:layout_height="wrap_content"
@@ -208,25 +231,6 @@
                 android:textSize="20sp"
                 android:typeface="monospace"
                 android:imeOptions="actionDone"/>
-
-            <!--<Button-->
-                <!--android:text="@string/buttonSave"-->
-                <!--android:layout_width="@dimen/editdata_buttonSave"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_centerHorizontal="true"-->
-                <!--android:layout_alignParentBottom="true"-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--android:layout_marginTop="25dp"-->
-                <!--android:layout_marginEnd="15dp"-->
-                <!--android:layout_toStartOf="@id/buttonTest"-->
-                <!--android:textColor="@color/colorPrimaryDark"-->
-                <!--android:background="@drawable/mybutton"-->
-                <!--android:layout_below="@id/editTextDescription"-->
-                <!--android:fontFamily="sans-serif"-->
-                <!--android:typeface="monospace"-->
-                <!--android:textAllCaps="false"-->
-                <!--android:textSize="20sp"-->
-                <!--android:id="@+id/buttonSave"/>-->
 
             <Button
                 android:id="@+id/buttonTest"

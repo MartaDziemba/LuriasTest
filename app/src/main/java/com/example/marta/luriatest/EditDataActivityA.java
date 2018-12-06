@@ -7,12 +7,14 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -49,6 +51,9 @@ public class EditDataActivityA extends AppCompatActivity {
         editTextIDNumber = findViewById(R.id.editTextIDNumber);
         editTextDescription = findViewById(R.id.editTextDescription);
 
+        TextView stringDate = (TextView) findViewById(R.id.stringDate);
+        stringDate.setText(DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_12HOUR));
+        //stringDate.setText(SimpleDateFormat("yyyy-MM-dd-hh-mm"));
         findViewById(R.id.allRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
