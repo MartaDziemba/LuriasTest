@@ -34,7 +34,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     private static final String TAG = "";
     private FingerPathA fingerPath;
     Dialog dialogTutorial;
-    Button buttonOk, buttonEnd;
+    Button buttonOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,11 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+    }
+
+    @OnClick(R.id.buttonEnd)
+    public void OnClickButtonNewTest(){
+        openAlertDialog();
     }
 
     public void clearCanvas(){
@@ -147,11 +152,12 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     private void openAlertBackDialog() {
         AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
         alertDialog.setTitle("Warning");
-        alertDialog.setMessage("Are you sure you want to go back?");
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Clear",
+        alertDialog.setMessage("Are you sure you want to finish?");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Finish",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        clearCanvas();
+                        Intent intent = new Intent(MoveToFingerPathActivityA.this, EditDataActivityA.class);
+                        startActivity(intent);
                     }
                 });
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",

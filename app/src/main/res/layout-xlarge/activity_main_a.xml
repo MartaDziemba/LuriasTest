@@ -28,30 +28,17 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/canvas"/>
 
-    <!--<Button-->
-        <!--android:text="@string/buttonEnd"-->
-        <!--android:layout_width="120dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_marginBottom="5dp"-->
-        <!--android:layout_marginStart="5dp"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:background="@drawable/buttoncanvas"-->
-        <!--android:textColor="@color/buttonTextCanvas"-->
-        <!--android:id="@+id/buttonEnd"/>-->
-
-    <!--<Button-->
-        <!--android:text="@string/buttonMore"-->
-        <!--android:layout_width="120dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_marginBottom="5dp"-->
-        <!--android:layout_marginEnd="5dp"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:background="@drawable/buttoncanvas"-->
-        <!--android:textColor="@color/buttonTextCanvas"-->
-        <!--android:id="@+id/buttonMore"/>-->
+    <Button
+        android:text="@string/buttonEnd"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/buttoncanvas"
+        android:textColor="@color/buttonTextCanvas"
+        android:id="@+id/buttonEnd"/>
 
 </RelativeLayout>

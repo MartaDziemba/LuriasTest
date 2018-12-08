@@ -52,8 +52,8 @@ public class EditDataActivityA extends AppCompatActivity {
         editTextDescription = findViewById(R.id.editTextDescription);
 
         TextView stringDate = (TextView) findViewById(R.id.stringDate);
-        stringDate.setText(DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_12HOUR));
-        //stringDate.setText(SimpleDateFormat("yyyy-MM-dd-hh-mm"));
+        stringDate.setText(DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_12HOUR));
+
         findViewById(R.id.allRelativeLayout).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

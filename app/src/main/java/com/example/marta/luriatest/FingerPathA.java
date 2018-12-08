@@ -102,27 +102,13 @@ public class FingerPathA extends View{
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
         saveAsFile("widthX=" + mBitmap.getWidth() + "\nheightY=" + mBitmap.getHeight() + "\nradius=652.799988");
-        //createSample(mCanvas);
     }
 
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        //todo
-        //createSample(mCanvas);
-    }
-
-    boolean firstDraw = true;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (firstDraw){
-            //todo
-            createSample(canvas);
-            firstDraw = false;
-        }{
-            canvas.drawPath(mPath, mPaint);
-        }
+        createSample(canvas);
+        canvas.drawPath(mPath, mPaint);
     }
 
     private void startTouch(float x, float y){
