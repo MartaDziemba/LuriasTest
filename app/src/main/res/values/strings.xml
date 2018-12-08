@@ -7,7 +7,7 @@
 
     <string name="buttonClear">"Clear"</string>
     <string name="buttonMore">"Help"</string>
-    <string name="buttonEnd">"End test"</string>
+    <string name="buttonEnd">"Finish test"</string>
 
     <string name="textFirstName">"First name"</string>
     <string name="editTextFirstName">"Enter your first name"</string>
@@ -46,6 +46,5 @@
     <string name="description">"Description: "</string>
 
     <string name="textTime">"Date:"</string>
-    <string name="stringDate">"date"</string>
 
 </resources>

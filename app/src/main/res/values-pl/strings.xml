@@ -46,7 +46,6 @@
     <string name="ID">"PESEL: "</string>
     <string name="description">"Opis: "</string>
 
-    <string name="textTime">"Data: "</string>
-    <string name="stringDate">"data"</string>
+    <string name="textTime">"Data:"</string>
 
 </resources>

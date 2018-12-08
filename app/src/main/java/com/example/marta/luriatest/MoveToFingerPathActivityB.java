@@ -34,6 +34,7 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_b);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        buttonEndOnClick();
 
         fingerPath = (FingerPathB) findViewById(R.id.canvas);
         Long date = System.currentTimeMillis();
@@ -58,6 +59,19 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
         myToolbar.inflateMenu(R.menu.dotsmenu);
 
         openTutorialDialog();
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
+
+    private void buttonEndOnClick(){
+        Button buttonEnd = findViewById(R.id.buttonEnd);
+        buttonEnd.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openAlertBackDialog();
+            }
+        });
     }
 
     public void clearCanvas(){
@@ -130,5 +144,24 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
             }
         });
         dialogTutorial.show();
+    }
+
+    private void openAlertBackDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityB.this).create();
+        alertDialog.setTitle("Warning");
+        alertDialog.setMessage("Are you sure you want to finish?");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Finish",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 }

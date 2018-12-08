@@ -35,11 +35,13 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     private FingerPathA fingerPath;
     Dialog dialogTutorial;
     Button buttonOk;
+    //Button buttonEnd = findViewById(R.id.buttonEnd);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_a);
+        buttonEndOnClick();
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         fingerPath = (FingerPathA) findViewById(R.id.canvas);
@@ -71,9 +73,13 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     public void onBackPressed() {
     }
 
-    @OnClick(R.id.buttonEnd)
-    public void OnClickButtonNewTest(){
-        openAlertDialog();
+    private void buttonEndOnClick(){
+        Button buttonEnd = findViewById(R.id.buttonEnd);
+        buttonEnd.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openAlertBackDialog();
+            }
+        });
     }
 
     public void clearCanvas(){
@@ -156,8 +162,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Finish",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MoveToFingerPathActivityA.this, EditDataActivityA.class);
-                        startActivity(intent);
+                        finish();
                     }
                 });
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",

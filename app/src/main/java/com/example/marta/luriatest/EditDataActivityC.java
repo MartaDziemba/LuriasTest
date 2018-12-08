@@ -46,6 +46,7 @@ public class EditDataActivityC extends AppCompatActivity {
         editTextLastName = findViewById(R.id.editTextLastName);
         editTextAge = findViewById(R.id.editTextAge);
         editTextIDNumber = findViewById(R.id.editTextIDNumber);
+        editTextDescription = findViewById(R.id.editTextDescription);
 
         TextView stringDate = (TextView) findViewById(R.id.stringDate);
         stringDate.setText(DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_12HOUR));
