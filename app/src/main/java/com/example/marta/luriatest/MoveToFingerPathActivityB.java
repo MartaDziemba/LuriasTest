@@ -132,7 +132,7 @@ public class MoveToFingerPathActivityB extends AppCompatActivity {
     }
 
     private void openTutorialDialog() {
-        dialogTutorial = new Dialog(MoveToFingerPathActivityB.this);
+        dialogTutorial = new Dialog(MoveToFingerPathActivityB.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
         dialogTutorial.setContentView(R.layout.tutorial_b);
         dialogTutorial.setTitle("Help");
         buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
