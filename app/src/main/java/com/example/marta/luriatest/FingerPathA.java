@@ -26,8 +26,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.RoundingMode;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -101,7 +103,7 @@ public class FingerPathA extends View{
         super.onSizeChanged(w, h, oldw, oldh);
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-        saveAsFile("widthX=" + mBitmap.getWidth() + "\nheightY=" + mBitmap.getHeight() + "\nradius=652.799988");
+        saveAsFile(" widthX=" + mBitmap.getWidth() + ", heightY=" + mBitmap.getHeight() + ", radius=652.799988\n");
     }
 
     @Override
@@ -167,6 +169,8 @@ public class FingerPathA extends View{
 
         float x = event.getX();
         float y = event.getY();
+        int valueX = (int) Math.rint(x*10000);
+        int valueY = (int) Math.rint(y*10000);
         long millisStart = System.currentTimeMillis() - startTime;
         int secondsStart = (int) (millisStart / 1000);
 
@@ -174,8 +178,8 @@ public class FingerPathA extends View{
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
-                saveAsFile('\n' + ".PEN_DOWN");
-                saveAsFile(x + "," + y + "," +  secondsStart + "/" + millisStart + "");
+                saveAsFile(".PEN_DOWN");
+                saveAsFile(valueX + "," + valueY + "," +  secondsStart + "/" + millisStart + "");
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -183,13 +187,13 @@ public class FingerPathA extends View{
                 //zapisywanie
                 long millis = System.currentTimeMillis() - startTime;
                 int seconds = (int) (millis / 1000);
-                saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", seconds, millis));
+                saveAsFile(valueX + "," + valueY + "," + String.format(Locale.getDefault(),"%d:%d", seconds, millis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
                 upTouch();
                 //koniec zapisu
-                saveAsFile(".PEN_UP");
+                saveAsFile(".PEN_UP" + '\n');
                 invalidate();
                 break;
         }
