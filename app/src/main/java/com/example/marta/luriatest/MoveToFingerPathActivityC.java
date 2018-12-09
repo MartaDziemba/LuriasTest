@@ -119,7 +119,7 @@ public class MoveToFingerPathActivityC extends AppCompatActivity {
     }
 
     private void openAlertDialog() {
-        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityC.this).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityC.this, android.R.style.Theme_Holo_Light_NoActionBar_Fullscreen).create();
         alertDialog.setTitle("Warning");
         alertDialog.setMessage("Are you sure you want to clear canvas?");
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Clear",
