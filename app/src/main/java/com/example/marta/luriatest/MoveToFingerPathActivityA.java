@@ -32,7 +32,9 @@ import butterknife.OnClick;
 public class MoveToFingerPathActivityA extends AppCompatActivity {
 
     private static final String TAG = "";
-    private FingerPathA fingerPath;
+    private FingerPathA fingerPathA;
+    private FingerPathB fingerPathB;
+    private FingerPathC fingerPathC;
     Dialog dialogTutorial;
     Button buttonOk;
     //Button buttonEnd = findViewById(R.id.buttonEnd);
@@ -41,10 +43,10 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_a);
-        buttonEndOnClick();
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        buttonEndOnClick();
+        fingerPathA = (FingerPathA) findViewById(R.id.canvas);
 
-        fingerPath = (FingerPathA) findViewById(R.id.canvas);
         Long date = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
         String fileName = sdf.format(date) + ".csv";
@@ -55,7 +57,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        fingerPath.setFile(file);
+        fingerPathA.setFile(file);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{
@@ -66,7 +68,100 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         myToolbar.inflateMenu(R.menu.dotsmenu);
 
-        openTutorialDialog();
+        openTutorialDialogTestA();
+
+//        Intent intent = getIntent();
+//        //Bundle extras = intent.getExtras();
+//        String testChoice = intent.getStringExtra("TEST_KEY");
+//        //Integer testChoice = extras.getInt("TEST_KEY");
+//
+//        if(testChoice=="1"){
+//            setContentView(R.layout.activity_main_a);
+//            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//            buttonEndOnClick();
+//            fingerPathA = (FingerPathA) findViewById(R.id.canvas);
+//
+//            Long date = System.currentTimeMillis();
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+//            String fileName = sdf.format(date) + ".csv";
+//
+//            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+//            try {
+//                file.createNewFile();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            fingerPathA.setFile(file);
+//
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//                requestPermissions(new String[]{
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+//            }
+//
+//            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//            setSupportActionBar(myToolbar);
+//            myToolbar.inflateMenu(R.menu.dotsmenu);
+//
+//            openTutorialDialogTestA();
+//        }
+//        if(testChoice=="2"){
+//            setContentView(R.layout.activity_main_b);
+//            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//            buttonEndOnClick();
+//            fingerPathB = (FingerPathB) findViewById(R.id.canvas);
+//
+//            Long date = System.currentTimeMillis();
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+//            String fileName = sdf.format(date) + ".csv";
+//
+//            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+//            try {
+//                file.createNewFile();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            fingerPathB.setFile(file);
+//
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//                requestPermissions(new String[]{
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+//            }
+//
+//            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//            setSupportActionBar(myToolbar);
+//            myToolbar.inflateMenu(R.menu.dotsmenu);
+//
+//            openTutorialDialogTestB();
+//        }
+//        if(testChoice=="3"){
+//            setContentView(R.layout.activity_main_c);
+//            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//            buttonEndOnClick();
+//            fingerPathC = (FingerPathC) findViewById(R.id.canvas);
+//
+//            Long date = System.currentTimeMillis();
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+//            String fileName = sdf.format(date) + ".csv";
+//
+//            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+//            try {
+//                file.createNewFile();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            fingerPathB.setFile(file);
+//
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//                requestPermissions(new String[]{
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+//            }
+//
+//            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//            setSupportActionBar(myToolbar);
+//            myToolbar.inflateMenu(R.menu.dotsmenu);
+//
+//            openTutorialDialogTestC();
+//        }
     }
 
     @Override
@@ -83,7 +178,21 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     public void clearCanvas(){
-        fingerPath.clearCanvas();
+//        Intent intent = getIntent();
+//        Bundle extras = intent.getExtras();
+//        String testChoice = intent.getStringExtra("TEST_KEY");
+//        //Integer testChoice = extras.getInt("TEST_KEY");
+//
+//        if(testChoice=="1"){
+//            fingerPathA.clearCanvas();
+//        }
+//        if(testChoice=="2"){
+//            fingerPathB.clearCanvas();
+//        }
+//        if(testChoice=="3"){
+//            fingerPathC.clearCanvas();
+//        }
+            fingerPathA.clearCanvas();
     }
 
     @Override
@@ -114,7 +223,21 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
                 openAlertDialog();
                 break;
             case R.id.menuButtonMore:
-                openTutorialDialog();
+                    openTutorialDialogTestA();
+//                Intent intent = getIntent();
+//                Bundle extras = intent.getExtras();
+//                String testChoice = intent.getStringExtra("TEST_KEY");
+//                //Integer testChoice = extras.getInt("TEST_KEY");
+//
+//                if(testChoice=="1"){
+//                    openTutorialDialogTestA();
+//                }
+//                if(testChoice=="2"){
+//                    openTutorialDialogTestB();
+//                }
+//                if(testChoice=="3"){
+//                    openTutorialDialogTestC();
+//                }
                 break;
         }
         return true;
@@ -139,9 +262,39 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void openTutorialDialog() {
+    private void openTutorialDialogTestA() {
         dialogTutorial = new Dialog(MoveToFingerPathActivityA.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
         dialogTutorial.setContentView(R.layout.alert_dialog);
+        dialogTutorial.setTitle("Help");
+        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
+        buttonOk.setEnabled(true);
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogTutorial.dismiss();
+            }
+        });
+        dialogTutorial.show();
+    }
+
+    private void openTutorialDialogTestB() {
+        dialogTutorial = new Dialog(MoveToFingerPathActivityA.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
+        dialogTutorial.setContentView(R.layout.tutorial_b);
+        dialogTutorial.setTitle("Help");
+        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
+        buttonOk.setEnabled(true);
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogTutorial.dismiss();
+            }
+        });
+        dialogTutorial.show();
+    }
+
+    private void openTutorialDialogTestC() {
+        dialogTutorial = new Dialog(MoveToFingerPathActivityA.this, android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
+        dialogTutorial.setContentView(R.layout.tutorial_c);
         dialogTutorial.setTitle("Help");
         buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
         buttonOk.setEnabled(true);

@@ -31,12 +31,36 @@ import butterknife.OnClick;
 public class EditDataActivityA extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
+    TextView name;
+
+//    @OnClick(R.id.buttonTest)
+//    void OnClickTest() {
+//
+//        saveData();
+//        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+//        startActivity(intent);
+//    }
 
     @OnClick(R.id.buttonTest)
     void OnClickTest() {
-        saveData();
-        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
-        startActivity(intent);
+        Bundle datafromButton = getIntent().getExtras();
+        String totext = datafromButton.getString("KEY");
+        name.setText(totext);
+        if(name.getText().toString().contains("TEST A")) {
+            saveData();
+            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+            startActivity(intent);
+        }
+        if(name.getText().toString().contains("TEST B")) {
+            saveData();
+            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityB.class);
+            startActivity(intent);
+        }
+        if(name.getText().toString().contains("TEST C")) {
+            saveData();
+            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityC.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -62,6 +86,43 @@ public class EditDataActivityA extends AppCompatActivity {
                 return true;
             }
         });
+
+//        String newString;
+//        if (savedInstanceState == null) {
+//            Bundle extras = getIntent().getExtras();
+//            if(extras == null) {
+//                newString= null;
+//            } else {
+//                newString= extras.getString("STRING_I_NEED");
+//            }
+//        } else {
+//            newString= (String) savedInstanceState.getSerializable("STRING_I_NEED");
+//        }
+
+//        Bundle datafromDefectAdapter = getIntent().getExtras();
+//        String totext = datafromDefectAdapter.getString("KEY");
+//        name.setText(totext);
+//        if(name.getText().toString().contains("Test A"))
+//        {
+//
+//
+//        }
+//        if(name.getText().toString().contains("Test B"))
+//        {
+//
+//
+//        }
+//        if(name.getText().toString().contains("Test C"))
+//        {
+//
+//
+//        }
+
+
+
+
+
+
     }
 
     public void saveData() {
