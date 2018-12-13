@@ -28,36 +28,6 @@ public class EditDataActivity extends AppCompatActivity {
     TextView name;
     Button buttonTest;
 
-//    @OnClick(R.id.buttonTest)
-//    void OnClickTest() {
-//
-//        saveData();
-//        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
-//        startActivity(intent);
-//    }
-
-//    @OnClick(R.id.buttonTest)
-//    void OnClickTest() {
-//        Bundle datafromButton = getIntent().getExtras();
-//        String totext = datafromButton.getString("KEY");
-//        name.setText(totext);
-//        if(name.getText().toString().contains("TEST A")) {
-//            saveData();
-//            Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
-//            startActivity(intent);
-//        }
-//        if(name.getText().toString().contains("TEST B")) {
-//            saveData();
-//            Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityB.class);
-//            startActivity(intent);
-//        }
-//        if(name.getText().toString().contains("TEST C")) {
-//            saveData();
-//            Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityC.class);
-//            startActivity(intent);
-//        }
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,84 +52,43 @@ public class EditDataActivity extends AppCompatActivity {
             }
         });
 
-        name = findViewById(R.id.name);
         buttonTest = findViewById(R.id.buttonTest);
         Bundle datafromButton = getIntent().getExtras();
         String totext = datafromButton.getString("KEY");
-        //name.getVisibility(View.INVISIBLE);
-        name.setText(totext);
 
-            if(name.getText().toString().contains("TEST A")) {
+            if(totext.equals("TEST A")) {
                 buttonTest.setOnClickListener(new View.OnClickListener(){
                     public void onClick(View v){
                         saveData();
                         String test = "TEST A";
-                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
+                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivity.class);
                         intent.putExtra("KEY",test);
                         startActivity(intent);
                     }
                 });
             }
-            if(name.getText().toString().contains("TEST B")) {
+            if(totext.equals("TEST B")) {
                 buttonTest.setOnClickListener(new View.OnClickListener(){
                     public void onClick(View v){
                         saveData();
                         String test = "TEST B";
-                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
+                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivity.class);
                         intent.putExtra("KEY",test);
                         startActivity(intent);
                     }
                 });
             }
-            if(name.getText().toString().contains("TEST C")) {
+            if(totext.equals("TEST C")) {
                 buttonTest.setOnClickListener(new View.OnClickListener(){
                     public void onClick(View v){
                         saveData();
                         String test = "TEST C";
-                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
+                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivity.class);
                         intent.putExtra("KEY",test);
                         startActivity(intent);
                     }
                 });
             }
-
-
-//        String newString;
-//        if (savedInstanceState == null) {
-//            Bundle extras = getIntent().getExtras();
-//            if(extras == null) {
-//                newString= null;
-//            } else {
-//                newString= extras.getString("STRING_I_NEED");
-//            }
-//        } else {
-//            newString= (String) savedInstanceState.getSerializable("STRING_I_NEED");
-//        }
-
-//        Bundle datafromDefectAdapter = getIntent().getExtras();
-//        String totext = datafromDefectAdapter.getString("KEY");
-//        name.setText(totext);
-//        if(name.getText().toString().contains("Test A"))
-//        {
-//
-//
-//        }
-//        if(name.getText().toString().contains("Test B"))
-//        {
-//
-//
-//        }
-//        if(name.getText().toString().contains("Test C"))
-//        {
-//
-//
-//        }
-
-
-
-
-
-
     }
 
     public void saveData() {

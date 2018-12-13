@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,22 +14,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-import butterknife.OnClick;
-
-public class MoveToFingerPathActivityA extends AppCompatActivity {
+public class MoveToFingerPathActivity extends AppCompatActivity {
 
     private static final String TAG = "";
     private FingerPathA fingerPathA;
@@ -39,49 +32,14 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     Dialog dialogTutorial;
     Button buttonOk;
     TextView name;
-    //Button buttonEnd = findViewById(R.id.buttonEnd);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main_a);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        buttonEndOnClick();
-//        fingerPathA = (FingerPathA) findViewById(R.id.canvas);
-//
-//        Long date = System.currentTimeMillis();
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-//        String fileName = sdf.format(date) + ".csv";
-//
-//        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-//        try {
-//            file.createNewFile();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        fingerPathA.setFile(file);
-//
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//            requestPermissions(new String[]{
-//                    Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-//        }
-//
-//        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-//        setSupportActionBar(myToolbar);
-//        myToolbar.inflateMenu(R.menu.dotsmenu);
-//
-//        openTutorialDialogTestA();
-
-        //Intent intent = getIntent();
-        //Bundle extras = intent.getExtras();
-        //String testChoice = intent.getStringExtra("TEST_KEY");
-        //Integer testChoice = extras.getInt("TEST_KEY");
 
         name = findViewById(R.id.name);
         Bundle datafromButton = getIntent().getExtras();
         String totext = datafromButton.getString("KEY");
-        //name.getVisibility(View.INVISIBLE);
-        //name.setText(totext);
 
         if(totext.equals("TEST A")){
             setContentView(R.layout.activity_main_a);
@@ -186,21 +144,18 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     public void clearCanvas(){
-//        Intent intent = getIntent();
-//        Bundle extras = intent.getExtras();
-//        String testChoice = intent.getStringExtra("TEST_KEY");
-//        //Integer testChoice = extras.getInt("TEST_KEY");
-//
-//        if(testChoice=="1"){
-//            fingerPathA.clearCanvas();
-//        }
-//        if(testChoice=="2"){
-//            fingerPathB.clearCanvas();
-//        }
-//        if(testChoice=="3"){
-//            fingerPathC.clearCanvas();
-//        }
+        Bundle datafromButton = getIntent().getExtras();
+        String totext = datafromButton.getString("KEY");
+
+        if(totext.equals("TEST A")){
             fingerPathA.clearCanvas();
+        }
+        if(totext.equals("TEST B")){
+            fingerPathB.clearCanvas();
+        }
+        if(totext.equals("TEST C")){
+            fingerPathC.clearCanvas();
+        }
     }
 
     @Override
@@ -231,28 +186,25 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
                 openAlertDialog();
                 break;
             case R.id.menuButtonMore:
+                Bundle datafromButton = getIntent().getExtras();
+                String totext = datafromButton.getString("KEY");
+
+                if(totext.equals("TEST A")){
                     openTutorialDialogTestA();
-//                Intent intent = getIntent();
-//                Bundle extras = intent.getExtras();
-//                String testChoice = intent.getStringExtra("TEST_KEY");
-//                //Integer testChoice = extras.getInt("TEST_KEY");
-//
-//                if(testChoice=="1"){
-//                    openTutorialDialogTestA();
-//                }
-//                if(testChoice=="2"){
-//                    openTutorialDialogTestB();
-//                }
-//                if(testChoice=="3"){
-//                    openTutorialDialogTestC();
-//                }
+                }
+                if(totext.equals("TEST B")){
+                    openTutorialDialogTestB();
+                }
+                if(totext.equals("TEST C")){
+                    openTutorialDialogTestC();
+                }
                 break;
         }
         return true;
     }
 
     private void openAlertDialog() {
-        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this,android.R.style.Theme_Material_NoActionBar_Fullscreen).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivity.this,android.R.style.Theme_Material_NoActionBar_Fullscreen).create();
         alertDialog.setTitle("Warning");
         alertDialog.setMessage("Are you sure you want to clear canvas?");
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Clear",
@@ -271,7 +223,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     private void openTutorialDialogTestA() {
-        dialogTutorial = new Dialog(MoveToFingerPathActivityA.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
+        dialogTutorial = new Dialog(MoveToFingerPathActivity.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
         dialogTutorial.setContentView(R.layout.alert_dialog);
         dialogTutorial.setTitle("Help");
         buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
@@ -286,7 +238,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     private void openTutorialDialogTestB() {
-        dialogTutorial = new Dialog(MoveToFingerPathActivityA.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
+        dialogTutorial = new Dialog(MoveToFingerPathActivity.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
         dialogTutorial.setContentView(R.layout.tutorial_b);
         dialogTutorial.setTitle("Help");
         buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
@@ -301,7 +253,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     private void openTutorialDialogTestC() {
-        dialogTutorial = new Dialog(MoveToFingerPathActivityA.this, android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
+        dialogTutorial = new Dialog(MoveToFingerPathActivity.this, android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
         dialogTutorial.setContentView(R.layout.tutorial_c);
         dialogTutorial.setTitle("Help");
         buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
@@ -316,7 +268,7 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     }
 
     private void openAlertBackDialog() {
-        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivityA.this).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(MoveToFingerPathActivity.this).create();
         alertDialog.setTitle("Warning");
         alertDialog.setMessage("Are you sure you want to finish?");
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Finish",
