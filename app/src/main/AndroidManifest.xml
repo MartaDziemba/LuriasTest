@@ -25,10 +25,6 @@
         </activity>
         <activity android:name=".MoveToFingerPathActivity"
             android:screenOrientation="landscape"></activity>
-        <activity android:name=".MoveToFingerPathActivityB"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".MoveToFingerPathActivityC"
-            android:screenOrientation="landscape"></activity>
         <activity android:name=".EditDataActivity"
             android:screenOrientation="landscape"></activity>
     </application>
