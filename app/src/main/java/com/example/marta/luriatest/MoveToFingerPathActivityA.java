@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -37,131 +38,138 @@ public class MoveToFingerPathActivityA extends AppCompatActivity {
     private FingerPathC fingerPathC;
     Dialog dialogTutorial;
     Button buttonOk;
+    TextView name;
     //Button buttonEnd = findViewById(R.id.buttonEnd);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_a);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        buttonEndOnClick();
-        fingerPathA = (FingerPathA) findViewById(R.id.canvas);
+//        setContentView(R.layout.activity_main_a);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        buttonEndOnClick();
+//        fingerPathA = (FingerPathA) findViewById(R.id.canvas);
+//
+//        Long date = System.currentTimeMillis();
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+//        String fileName = sdf.format(date) + ".csv";
+//
+//        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+//        try {
+//            file.createNewFile();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        fingerPathA.setFile(file);
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//            requestPermissions(new String[]{
+//                    Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+//        }
+//
+//        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//        setSupportActionBar(myToolbar);
+//        myToolbar.inflateMenu(R.menu.dotsmenu);
+//
+//        openTutorialDialogTestA();
 
-        Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-        String fileName = sdf.format(date) + ".csv";
+        //Intent intent = getIntent();
+        //Bundle extras = intent.getExtras();
+        //String testChoice = intent.getStringExtra("TEST_KEY");
+        //Integer testChoice = extras.getInt("TEST_KEY");
 
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-        try {
-            file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
+        name = findViewById(R.id.name);
+        Bundle datafromButton = getIntent().getExtras();
+        String totext = datafromButton.getString("KEY");
+        //name.getVisibility(View.INVISIBLE);
+        //name.setText(totext);
+
+        if(totext.equals("TEST A")){
+            setContentView(R.layout.activity_main_a);
+            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            buttonEndOnClick();
+            fingerPathA = (FingerPathA) findViewById(R.id.canvas);
+
+            Long date = System.currentTimeMillis();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+            String fileName = sdf.format(date) + ".csv";
+
+            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            fingerPathA.setFile(file);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+            }
+
+            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+            setSupportActionBar(myToolbar);
+            myToolbar.inflateMenu(R.menu.dotsmenu);
+
+            openTutorialDialogTestA();
         }
-        fingerPathA.setFile(file);
+        if(totext.equals("TEST B")){
+            setContentView(R.layout.activity_main_b);
+            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            buttonEndOnClick();
+            fingerPathB = (FingerPathB) findViewById(R.id.canvas);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+            Long date = System.currentTimeMillis();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+            String fileName = sdf.format(date) + ".csv";
+
+            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            fingerPathB.setFile(file);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+            }
+
+            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+            setSupportActionBar(myToolbar);
+            myToolbar.inflateMenu(R.menu.dotsmenu);
+
+            openTutorialDialogTestB();
         }
+        if(totext.equals("TEST C")){
+            setContentView(R.layout.activity_main_c);
+            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            buttonEndOnClick();
+            fingerPathC = (FingerPathC) findViewById(R.id.canvas);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        myToolbar.inflateMenu(R.menu.dotsmenu);
+            Long date = System.currentTimeMillis();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+            String fileName = sdf.format(date) + ".csv";
 
-        openTutorialDialogTestA();
+            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            fingerPathC.setFile(file);
 
-//        Intent intent = getIntent();
-//        //Bundle extras = intent.getExtras();
-//        String testChoice = intent.getStringExtra("TEST_KEY");
-//        //Integer testChoice = extras.getInt("TEST_KEY");
-//
-//        if(testChoice=="1"){
-//            setContentView(R.layout.activity_main_a);
-//            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//            buttonEndOnClick();
-//            fingerPathA = (FingerPathA) findViewById(R.id.canvas);
-//
-//            Long date = System.currentTimeMillis();
-//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-//            String fileName = sdf.format(date) + ".csv";
-//
-//            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-//            try {
-//                file.createNewFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            fingerPathA.setFile(file);
-//
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//                requestPermissions(new String[]{
-//                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-//            }
-//
-//            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-//            setSupportActionBar(myToolbar);
-//            myToolbar.inflateMenu(R.menu.dotsmenu);
-//
-//            openTutorialDialogTestA();
-//        }
-//        if(testChoice=="2"){
-//            setContentView(R.layout.activity_main_b);
-//            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//            buttonEndOnClick();
-//            fingerPathB = (FingerPathB) findViewById(R.id.canvas);
-//
-//            Long date = System.currentTimeMillis();
-//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-//            String fileName = sdf.format(date) + ".csv";
-//
-//            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-//            try {
-//                file.createNewFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            fingerPathB.setFile(file);
-//
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//                requestPermissions(new String[]{
-//                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-//            }
-//
-//            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-//            setSupportActionBar(myToolbar);
-//            myToolbar.inflateMenu(R.menu.dotsmenu);
-//
-//            openTutorialDialogTestB();
-//        }
-//        if(testChoice=="3"){
-//            setContentView(R.layout.activity_main_c);
-//            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//            buttonEndOnClick();
-//            fingerPathC = (FingerPathC) findViewById(R.id.canvas);
-//
-//            Long date = System.currentTimeMillis();
-//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-//            String fileName = sdf.format(date) + ".csv";
-//
-//            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-//            try {
-//                file.createNewFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            fingerPathB.setFile(file);
-//
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//                requestPermissions(new String[]{
-//                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-//            }
-//
-//            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-//            setSupportActionBar(myToolbar);
-//            myToolbar.inflateMenu(R.menu.dotsmenu);
-//
-//            openTutorialDialogTestC();
-//        }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+            }
+
+            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+            setSupportActionBar(myToolbar);
+            myToolbar.inflateMenu(R.menu.dotsmenu);
+
+            openTutorialDialogTestC();
+        }
     }
 
     @Override

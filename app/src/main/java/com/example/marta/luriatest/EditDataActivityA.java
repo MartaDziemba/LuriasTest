@@ -32,6 +32,7 @@ public class EditDataActivityA extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
     TextView name;
+    Button buttonTest;
 
 //    @OnClick(R.id.buttonTest)
 //    void OnClickTest() {
@@ -41,27 +42,27 @@ public class EditDataActivityA extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    @OnClick(R.id.buttonTest)
-    void OnClickTest() {
-        Bundle datafromButton = getIntent().getExtras();
-        String totext = datafromButton.getString("KEY");
-        name.setText(totext);
-        if(name.getText().toString().contains("TEST A")) {
-            saveData();
-            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
-            startActivity(intent);
-        }
-        if(name.getText().toString().contains("TEST B")) {
-            saveData();
-            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityB.class);
-            startActivity(intent);
-        }
-        if(name.getText().toString().contains("TEST C")) {
-            saveData();
-            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityC.class);
-            startActivity(intent);
-        }
-    }
+//    @OnClick(R.id.buttonTest)
+//    void OnClickTest() {
+//        Bundle datafromButton = getIntent().getExtras();
+//        String totext = datafromButton.getString("KEY");
+//        name.setText(totext);
+//        if(name.getText().toString().contains("TEST A")) {
+//            saveData();
+//            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+//            startActivity(intent);
+//        }
+//        if(name.getText().toString().contains("TEST B")) {
+//            saveData();
+//            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityB.class);
+//            startActivity(intent);
+//        }
+//        if(name.getText().toString().contains("TEST C")) {
+//            saveData();
+//            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityC.class);
+//            startActivity(intent);
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,48 @@ public class EditDataActivityA extends AppCompatActivity {
                 return true;
             }
         });
+
+        name = findViewById(R.id.name);
+        buttonTest = findViewById(R.id.buttonTest);
+        Bundle datafromButton = getIntent().getExtras();
+        String totext = datafromButton.getString("KEY");
+        //name.getVisibility(View.INVISIBLE);
+        name.setText(totext);
+
+            if(name.getText().toString().contains("TEST A")) {
+                buttonTest.setOnClickListener(new View.OnClickListener(){
+                    public void onClick(View v){
+                        saveData();
+                        String test = "TEST A";
+                        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+                        intent.putExtra("KEY",test);
+                        startActivity(intent);
+                    }
+                });
+            }
+            if(name.getText().toString().contains("TEST B")) {
+                buttonTest.setOnClickListener(new View.OnClickListener(){
+                    public void onClick(View v){
+                        saveData();
+                        String test = "TEST B";
+                        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+                        intent.putExtra("KEY",test);
+                        startActivity(intent);
+                    }
+                });
+            }
+            if(name.getText().toString().contains("TEST C")) {
+                buttonTest.setOnClickListener(new View.OnClickListener(){
+                    public void onClick(View v){
+                        saveData();
+                        String test = "TEST C";
+                        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+                        intent.putExtra("KEY",test);
+                        startActivity(intent);
+                    }
+                });
+            }
+
 
 //        String newString;
 //        if (savedInstanceState == null) {
