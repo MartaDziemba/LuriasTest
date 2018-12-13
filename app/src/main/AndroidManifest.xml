@@ -29,7 +29,7 @@
             android:screenOrientation="landscape"></activity>
         <activity android:name=".MoveToFingerPathActivityC"
             android:screenOrientation="landscape"></activity>
-        <activity android:name=".EditDataActivityA"
+        <activity android:name=".EditDataActivity"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".EditDataActivityB"
             android:screenOrientation="landscape"></activity>

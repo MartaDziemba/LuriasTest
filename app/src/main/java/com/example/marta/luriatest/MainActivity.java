@@ -5,10 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -22,14 +19,14 @@ public class MainActivity extends AppCompatActivity {
 //    void OnClicktextTime(View v){
 //        TextView textTime = (TextView) v;
 //        String buttonText = textTime.getText().toString();
-//        Intent intent = new Intent(MainActivity.this, EditDataActivityA.class);
+//        Intent intent = new Intent(MainActivity.this, EditDataActivity.class);
 //        intent.putExtra("KEY",buttonText);
 //        startActivity(intent);
 //    }
 
 //    @OnClick(R.id.name)
 //    void OnClicktextTime(View v){
-//        Intent intent = new Intent( MainActivity.this, EditDataActivityA.class);
+//        Intent intent = new Intent( MainActivity.this, EditDataActivity.class);
 //        Bundle bundle = new Bundle();
 //        //String wpisanyTekst = name.getText().toString();
 //        String test = "TEST A";
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         //Button b = (Button)v;
         //String buttonText = b.getText().toString();
         String test = "TEST A";
-        Intent intent = new Intent(MainActivity.this, EditDataActivityA.class);
+        Intent intent = new Intent(MainActivity.this, EditDataActivity.class);
         intent.putExtra("KEY",test);
         startActivity(intent);
     }
@@ -53,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 //        Button b = (Button)v;
 //        String buttonText = b.getText().toString();
         String test = "TEST B";
-        Intent intent = new Intent(MainActivity.this, EditDataActivityA.class);
+        Intent intent = new Intent(MainActivity.this, EditDataActivity.class);
         intent.putExtra("KEY",test);
         startActivity(intent);
     }
@@ -63,14 +60,14 @@ public class MainActivity extends AppCompatActivity {
 //        Button b = (Button)v;
 //        String buttonText = b.getText().toString();
         String test = "TEST C";
-        Intent intent = new Intent(MainActivity.this, EditDataActivityA.class);
+        Intent intent = new Intent(MainActivity.this, EditDataActivity.class);
         intent.putExtra("KEY",test);
         startActivity(intent);
     }
 
 //    @OnClick(R.id.buttonNewTest)
 //    void OnClickNewTest(){
-//        Intent intent = new Intent(MainActivity.this, EditDataActivityA.class);
+//        Intent intent = new Intent(MainActivity.this, EditDataActivity.class);
 //        //String testChoice = "1";
 //        //intent.putExtra("TEST_KEY", testChoice);
 //        startActivity(intent);

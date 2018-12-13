@@ -1,12 +1,9 @@
 package com.example.marta.luriatest;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.text.format.DateUtils;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,13 +19,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class EditDataActivityA extends AppCompatActivity {
+public class EditDataActivity extends AppCompatActivity {
 
     EditText editTextFirstName, editTextLastName, editTextAge, editTextIDNumber, editTextDescription;
     TextView name;
@@ -38,7 +32,7 @@ public class EditDataActivityA extends AppCompatActivity {
 //    void OnClickTest() {
 //
 //        saveData();
-//        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+//        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
 //        startActivity(intent);
 //    }
 
@@ -49,17 +43,17 @@ public class EditDataActivityA extends AppCompatActivity {
 //        name.setText(totext);
 //        if(name.getText().toString().contains("TEST A")) {
 //            saveData();
-//            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+//            Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
 //            startActivity(intent);
 //        }
 //        if(name.getText().toString().contains("TEST B")) {
 //            saveData();
-//            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityB.class);
+//            Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityB.class);
 //            startActivity(intent);
 //        }
 //        if(name.getText().toString().contains("TEST C")) {
 //            saveData();
-//            Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityC.class);
+//            Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityC.class);
 //            startActivity(intent);
 //        }
 //    }
@@ -100,7 +94,7 @@ public class EditDataActivityA extends AppCompatActivity {
                     public void onClick(View v){
                         saveData();
                         String test = "TEST A";
-                        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
                         intent.putExtra("KEY",test);
                         startActivity(intent);
                     }
@@ -111,7 +105,7 @@ public class EditDataActivityA extends AppCompatActivity {
                     public void onClick(View v){
                         saveData();
                         String test = "TEST B";
-                        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
                         intent.putExtra("KEY",test);
                         startActivity(intent);
                     }
@@ -122,7 +116,7 @@ public class EditDataActivityA extends AppCompatActivity {
                     public void onClick(View v){
                         saveData();
                         String test = "TEST C";
-                        Intent intent = new Intent(EditDataActivityA.this, MoveToFingerPathActivityA.class);
+                        Intent intent = new Intent(EditDataActivity.this, MoveToFingerPathActivityA.class);
                         intent.putExtra("KEY",test);
                         startActivity(intent);
                     }
