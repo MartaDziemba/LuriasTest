@@ -23,6 +23,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
+import butterknife.BindView;
+
 public class MoveToFingerPathActivity extends AppCompatActivity {
 
     private static final String TAG = "";
@@ -30,104 +32,113 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
     private FingerPathB fingerPathB;
     private FingerPathC fingerPathC;
     Dialog dialogTutorial;
+
+    @BindView(R.id.buttonOk)
     Button buttonOk;
-    TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        name = findViewById(R.id.name);
         Bundle datafromButton = getIntent().getExtras();
         String totext = datafromButton.getString("KEY");
 
         if(totext.equals("TEST A")){
-            setContentView(R.layout.activity_main_a);
-            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            buttonEndOnClick();
-            fingerPathA = (FingerPathA) findViewById(R.id.canvas);
-
-            Long date = System.currentTimeMillis();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-            String fileName = sdf.format(date) + ".csv";
-
-            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            fingerPathA.setFile(file);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-            }
-
-            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-            setSupportActionBar(myToolbar);
-            myToolbar.inflateMenu(R.menu.dotsmenu);
-
-            openTutorialDialogTestA();
+            OnCreateTestA();
         }
         if(totext.equals("TEST B")){
-            setContentView(R.layout.activity_main_b);
-            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            buttonEndOnClick();
-            fingerPathB = (FingerPathB) findViewById(R.id.canvas);
-
-            Long date = System.currentTimeMillis();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-            String fileName = sdf.format(date) + ".csv";
-
-            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            fingerPathB.setFile(file);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-            }
-
-            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-            setSupportActionBar(myToolbar);
-            myToolbar.inflateMenu(R.menu.dotsmenu);
-
-            openTutorialDialogTestB();
+            OnCreateTestB();
         }
         if(totext.equals("TEST C")){
-            setContentView(R.layout.activity_main_c);
-            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            buttonEndOnClick();
-            fingerPathC = (FingerPathC) findViewById(R.id.canvas);
-
-            Long date = System.currentTimeMillis();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
-            String fileName = sdf.format(date) + ".csv";
-
-            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            fingerPathC.setFile(file);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
-            }
-
-            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-            setSupportActionBar(myToolbar);
-            myToolbar.inflateMenu(R.menu.dotsmenu);
-
-            openTutorialDialogTestC();
+            OnCreateTestC();
         }
+    }
+
+    private void OnCreateTestC() {
+        setContentView(R.layout.activity_main_c);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        buttonEndOnClick();
+        fingerPathC = findViewById(R.id.canvas);
+
+        Long date = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        String fileName = sdf.format(date) + ".csv";
+
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        fingerPathC.setFile(file);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+        }
+
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.inflateMenu(R.menu.dotsmenu);
+
+        openTutorialDialogTestC();
+    }
+
+    private void OnCreateTestB() {
+        setContentView(R.layout.activity_main_b);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        buttonEndOnClick();
+        fingerPathB = findViewById(R.id.canvas);
+
+        Long date = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        String fileName = sdf.format(date) + ".csv";
+
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        fingerPathB.setFile(file);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+        }
+
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.inflateMenu(R.menu.dotsmenu);
+
+        openTutorialDialogTestB();
+    }
+
+    private void OnCreateTestA() {
+        setContentView(R.layout.activity_main_a);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        buttonEndOnClick();
+        fingerPathA = findViewById(R.id.canvas);
+
+        Long date = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        String fileName = sdf.format(date) + ".csv";
+
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        fingerPathA.setFile(file);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
+        }
+
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.inflateMenu(R.menu.dotsmenu);
+
+        openTutorialDialogTestA();
     }
 
     @Override
@@ -186,21 +197,25 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
                 openAlertDialog();
                 break;
             case R.id.menuButtonMore:
-                Bundle datafromButton = getIntent().getExtras();
-                String totext = datafromButton.getString("KEY");
-
-                if(totext.equals("TEST A")){
-                    openTutorialDialogTestA();
-                }
-                if(totext.equals("TEST B")){
-                    openTutorialDialogTestB();
-                }
-                if(totext.equals("TEST C")){
-                    openTutorialDialogTestC();
-                }
+                clearTestChoice();
                 break;
         }
         return true;
+    }
+
+    private void clearTestChoice() {
+        Bundle datafromButton = getIntent().getExtras();
+        String totext = datafromButton.getString("KEY");
+
+        if(totext.equals("TEST A")){
+            openTutorialDialogTestA();
+        }
+        if(totext.equals("TEST B")){
+            openTutorialDialogTestB();
+        }
+        if(totext.equals("TEST C")){
+            openTutorialDialogTestC();
+        }
     }
 
     private void openAlertDialog() {
@@ -226,7 +241,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         dialogTutorial = new Dialog(MoveToFingerPathActivity.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
         dialogTutorial.setContentView(R.layout.alert_dialog);
         dialogTutorial.setTitle("Help");
-        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
+        buttonOk = dialogTutorial.findViewById(R.id.buttonOk);
         buttonOk.setEnabled(true);
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override

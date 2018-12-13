@@ -102,7 +102,6 @@ public class FingerPathB extends View{
         super.onSizeChanged(w, h, oldw, oldh);
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-        //createSample(mCanvas);
     }
 
     @Override
@@ -111,8 +110,6 @@ public class FingerPathB extends View{
 
         canvas.drawPath(mPath, mPaint);
         createSample(canvas);
-
-        //canvas.drawCircle(600, 200, 1, mPaint);
     }
 
     private void startTouch(float x, float y){
