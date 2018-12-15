@@ -70,33 +70,6 @@ public class FingerPathB extends View{
         canvas.drawLine(75, 300, 100, 350, mPaint);
     }
 
-    private List<PointXY> pointsXY= new ArrayList<>();
-
-    private void readData(Canvas canvas) {
-        InputStream is = getResources().openRawResource(R.raw.points);
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(is, Charset.forName("UTF-8"))
-        );
-
-        String line ="";
-        try {
-            while((line = reader.readLine()) != null){
-                Log.d("FingerPath","Line: " + line);
-
-                String[] tokens = line.split(";");
-                PointXY pointXY = new PointXY();
-                pointXY.setX(Float.parseFloat(tokens[0]));
-                pointXY.setY(Float.parseFloat(tokens[1]));
-                pointsXY.add(pointXY);
-
-                Log.d("FingerPath","Just created: " + pointXY);
-            }
-        }catch (IOException e) {
-            Log.wtf("FingerPath","Error reading data file" + line,e);
-            e.printStackTrace();
-        }
-    }
-
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);

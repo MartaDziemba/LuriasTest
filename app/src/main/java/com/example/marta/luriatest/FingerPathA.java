@@ -9,6 +9,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -34,8 +36,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.ButterKnife;
 
@@ -49,7 +54,26 @@ public class FingerPathA extends View{
     private static final float TOLERANCE = 5;
     Context context;
     private File file;
-    long startTime = System.currentTimeMillis();
+    //long startTime = System.currentTimeMillis();
+    long timeInMillis=0L, updateTime=0L, timeSwapBuff=0L, startTime;
+    boolean firstTouch = true;
+    //long startTime = SystemClock.uptimeMillis();
+//    Handler customHandler = new Handler();
+//    Runnable updateTimeThread = new Runnable() {
+//        @Override
+//        public void run() {
+//            timeInMillis = SystemClock.uptimeMillis() - startTime;
+//            updateTime = timeSwapBuff+timeInMillis;
+//            int secs = (int) (updateTime/1000);
+//            int mins = (int) (secs/60);
+//            secs%=60;
+//            int milliseconds = (int) (updateTime%1000);
+//
+//            customHandler.postDelayed(this,0);
+//        }
+//    };
+//    Timer timer;
+//    MyTimerTask myTimerTask;
 
     public FingerPathA(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -69,33 +93,6 @@ public class FingerPathA extends View{
 
         canvas.drawLine(5, 690, 45, 690, mPaint);
         canvas.drawLine(15, 700, 15, 660, mPaint);
-    }
-
-    private List<PointXY> pointsXY= new ArrayList<>();
-
-    private void readData(Canvas canvas) {
-        InputStream is = getResources().openRawResource(R.raw.points);
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(is, Charset.forName("UTF-8"))
-        );
-
-        String line ="";
-        try {
-            while((line = reader.readLine()) != null){
-                Log.d("FingerPath","Line: " + line);
-
-                String[] tokens = line.split(";");
-                PointXY pointXY = new PointXY();
-                pointXY.setX(Float.parseFloat(tokens[0]));
-                pointXY.setY(Float.parseFloat(tokens[1]));
-                pointsXY.add(pointXY);
-
-                Log.d("FingerPath","Just created: " + pointXY);
-            }
-        }catch (IOException e) {
-            Log.wtf("FingerPath","Error reading data file" + line,e);
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -171,23 +168,58 @@ public class FingerPathA extends View{
         float y = event.getY();
         int valueX = (int) Math.rint(x*10000);
         int valueY = (int) Math.rint(y*10000);
-        long millisStart = System.currentTimeMillis() - startTime;
-        int secondsStart = (int) (millisStart / 1000);
+        //long startTime;
+            if (firstTouch){
+            //todo
+                startTime = SystemClock.uptimeMillis();
+                firstTouch = false;
+            }
+            else{
+                startTime = startTime;
+            }
+//        long millisStart = System.currentTimeMillis() - startTime;
+//        int secondsStart = (int) (millisStart / 1000);
+
+
+
+        //startTime = timeInMillis*1000;
+        //checkOtherTimeInMillis = SystemClock.currentThreadTimeMillis();
+//
+        //startTime = SystemClock.uptimeMillis();
+        //customHandler.postDelayed(updateTimeThread,0);
+
+
+        //int milliseconds = (int) (updateTime%1000);
+
 
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
                 saveAsFile(".PEN_DOWN");
-                saveAsFile(valueX + "," + valueY + "," +  secondsStart + "/" + millisStart + "");
+                timeInMillis = SystemClock.uptimeMillis() - startTime;
+                //updateTime = timeSwapBuff+timeInMillis;
+                int secs = (int) (timeInMillis/1000);
+                int mins = (int) (secs/60);
+                secs%=60;
+                //saveAsFile(valueX + "," + valueY + "," +  secondsStart + "," + millisStart + "");
+                saveAsFile(valueX + "," + valueY + "," + mins + "," + String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 moveTouch(x,y);
                 //zapisywanie
-                long millis = System.currentTimeMillis() - startTime;
-                int seconds = (int) (millis / 1000);
-                saveAsFile(valueX + "," + valueY + "," + String.format(Locale.getDefault(),"%d:%d", seconds, millis));
+
+//                long millis = System.currentTimeMillis() - startTime;
+//                int seconds = (int) (millis / 1000);
+//                saveAsFile(valueX + "," + valueY + "," + String.format(Locale.getDefault(),"%d:%d", seconds, millis));
+
+                timeInMillis = SystemClock.uptimeMillis() - startTime;
+                //updateTime = timeSwapBuff+timeInMillis;
+                secs = (int) (timeInMillis/1000);
+                mins = (int) (secs/60);
+                secs%=60;
+                saveAsFile(valueX + "," + valueY + "," + mins + "," + String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
@@ -210,4 +242,14 @@ public class FingerPathA extends View{
                 ".Y_POINTS_PER_INCH 300000\n" +
                 ".COMMENT\n");
     }
+
+//    class MyTimerTask extends TimerTask {
+//         @Override
+//        public void run() {
+//            Calendar calendar = Calendar.getInstance();
+//            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("ss:ms");
+//            final String strTime = simpleDateFormat.format(calendar.getTimeInMillis());
+//
+//        }
+//    }
 }

@@ -98,14 +98,12 @@ public class FingerPathC extends View{
         super.onSizeChanged(w, h, oldw, oldh);
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-        //createSample(mCanvas);
     }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         //todo
-        //createSample(mCanvas);
     }
 
     boolean firstDraw = true;
