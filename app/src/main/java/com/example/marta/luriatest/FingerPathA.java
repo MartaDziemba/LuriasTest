@@ -54,26 +54,8 @@ public class FingerPathA extends View{
     private static final float TOLERANCE = 5;
     Context context;
     private File file;
-    //long startTime = System.currentTimeMillis();
-    long timeInMillis=0L, updateTime=0L, timeSwapBuff=0L, startTime;
+    long timeInMillis=0, startTime;
     boolean firstTouch = true;
-    //long startTime = SystemClock.uptimeMillis();
-//    Handler customHandler = new Handler();
-//    Runnable updateTimeThread = new Runnable() {
-//        @Override
-//        public void run() {
-//            timeInMillis = SystemClock.uptimeMillis() - startTime;
-//            updateTime = timeSwapBuff+timeInMillis;
-//            int secs = (int) (updateTime/1000);
-//            int mins = (int) (secs/60);
-//            secs%=60;
-//            int milliseconds = (int) (updateTime%1000);
-//
-//            customHandler.postDelayed(this,0);
-//        }
-//    };
-//    Timer timer;
-//    MyTimerTask myTimerTask;
 
     public FingerPathA(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -168,29 +150,13 @@ public class FingerPathA extends View{
         float y = event.getY();
         int valueX = (int) Math.rint(x*10000);
         int valueY = (int) Math.rint(y*10000);
-        //long startTime;
-            if (firstTouch){
-            //todo
-                startTime = SystemClock.uptimeMillis();
-                firstTouch = false;
-            }
-            else{
-                startTime = startTime;
-            }
-//        long millisStart = System.currentTimeMillis() - startTime;
-//        int secondsStart = (int) (millisStart / 1000);
-
-
-
-        //startTime = timeInMillis*1000;
-        //checkOtherTimeInMillis = SystemClock.currentThreadTimeMillis();
-//
-        //startTime = SystemClock.uptimeMillis();
-        //customHandler.postDelayed(updateTimeThread,0);
-
-
-        //int milliseconds = (int) (updateTime%1000);
-
+        if (firstTouch){
+            startTime = SystemClock.uptimeMillis();
+            firstTouch = false;
+        }
+        else{
+            startTime = startTime;
+        }
 
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
@@ -198,28 +164,18 @@ public class FingerPathA extends View{
                 //otwarcie pliku
                 saveAsFile(".PEN_DOWN");
                 timeInMillis = SystemClock.uptimeMillis() - startTime;
-                //updateTime = timeSwapBuff+timeInMillis;
                 int secs = (int) (timeInMillis/1000);
-                int mins = (int) (secs/60);
-                secs%=60;
-                //saveAsFile(valueX + "," + valueY + "," +  secondsStart + "," + millisStart + "");
-                saveAsFile(valueX + "," + valueY + "," + mins + "," + String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
+                //secs%=60;
+                saveAsFile(valueX + "," + valueY + "," +  String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 moveTouch(x,y);
                 //zapisywanie
-
-//                long millis = System.currentTimeMillis() - startTime;
-//                int seconds = (int) (millis / 1000);
-//                saveAsFile(valueX + "," + valueY + "," + String.format(Locale.getDefault(),"%d:%d", seconds, millis));
-
                 timeInMillis = SystemClock.uptimeMillis() - startTime;
-                //updateTime = timeSwapBuff+timeInMillis;
                 secs = (int) (timeInMillis/1000);
-                mins = (int) (secs/60);
-                secs%=60;
-                saveAsFile(valueX + "," + valueY + "," + mins + "," + String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
+                //secs%=60;
+                saveAsFile(valueX + "," + valueY + "," +  String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
@@ -242,14 +198,4 @@ public class FingerPathA extends View{
                 ".Y_POINTS_PER_INCH 300000\n" +
                 ".COMMENT\n");
     }
-
-//    class MyTimerTask extends TimerTask {
-//         @Override
-//        public void run() {
-//            Calendar calendar = Calendar.getInstance();
-//            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("ss:ms");
-//            final String strTime = simpleDateFormat.format(calendar.getTimeInMillis());
-//
-//        }
-//    }
 }
