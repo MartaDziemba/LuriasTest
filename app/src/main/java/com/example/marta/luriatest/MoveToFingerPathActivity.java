@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,7 +62,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         fingerPathC = findViewById(R.id.canvas);
 
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
         String fileName = sdf.format(date) + ".csv";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
@@ -90,7 +91,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         fingerPathB = findViewById(R.id.canvas);
 
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
         String fileName = sdf.format(date) + ".csv";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);
@@ -119,7 +120,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         fingerPathA = findViewById(R.id.canvas);
 
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
         String fileName = sdf.format(date) + ".csv";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),fileName);

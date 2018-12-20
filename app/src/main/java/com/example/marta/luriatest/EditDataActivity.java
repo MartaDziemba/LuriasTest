@@ -107,9 +107,8 @@ public class EditDataActivity extends AppCompatActivity {
 
     public void saveData() {
         Long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
         String fileName = sdf.format(date) + ".txt";
-
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), fileName);
         try {
             file.createNewFile();

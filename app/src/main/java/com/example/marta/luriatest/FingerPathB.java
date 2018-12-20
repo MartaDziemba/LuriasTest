@@ -9,6 +9,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -26,14 +28,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.RoundingMode;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.ButterKnife;
 
@@ -47,7 +54,7 @@ public class FingerPathB extends View{
     private static final float TOLERANCE = 5;
     Context context;
     private File file;
-    long startTime = System.currentTimeMillis();
+    long timeInMillis=0, startTime = SystemClock.uptimeMillis();
 
     public FingerPathB(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -75,14 +82,14 @@ public class FingerPathB extends View{
         super.onSizeChanged(w, h, oldw, oldh);
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
+        saveAsFile("widthX=" + mBitmap.getWidth() + " heightY=" + mBitmap.getHeight() + " radius=652.799988\n");
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-        canvas.drawPath(mPath, mPaint);
         createSample(canvas);
+        canvas.drawPath(mPath, mPaint);
     }
 
     private void startTouch(float x, float y){
@@ -103,11 +110,7 @@ public class FingerPathB extends View{
 
     public void clearCanvas(){
         mPath.reset();
-        try {
-            FileWriter writer = new FileWriter(file,false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        saveAsFile(".COMMENT CLEAR");
         invalidate();
     }
 
@@ -120,7 +123,7 @@ public class FingerPathB extends View{
             try {
                 FileWriter writer = new FileWriter(file,true);
                 writer.append(content);
-                writer.append(',');
+                writer.append(' ');
                 writer.append('\n');
                 writer.flush();
                 writer.close();
@@ -145,29 +148,29 @@ public class FingerPathB extends View{
 
         float x = event.getX();
         float y = event.getY();
-        long millisStart = System.currentTimeMillis() - startTime;
-        int secondsStart = (int) (millisStart / 1000);
+        int valueX = (int) Math.rint(x*10000);
+        int valueY = (int) Math.rint(y*10000);
 
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 startTouch(x,y);
                 //otwarcie pliku
                 saveAsFile(".PEN_DOWN");
-                saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", secondsStart, millisStart));
+                timeInMillis = SystemClock.uptimeMillis() - startTime;
+                saveAsFile(valueX + " " + valueY + " " + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 moveTouch(x,y);
                 //zapisywanie
-                long millis = System.currentTimeMillis() - startTime;
-                int seconds = (int) (millis / 1000);
-                saveAsFile(x + "," + y + "," + String.format(Locale.getDefault(),"%d:%d", seconds, millis));
+                timeInMillis = SystemClock.uptimeMillis() - startTime;
+                saveAsFile(valueX + " " + valueY + " " + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
                 upTouch();
                 //koniec zapisu
-                saveAsFile(".PEN_UP");
+                saveAsFile(".PEN_UP" + '\n');
                 invalidate();
                 break;
         }
@@ -176,5 +179,12 @@ public class FingerPathB extends View{
 
     public void setFile(File file) {
         this.file = file;
+        saveAsFile(".VERSION 1.0 0\n" +
+                ".COORD X Y T\n" +
+                ".HIERARCHY CHARACTER\n" +
+                ".DATA_SOURCE minicog 20160802_105856\n" +
+                ".X_POINTS_PER_INCH 300000\n" +
+                ".Y_POINTS_PER_INCH 300000\n" +
+                ".COMMENT\n");
     }
 }

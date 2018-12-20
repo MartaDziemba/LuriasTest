@@ -54,8 +54,7 @@ public class FingerPathA extends View{
     private static final float TOLERANCE = 5;
     Context context;
     private File file;
-    long timeInMillis=0, startTime;
-    boolean firstTouch = true;
+    long timeInMillis=0, startTime = SystemClock.uptimeMillis();
 
     public FingerPathA(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -82,7 +81,7 @@ public class FingerPathA extends View{
         super.onSizeChanged(w, h, oldw, oldh);
         mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-        saveAsFile(" widthX=" + mBitmap.getWidth() + ", heightY=" + mBitmap.getHeight() + ", radius=652.799988\n");
+        saveAsFile("widthX=" + mBitmap.getWidth() + " heightY=" + mBitmap.getHeight() + " radius=652.799988\n");
     }
 
     @Override
@@ -123,7 +122,7 @@ public class FingerPathA extends View{
             try {
                 FileWriter writer = new FileWriter(file,true);
                 writer.append(content);
-                writer.append(',');
+                writer.append(' ');
                 writer.append('\n');
                 writer.flush();
                 writer.close();
@@ -137,7 +136,7 @@ public class FingerPathA extends View{
             try {
                 FileOutputStream fos = new FileOutputStream(file);
             } catch (IOException e) {
-                Log.wtf("FingerPathB","Error saving as file: " + e);
+                Log.wtf("FingerPathA","Error saving as file: " + e);
                 e.printStackTrace();
             }
         }
@@ -150,13 +149,6 @@ public class FingerPathA extends View{
         float y = event.getY();
         int valueX = (int) Math.rint(x*10000);
         int valueY = (int) Math.rint(y*10000);
-        if (firstTouch){
-            startTime = SystemClock.uptimeMillis();
-            firstTouch = false;
-        }
-        else{
-            startTime = startTime;
-        }
 
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
@@ -164,18 +156,14 @@ public class FingerPathA extends View{
                 //otwarcie pliku
                 saveAsFile(".PEN_DOWN");
                 timeInMillis = SystemClock.uptimeMillis() - startTime;
-                int secs = (int) (timeInMillis/1000);
-                //secs%=60;
-                saveAsFile(valueX + "," + valueY + "," +  String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
+                saveAsFile(valueX + " " + valueY + " " + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 moveTouch(x,y);
                 //zapisywanie
                 timeInMillis = SystemClock.uptimeMillis() - startTime;
-                secs = (int) (timeInMillis/1000);
-                //secs%=60;
-                saveAsFile(valueX + "," + valueY + "," +  String.format("%2d",secs) + "," + String.format("%3d",timeInMillis));
+                saveAsFile(valueX + " " + valueY + " " + String.format("%3d",timeInMillis));
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
