@@ -55,11 +55,11 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         }
     }
 
-    private void OnCreateTestC() {
-        setContentView(R.layout.activity_main_c);
+    private void OnCreateTestA() {
+        setContentView(R.layout.activity_main_a);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         buttonEndOnClick();
-        fingerPathC = findViewById(R.id.canvas);
+        fingerPathA = findViewById(R.id.canvas);
 
         Long date = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
@@ -71,7 +71,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        fingerPathC.setFile(file);
+        fingerPathA.setFile(file);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
@@ -81,7 +81,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         myToolbar.inflateMenu(R.menu.dotsmenu);
 
-        openTutorialDialogTestC();
+        openTutorialDialogTest();
     }
 
     private void OnCreateTestB() {
@@ -110,14 +110,14 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         myToolbar.inflateMenu(R.menu.dotsmenu);
 
-        openTutorialDialogTestB();
+        openTutorialDialogTest();
     }
 
-    private void OnCreateTestA() {
-        setContentView(R.layout.activity_main_a);
+    private void OnCreateTestC() {
+        setContentView(R.layout.activity_main_c);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         buttonEndOnClick();
-        fingerPathA = findViewById(R.id.canvas);
+        fingerPathC = findViewById(R.id.canvas);
 
         Long date = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
@@ -129,7 +129,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        fingerPathA.setFile(file);
+        fingerPathC.setFile(file);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1000);
@@ -139,7 +139,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         myToolbar.inflateMenu(R.menu.dotsmenu);
 
-        openTutorialDialogTestA();
+        openTutorialDialogTest();
     }
 
     @Override
@@ -205,18 +205,7 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
     }
 
     private void clearTestChoice() {
-        Bundle datafromButton = getIntent().getExtras();
-        String totext = datafromButton.getString("KEY");
-
-        if(totext.equals("TEST A")){
-            openTutorialDialogTestA();
-        }
-        if(totext.equals("TEST B")){
-            openTutorialDialogTestB();
-        }
-        if(totext.equals("TEST C")){
-            openTutorialDialogTestC();
-        }
+        openTutorialDialogTest();
     }
 
     private void openAlertDialog() {
@@ -238,41 +227,22 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void openTutorialDialogTestA() {
+    private void openTutorialDialogTest() {
         dialogTutorial = new Dialog(MoveToFingerPathActivity.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
-        dialogTutorial.setContentView(R.layout.alert_dialog);
+        Bundle datafromButton = getIntent().getExtras();
+        String totext = datafromButton.getString("KEY");
+
+        if(totext.equals("TEST A")){
+            dialogTutorial.setContentView(R.layout.alert_dialog);
+        }
+        if(totext.equals("TEST B")){
+            dialogTutorial.setContentView(R.layout.tutorial_b);
+        }
+        if(totext.equals("TEST C")){
+            dialogTutorial.setContentView(R.layout.tutorial_c);
+        }
         dialogTutorial.setTitle("Help");
         buttonOk = dialogTutorial.findViewById(R.id.buttonOk);
-        buttonOk.setEnabled(true);
-        buttonOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialogTutorial.dismiss();
-            }
-        });
-        dialogTutorial.show();
-    }
-
-    private void openTutorialDialogTestB() {
-        dialogTutorial = new Dialog(MoveToFingerPathActivity.this,android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
-        dialogTutorial.setContentView(R.layout.tutorial_b);
-        dialogTutorial.setTitle("Help");
-        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
-        buttonOk.setEnabled(true);
-        buttonOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialogTutorial.dismiss();
-            }
-        });
-        dialogTutorial.show();
-    }
-
-    private void openTutorialDialogTestC() {
-        dialogTutorial = new Dialog(MoveToFingerPathActivity.this, android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
-        dialogTutorial.setContentView(R.layout.tutorial_c);
-        dialogTutorial.setTitle("Help");
-        buttonOk = (Button)dialogTutorial.findViewById(R.id.buttonOk);
         buttonOk.setEnabled(true);
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
