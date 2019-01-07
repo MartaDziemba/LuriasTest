@@ -198,14 +198,10 @@ public class MoveToFingerPathActivity extends AppCompatActivity {
                 openAlertDialog();
                 break;
             case R.id.menuButtonMore:
-                clearTestChoice();
+                openTutorialDialogTest();
                 break;
         }
         return true;
-    }
-
-    private void clearTestChoice() {
-        openTutorialDialogTest();
     }
 
     private void openAlertDialog() {
